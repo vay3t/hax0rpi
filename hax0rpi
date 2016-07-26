@@ -170,9 +170,12 @@ rm Windows.zip
 mv Windows lazagne
 
 # install findmyhash
+mkdir findmyhash
+cd findmyhash
 wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/findmyhash/findmyhash_v1.1.2.py
 mv findmyhash_v1.1.2.py findmyhash.py
 chmod +x findmyhash.py
+cd && cd $secret
 
 # dont need installation
 git clone https://github.com/sqlmapproject/sqlmap
