@@ -99,9 +99,7 @@ cd && cd $secret
 
 # install netcreds
 git clone https://github.com/DanMcInerney/net-creds
-cd net-creds
-sudo pip install -r requirements.txt
-cd && cd $secret
+sudo pip install wsgiref scapy
 
 # install pixie-dust
 git clone https://github.com/wiire/pixiewps
