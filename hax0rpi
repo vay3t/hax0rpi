@@ -21,9 +21,9 @@ read INPUT
 echo ""
 
 # secret directory
-pwd_=/home/pi/.tools
-cd /home/pi
-mkdir .tools && cd .tools
+secret=.tools
+cd
+mkdir .tools && cd $secret
 
 # update system
 sudo apt-get update
@@ -69,12 +69,12 @@ cd packetfu
 bundle install
 sudo apt-get install build-essential ruby-dev libpcap-dev -y
 sudo gem install bettercap
-cd pwd_
+cd && cd $secret
 
 # install empire
 git clone https://github.com/PowerShellEmpire/Empire/
 cd Empire/setup && chmod +x install.sh && sudo ./install.sh
-cd pwd_
+cd && cd $secret
 
 # install sublist3r
 git clone https://github.com/aboul3la/Sublist3r
@@ -85,7 +85,7 @@ sudo apt-get install g++ python-pip libyaml-dev python-dev -y
 git clone https://github.com/epinna/weevely3
 cd weevely3
 sudo pip install -r requirements.txt
-cd pwd_
+cd && cd $secret
 
 # install dnsenum
 git clone https://github.com/fwaeytens/dnsenum
@@ -95,21 +95,21 @@ sudo apt-get install cpanminus -y
 git clone https://github.com/trustedsec/social-engineer-toolkit
 cd social-engineer-toolkit
 sudo python setup.py
-cd pwd_
+cd && cd $secret
 
 # install netcreds
 git clone https://github.com/DanMcInerney/net-creds
 cd net-creds
 sudo pip install -r requirements.txt
-cd pwd_
+cd && cd $secret
 
 # install pixie-dust
 git clone https://github.com/wiire/pixiewps
 cd pixiewps*/
 cd src/
-sudo make
+make
 sudo make install
-cd pwd_
+cd && cd $secret
 
 # install reaver
 sudo apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev
@@ -117,9 +117,9 @@ git clone https://github.com/t6x/reaver-wps-fork-t6x
 cd reaver-wps-fork-t6x*/
 cd src/
 ./configure
-sudo make
+make
 sudo make install
-cd pwd_
+cd && cd $secret
 
 # install aircrack-ng
 sudo apt-get -y install libssl-dev
@@ -127,36 +127,36 @@ wget http://download.aircrack-ng.org/aircrack-ng-1.2-rc4.tar.gz
 tar -zxvf aircrack-ng-1.2-rc4.tar.gz
 rm aircrack-ng-1.2-rc4.tar.gz
 cd aircrack-ng-1.2-rc4
-sudo make
+make
 sudo make install
-cd pwd_
+cd && cd $secret
 
 # instal mdk3
 wget http://aspj.aircrack-ng.org/mdk3-v6.tar.bz2
 tar jxvf mdk3-v6.tar.bz2
 rm mdk3-v6.tar.bz2
 cd mdk3-v6
-sudo make
+make
 sudo make install
-cd pwd_
+cd && cd $secret
 
 # install dirb
 wget https://sourceforge.net/projects/dirb/files/dirb/2.22/dirb222.tar.gz
 tar -xzvf dirb222.tar.gz
 rm dirb222.tar.gz
 cd dirb222
-sudo make
+make
 sudo make install
-cd pwd_
+cd && cd $secret
 
 # install p0f
 wget http://lcamtuf.coredump.cx/p0f3/releases/p0f-3.09b.tgz
 tar -xvzf p0f-3.09b.tgz
 rm p0f-3.09b.tgz
 cd p0f-3.09b
-sudo make
+make
 sudo make install
-cd pwd_
+cd && cd $secret
 
 # install cewl
 wget https://digi.ninja/files/cewl_5.1.tar.bz2
