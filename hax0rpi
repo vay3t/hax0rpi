@@ -122,7 +122,7 @@ sudo make install
 cd && cd $secret
 
 # install aircrack-ng
-sudo apt-get -y install libssl-dev
+sudo apt-get -y install libssl-dev libnl1
 wget http://download.aircrack-ng.org/aircrack-ng-1.2-rc4.tar.gz
 tar -zxvf aircrack-ng-1.2-rc4.tar.gz
 rm aircrack-ng-1.2-rc4.tar.gz
@@ -191,6 +191,8 @@ tar -xzvf windows-binaries_0.5.orig.tar.gz
 rm windows-binaries_0.5.orig.tar.gz
 
 # windows utilities
+mkdir SysinternalsSuit && cd SysinternalsSuit
 wget https://download.sysinternals.com/files/SysinternalsSuite.zip
 unzip SysinternalsSuite.zip
 rm SysinternalsSuite.zip
+cd && cd $secret
