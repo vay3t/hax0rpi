@@ -1,0 +1,196 @@
+#!/bin/bash
+
+echo "               _                 ___             _              "
+echo "              | |__   __ ___  __/ _ \ _ __ _ __ (_)             "
+echo "              | '_ \ / _' \ \/ / | | | '__| '_ \| |             "
+echo "              | | | | (_| |>  <| |_| | |  | |_) | |             "
+echo '              |_| |_|\__,_/_/\_\\___/|_|  | .__/|_|             '
+echo "                                          |_|                   "
+echo ""
+echo "                  === hax0rpi Release 0.1 ===                   "
+echo "           A Raspberry Pi Hacker Tools suite by Vay3t           "
+echo ""
+echo "----------------------------------------------------------------"
+echo "    This installer will load a comprehensive of hacker tools    "
+echo "      suite onto your Raspberry Pi. Note that the Raspbian      "
+echo "     distribution must be installed onto the SD card before     "
+echo "     proceeding. See README (if exist) for more information.    "
+echo ""
+echo "Press ENTER to continue, CTRL+C to abort."
+read INPUT
+echo ""
+
+# secret directory
+secret=.tools
+pwd_=/home/pi/$secret
+cd ..
+mkdir $secret && cd $secret
+
+# update system
+sudo apt-get update
+sudo apt-get dist-upgrade -y
+
+# install from apt-get
+sudo apt-get install -y \
+	apache2 \
+	arp-scan \
+	crunch \
+	dnsmasq \
+	dsniff \
+	goaccess \
+	hostapd \
+	htop \
+	hydra \
+	iw \
+	macchanger \
+	mysql-client \ 
+	mysql-server \
+	nmap \
+	openvpn \
+	pi-bluetooth \
+	sslstrip \
+	tcpdump \
+	tcpkill \
+	tree \
+	tshark \
+	vlc \
+	wipe \
+	wireless-tools \
+	wvdial;
+
+sudo pip install --upgrade pip
+sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket
+
+sudo gem update
+sudo gem install bundler
+
+# install bettercap
+git clone https://github.com/packetfu/packetfu
+cd packetfu
+bundle install
+sudo apt-get install build-essential ruby-dev libpcap-dev -y
+sudo gem install bettercap
+cd pwd_
+
+# install empire
+git clone https://github.com/PowerShellEmpire/Empire/
+cd /Empire/setup && chmod +x setup && sudo ./setup
+cd pwd_
+
+# install sublist3r
+git clone https://github.com/aboul3la/Sublist3r
+sudo apt-get install -y python-argparse python-dnspython python-requests
+
+# install weevely3
+git clone https://github.com/epinna/weevely3
+cd weevely3
+sudo pip install -r requeriments.txt
+cd pwd_
+
+# install dnsenum
+git clone https://github.com/fwaeytens/dnsenum
+sudo apt-get install cpanminus
+
+# install SET
+git clone https://github.com/trustedsec/social-engineer-toolkit
+cd social-engineer-toolkit
+sudo python setup.py
+cd pwd_
+
+# install netcreds
+git clone https://github.com/DanMcInerney/net-creds
+cd net-creds
+sudo pip install -r requeriments.txt
+cd pwd_
+
+# install pixie-dust
+git clone https://github.com/wiire/pixiewps
+cd pixiewps*/
+cd src/
+sudo make
+sudo make install
+cd pwd_
+
+# install reaver
+sudo apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev
+git clone https://github.com/t6x/reaver-wps-fork-t6x
+cd reaver-wps-fork-t6x*/
+cd src/
+./configure
+sudo make
+sudo make install
+cd pwd_
+
+# install aircrack-ng
+sudo apt-get -y install libssl-dev
+wget http://download.aircrack-ng.org/aircrack-ng-1.2-rc4.tar.gz
+tar -zxvf aircrack-ng-1.2-rc4.tar.gz
+rm aircrack-ng-1.2-rc4.tar.gz
+cd aircrack-ng-1.2-rc4
+sudo make
+sudo make install
+cd pwd_
+
+# instal mdk3
+wget http://aspj.aircrack-ng.org/mdk3-v6.tar.bz2
+tar jxvf mdk3-v6.tar.bz2
+rm mdk3-v6.tar.bz2
+cd mdk3-v6
+sudo make
+sudo make install
+cd pwd_
+
+# install dirb
+wget https://sourceforge.net/projects/dirb/files/dirb/2.22/dirb222.tar.gz
+tar -xzvf dirb222.tar.gz
+rm dirb222.tar.gz
+cd dirb222
+sudo make
+sudo make install
+cd pwd_
+
+# install p0f
+wget http://lcamtuf.coredump.cx/p0f3/releases/p0f-3.09b.tgz
+tar -xvzf p0f-3.09b.tgz
+rm p0f-3.09b.tgz
+cd p0f-3.09b
+sudo make
+sudo make install
+cd pwd_
+
+# install cewl
+wget https://digi.ninja/files/cewl_5.1.tar.bz2
+tar jxvf cewl_5.1.tar.bz2
+rm cewl_5.1.tar.bz2
+
+# install lazagne
+wget https://github.com/AlessandroZ/LaZagne/releases/download/1.4/Windows.zip
+mv Windows.zip lazagne.zip
+unzip lazagne.zip
+rm lazagne.zip
+
+# install findmyhash
+wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/findmyhash/findmyhash_v1.1.2.py
+mv findmyhash_v1.1.2.py findmyhash.py
+chmod +x findmyhash.py
+
+# dont need installation
+git clone https://github.com/sqlmapproject/sqlmap
+git clone https://github.com/laramies/theHarvester
+git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
+git clone https://github.com/PenturaLabs/Linux_Exploit_Suggester
+git clone https://github.com/samratashok/nishang
+git clone https://github.com/offensive-security/exploit-database
+git clone https://github.com/AlisamTechnology/ATSCAN
+git clone https://github.com/mubix/post-exploitation
+git clone https://github.com/SpiderLabs/Responder
+
+# windows binaries
+wget http://repo.kali.org/kali/pool/non-free/w/windows-binaries/windows-binaries_0.5.orig.tar.gz
+tar -xzvf windows-binaries_0.5.orig.tar.gz
+rm windows-binaries_0.5.orig.tar.gz
+
+# windows utilities
+wget https://download.sysinternals.com/files/SysinternalsSuite.zip
+unzip SysinternalsSuite.zip
+rm SysinternalsSuite.zip
