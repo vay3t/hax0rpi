@@ -48,6 +48,7 @@ sudo apt-get install -y \
 	nmap \
 	openvpn \
 	pi-bluetooth \
+	python-dev \
 	sslstrip \
 	tcpdump \
 	tcpkill \
