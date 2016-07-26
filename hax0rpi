@@ -74,7 +74,7 @@ cd pwd_
 
 # install empire
 git clone https://github.com/PowerShellEmpire/Empire/
-cd Empire/setup && chmod +x setup && sudo ./setup
+cd Empire/setup && chmod +x install.sh && sudo ./install.sh
 cd pwd_
 
 # install sublist3r
