@@ -23,5 +23,5 @@ pi@raspberrypi:~/hax0rpi $ ./hax0rpi
 git clone https://github.com/vay3t/hax0rpi
 cd hax0rpi
 chmod +x hax0rpi
-sudo ./hax0rpi
+./hax0rpi
 ```
