@@ -84,7 +84,7 @@ sudo apt-get install -y python-argparse python-dnspython python-requests
 # install weevely3
 git clone https://github.com/epinna/weevely3
 cd weevely3
-sudo pip install -r requeriments.txt
+sudo pip install -r requirements.txt
 cd pwd_
 
 # install dnsenum
@@ -100,7 +100,7 @@ cd pwd_
 # install netcreds
 git clone https://github.com/DanMcInerney/net-creds
 cd net-creds
-sudo pip install -r requeriments.txt
+sudo pip install -r requirements.txt
 cd pwd_
 
 # install pixie-dust
