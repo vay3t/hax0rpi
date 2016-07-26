@@ -49,6 +49,7 @@ sudo apt-get install -y \
 	openvpn \
 	pi-bluetooth \
 	python-dev \
+	python-gdbm \
 	sslstrip \
 	tcpdump \
 	tcpkill \
