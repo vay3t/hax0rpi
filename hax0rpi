@@ -48,7 +48,6 @@ sudo apt-get install -y \
 	openvpn \
 	pi-bluetooth \
 	python-dev \
-	python-gdbm \
 	sslstrip \
 	tcpdump \
 	tree \
@@ -79,9 +78,10 @@ cd pwd_
 
 # install sublist3r
 git clone https://github.com/aboul3la/Sublist3r
-sudo apt-get install -y python-argparse python-dnspython python-requests
+sudo pip install argparse dnspython requests
 
 # install weevely3
+sudo apt-get install g++ python-pip libyaml-dev python-dev -y
 git clone https://github.com/epinna/weevely3
 cd weevely3
 sudo pip install -r requirements.txt
