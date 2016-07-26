@@ -43,7 +43,7 @@ sudo apt-get install -y \
 	hydra \
 	iw \
 	macchanger \
-	mysql-client \ 
+	mysql-client \
 	mysql-server \
 	nmap \
 	openvpn \
