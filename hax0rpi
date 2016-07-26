@@ -21,10 +21,9 @@ read INPUT
 echo ""
 
 # secret directory
-secret=.tools
-pwd_=/home/pi/$secret
+pwd_=/home/pi/.tools
 cd /home/pi
-mkdir $secret && cd $secret
+mkdir .tools && cd .tools
 
 # update system
 sudo apt-get update
