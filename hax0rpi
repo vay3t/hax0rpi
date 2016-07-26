@@ -90,7 +90,7 @@ cd pwd_
 
 # install dnsenum
 git clone https://github.com/fwaeytens/dnsenum
-sudo apt-get install cpanminus
+sudo apt-get install cpanminus -y
 
 # install SET
 git clone https://github.com/trustedsec/social-engineer-toolkit
