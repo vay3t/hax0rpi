@@ -23,7 +23,7 @@ echo ""
 # secret directory
 secret=.tools
 pwd_=/home/pi/$secret
-cd ..
+cd /home/pi
 mkdir $secret && cd $secret
 
 # update system
