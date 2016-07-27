@@ -175,6 +175,14 @@ mv findmyhash_v1.1.2.py findmyhash.py
 chmod +x findmyhash.py
 cd && cd $secret
 
+# install atscan
+git clone https://github.com/AlisamTechnology/ATSCAN
+cd ATSCAN 
+chmod +x atscan.pl
+chmod +x install.sh 
+./install.sh
+cd && cd $secret
+
 # dont need installation
 git clone https://github.com/sqlmapproject/sqlmap
 git clone https://github.com/laramies/theHarvester
@@ -182,7 +190,6 @@ git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
 git clone https://github.com/PenturaLabs/Linux_Exploit_Suggester
 git clone https://github.com/samratashok/nishang
 git clone https://github.com/offensive-security/exploit-database
-git clone https://github.com/AlisamTechnology/ATSCAN
 git clone https://github.com/mubix/post-exploitation
 git clone https://github.com/SpiderLabs/Responder
 
