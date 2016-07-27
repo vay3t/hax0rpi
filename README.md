@@ -25,3 +25,6 @@ cd hax0rpi
 chmod +x hax0rpi
 ./hax0rpi
 ```
+
+# New tools?
+I accept suggestions
