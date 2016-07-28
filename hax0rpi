@@ -60,6 +60,7 @@ sudo apt-get install -y \
 sudo pip install --upgrade pip
 sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket
 
+sudo apt-get install build-essential ruby-dev libpcap-dev -y
 sudo gem update
 sudo gem install bundler
 
@@ -67,7 +68,6 @@ sudo gem install bundler
 git clone https://github.com/packetfu/packetfu
 cd packetfu
 bundle install
-sudo apt-get install build-essential ruby-dev libpcap-dev -y
 sudo gem install bettercap
 cd && cd $secret
 
