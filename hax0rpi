@@ -94,7 +94,7 @@ sudo apt-get install cpanminus -y
 # install SET
 git clone https://github.com/trustedsec/social-engineer-toolkit
 cd social-engineer-toolkit
-sudo python setup.py
+sudo python setup.py install
 cd && cd $secret
 
 # install netcreds
