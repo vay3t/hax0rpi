@@ -131,6 +131,7 @@ rm aircrack-ng-1.2-rc4.tar.gz
 cd aircrack-ng-1.2-rc4
 make
 sudo make install
+sudo airodump-ng-oui-update
 cd && cd $secret
 
 # instal mdk3
