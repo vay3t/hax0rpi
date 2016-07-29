@@ -162,7 +162,7 @@ cd && cd $secret
 wget https://digi.ninja/files/cewl_5.1.tar.bz2
 tar jxvf cewl_5.1.tar.bz2
 rm cewl_5.1.tar.bz2
-sudo gem install mime-types mini_exiftool rubyzip spider
+sudo gem install mime-types mini_exiftool nokogiri rubyzip spider
 
 # install lazagne
 wget https://github.com/AlessandroZ/LaZagne/releases/download/1.4/Windows.zip
