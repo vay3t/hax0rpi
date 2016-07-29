@@ -81,10 +81,6 @@ git clone https://github.com/PowerShellEmpire/Empire/
 cd Empire/setup && chmod +x install.sh && sudo ./install.sh
 cd && cd $secret
 
-# install sublist3r
-git clone https://github.com/aboul3la/Sublist3r
-sudo pip install argparse dnspython requests
-
 # install weevely3
 sudo apt-get install g++ python-pip libyaml-dev python-dev -y
 git clone https://github.com/epinna/weevely3
