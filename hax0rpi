@@ -200,3 +200,9 @@ wget https://download.sysinternals.com/files/SysinternalsSuite.zip
 unzip SysinternalsSuite.zip
 rm SysinternalsSuite.zip
 cd && cd $secret
+
+
+
+# remove hax0rpi
+cd
+sudo rm -r hax0rpi/
