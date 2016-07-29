@@ -63,7 +63,7 @@ sudo apt-get install -y \
 	wvdial;
 
 sudo pip install --upgrade pip
-sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket
+sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket glances
 
 sudo apt-get install build-essential ruby-dev libpcap-dev -y
 sudo gem update
