@@ -38,16 +38,21 @@ sudo apt-get install -y \
 	dsniff \
 	goaccess \
 	hostapd \
+	hping3 \
 	htop \
 	hydra \
 	iw \
+	libimage-exiftool-perl \
 	macchanger \
 	mysql-client \
 	mysql-server \
+	nbtscan \
 	nmap \
 	openvpn \
+	pdfcrack \
 	pi-bluetooth \
 	python-dev \
+	rarcrack \
 	sslstrip \
 	tcpdump \
 	tree \
