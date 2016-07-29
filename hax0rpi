@@ -142,9 +142,11 @@ cd && cd $secret
 wget https://sourceforge.net/projects/dirb/files/dirb/2.22/dirb222.tar.gz
 tar -xzvf dirb222.tar.gz
 rm dirb222.tar.gz
+chmod -R 777 dirb222
+sudo apt-get install libcurl4-gnutls-dev -y
 cd dirb222
+./configure
 make
-sudo make install
 cd && cd $secret
 
 # install p0f
