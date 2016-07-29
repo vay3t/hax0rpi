@@ -78,7 +78,9 @@ cd && cd $secret
 
 # install empire
 git clone https://github.com/PowerShellEmpire/Empire/
-cd Empire/setup && chmod +x install.sh && sudo ./install.sh
+cd Empire/setup
+chmod +x install.sh
+sudo ./install.sh
 cd && cd $secret
 
 # install weevely3
