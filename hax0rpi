@@ -206,8 +206,13 @@ unzip SysinternalsSuite.zip
 rm SysinternalsSuite.zip
 cd && cd $secret
 
-
+# Disable service in boot
+sudo update-rc.d apache2 disable
+sudo update-rc.d dnsmasq disable
+sudo update-rc.d mysql disable
 
 # remove hax0rpi
 cd
 sudo rm -r hax0rpi/
+
+echo "[!] Need reboot"
