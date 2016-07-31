@@ -66,6 +66,7 @@ sudo apt-get install -y \
 sudo pip install --upgrade pip
 sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket
 
+# install ruby
 sudo apt-get install build-essential ruby-dev libpcap-dev -y
 sudo gem update
 sudo gem install bundler
@@ -92,8 +93,8 @@ sudo pip install -r requirements.txt
 cd && cd $secret
 
 # install dnsenum
-git clone https://github.com/fwaeytens/dnsenum
 sudo apt-get install cpanminus -y
+git clone https://github.com/fwaeytens/dnsenum
 
 # install SET
 git clone https://github.com/trustedsec/social-engineer-toolkit
@@ -143,11 +144,11 @@ sudo make install
 cd && cd $secret
 
 # install dirb
+sudo apt-get install libcurl4-gnutls-dev -y
 wget https://sourceforge.net/projects/dirb/files/dirb/2.22/dirb222.tar.gz
 tar -xzvf dirb222.tar.gz
 rm dirb222.tar.gz
 chmod -R 777 dirb222
-sudo apt-get install libcurl4-gnutls-dev -y
 cd dirb222
 ./configure
 make
