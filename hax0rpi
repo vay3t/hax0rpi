@@ -23,8 +23,7 @@ echo ""
 # secret directory
 secret=.tools
 cd
-mkdir $secret
-cd $secret
+mkdir $secret && cd $secret
 
 # update system
 sudo apt-get update
