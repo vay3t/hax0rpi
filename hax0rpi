@@ -23,7 +23,8 @@ echo ""
 # secret directory
 secret=.tools
 cd
-mkdir $secret && cd $secret
+mkdir $secret
+cd $secret
 
 # update system
 sudo apt-get update
@@ -206,7 +207,7 @@ unzip SysinternalsSuite.zip
 rm SysinternalsSuite.zip
 cd && cd $secret
 
-# Disable service in boot
+# Disable services in boot
 sudo update-rc.d apache2 disable
 sudo update-rc.d dnsmasq disable
 sudo update-rc.d mysql disable
