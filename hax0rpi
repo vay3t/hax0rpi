@@ -164,10 +164,8 @@ sudo make install
 cd && cd $secret
 
 # install cewl
-wget https://digi.ninja/files/cewl_5.1.tar.bz2
-tar jxvf cewl_5.1.tar.bz2
-rm cewl_5.1.tar.bz2
-cd cewl
+git clone https://github.com/digininja/CeWL
+cd CeWL
 bundle install
 cd && cd $secret
 
