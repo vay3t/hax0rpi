@@ -85,6 +85,12 @@ chmod +x install.sh
 sudo ./install.sh
 cd && cd $secret
 
+# install empyre
+git clone https://github.com/adaptivethreat/EmPyre
+cd EmPyre/setup
+sudo ./install.sh
+cd && cd $secret
+
 # install weevely3
 sudo apt-get install g++ python-pip libyaml-dev python-dev -y
 git clone https://github.com/epinna/weevely3
