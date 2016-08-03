@@ -91,6 +91,12 @@ cd EmPyre/setup
 sudo ./install.sh
 cd && cd $secret
 
+# install pupy
+git clone --recursive git://github.com/n1nj4sec/pupy.git pupy
+cd pupy
+pip install -r requirements.txt
+cd && cd $secret
+
 # install weevely3
 sudo apt-get install g++ python-pip libyaml-dev python-dev -y
 git clone https://github.com/epinna/weevely3
