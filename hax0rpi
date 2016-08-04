@@ -57,14 +57,13 @@ sudo apt-get install -y \
 	sslstrip \
 	tcpdump \
 	tree \
-	tshark \
 	vlc \
 	wipe \
 	wireless-tools \
 	wvdial;
 
 sudo pip install --upgrade pip
-sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket
+sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket glances
 
 # install ruby
 sudo apt-get install build-essential ruby-dev libpcap-dev -y
