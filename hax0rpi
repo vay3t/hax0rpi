@@ -194,10 +194,16 @@ mv findmyhash_v1.1.2.py findmyhash.py
 chmod +x findmyhash.py
 cd && cd $secret
 
+# install windows exploit suggester
+sudo apt-get install python-xlrd -y
+git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
+cd Windows-Exploit-Suggester
+./windows-exploit-suggester.py --update
+cd && cd $secret
+
 # dont need installation
 git clone https://github.com/sqlmapproject/sqlmap
 git clone https://github.com/laramies/theHarvester
-git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
 git clone https://github.com/PenturaLabs/Linux_Exploit_Suggester
 git clone https://github.com/samratashok/nishang
 git clone https://github.com/offensive-security/exploit-database
