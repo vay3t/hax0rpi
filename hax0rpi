@@ -132,6 +132,7 @@ cd reaver-wps-fork-t6x*/
 cd src/
 ./configure
 make
+sudo make install
 cd && cd $secret
 
 # install aircrack-ng
