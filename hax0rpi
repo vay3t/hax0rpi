@@ -210,6 +210,7 @@ git clone https://github.com/samratashok/nishang
 git clone https://github.com/offensive-security/exploit-database
 git clone https://github.com/mubix/post-exploitation
 git clone https://github.com/SpiderLabs/Responder
+git clone https://github.com/binkybear/rock3tman
 
 # windows binaries
 wget http://repo.kali.org/kali/pool/non-free/w/windows-binaries/windows-binaries_0.5.orig.tar.gz
