@@ -50,6 +50,7 @@ sudo apt-get install -y \
 	nmap \
 	openvpn \
 	pdfcrack \
+	php5 \
 	pi-bluetooth \
 	proxychains \
 	python-dev \
