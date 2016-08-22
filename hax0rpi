@@ -94,7 +94,7 @@ cd && cd $secret
 # install pupy
 git clone --recursive git://github.com/n1nj4sec/pupy.git pupy
 cd pupy
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
 cd && cd $secret
 
 # install weevely3
