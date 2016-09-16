@@ -97,7 +97,7 @@ cd pupy
 git submodule update --init --depth 1 pupy/payload_templates
 git submodule init
 git submodule update
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
 cd && cd $secret
 
 # install weevely3
