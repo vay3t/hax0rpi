@@ -39,7 +39,6 @@ sudo apt install -y \
 	goaccess \
 	hostapd \
 	hping3 \
-	htop \
 	hydra \
 	iw \
 	libimage-exiftool-perl \
