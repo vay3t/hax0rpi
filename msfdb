@@ -1,6 +1,8 @@
 #!/bin/sh
 
-METASPLOIT_BASEDIR=/usr/share/metasploit-framework
+secret=.tools
+
+METASPLOIT_BASEDIR=$secret/metasploit-framework
 
 DB_CONF=$METASPLOIT_BASEDIR/config/database.yml
 DB_NAME=msf
