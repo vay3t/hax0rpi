@@ -266,6 +266,8 @@ git clone https://github.com/rapid7/metasploit-framework
 cd metasploit-framework
 bundle install
 sudo msfdb init
+cd ../packetfu
+bundle install
 cd && cd $secret
 
 # Disable services in boot
