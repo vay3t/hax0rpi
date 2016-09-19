@@ -7,7 +7,7 @@ echo "              | | | | (_| |>  <| |_| | |  | |_) | |             "
 echo '              |_| |_|\__,_/_/\_\\___/|_|  | .__/|_|             '
 echo "                                          |_|                   "
 echo ""
-echo "                  === hax0rpi Release 0.1 ===                   "
+echo "                  === hax0rpi Release 0.2 ===                   "
 echo "           A Raspberry Pi Hacker Tools suite by Vay3t           "
 echo ""
 echo "----------------------------------------------------------------"
@@ -229,10 +229,50 @@ unzip SysinternalsSuite.zip
 rm SysinternalsSuite.zip
 cd && cd $secret
 
+# install metasploit
+sudo apt-get -y install \
+  autoconf \
+  bison \
+  build-essential \
+  curl \
+  git-core \
+  libapr1 \
+  libaprutil1 \
+  libcurl4-openssl-dev \
+  libgmp3-dev \
+  libpcap-dev \
+  libpq-dev \
+  libreadline6-dev \
+  libsqlite3-dev \
+  libssl-dev \
+  libsvn1 \
+  libtool \
+  libxml2 \
+  libxml2-dev \
+  libxslt-dev \
+  libyaml-dev \
+  locate \
+  ncurses-dev \
+  openssl \
+  postgresql \
+  postgresql-contrib \
+  wget \
+  xsel \
+  zlib1g \
+  zlib1g-dev
+chmod +x msfdb
+mv msfdb metasploit-framework/msfdb
+git clone https://github.com/rapid7/metasploit-framework
+cd metasploit-framework
+bundle install
+sudo msfdb init
+cd && cd $secret
+
 # Disable services in boot
 sudo update-rc.d apache2 disable
 sudo update-rc.d dnsmasq disable
 sudo update-rc.d mysql disable
+sudo update-rc.d postgresql disable
 
 # remove hax0rpi
 cd
