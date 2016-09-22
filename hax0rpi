@@ -287,8 +287,5 @@ sudo update-rc.d dnsmasq disable
 sudo update-rc.d mysql disable
 sudo update-rc.d postgresql disable
 
-# remove hax0rpi
-cd
-sudo rm -r hax0rpi/
 
 echo "[!] Need reboot"
