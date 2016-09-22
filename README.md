@@ -40,5 +40,12 @@ rm hax0rpi
 sudo reboot
 ```
 
+# How to add Kali linux repository
+```
+apt-key adv --keyserver pgp.mit.edu --recv-keys ED444FF07D8D0BF6
+deb http://http.kali.org/kali kali-rolling main contrib non-free >> /etc/apt/sources.list
+apt-get update -m
+```
+
 # New tools?
 I accept suggestions
