@@ -46,7 +46,8 @@ wget http://downloads.raspberrypi.org/raspbian/images/raspbian-2016-05-31/2016-0
 unzip 2016-05-27-raspbian-jessie.zip
 dd if=2016-05-27-raspbian-jessie.img of=/dev/sdd bs=4M
 ```
-more informatio: https://www.raspberrypi.org/documentation/installation/installing-images/linux.md
+### more information
+https://www.raspberrypi.org/documentation/installation/installing-images/linux.md
 
 # How to add Kali repo in Raspbian?
 ```
