@@ -264,7 +264,7 @@ sudo apt-get -y install \
   zlib1g-dev
 git clone https://github.com/rapid7/metasploit-framework
 cd metasploit-framework
-mv ../../hax0rpi/msfdb msfdb
+curl https://raw.githubusercontent.com/vay3t/hax0rpi/master/msfdb > msfdb
 chmod +x msfdb
 bundle install
 sudo ./msfdb init
@@ -277,7 +277,7 @@ sudo apt install libsqlite3-dev sqlite3 -y
 git clone https://github.com/beefproject/beef
 cd beef
 rm Gemfile.lock
-mv ../../hax0rpi/beef-Gemfile.lock Gemfile.lock
+curl -s https://raw.githubusercontent.com/vay3t/hax0rpi/master/beef-Gemfile.lock > Gemfile.lock
 bundle install
 cd && cd $secret
 
