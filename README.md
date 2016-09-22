@@ -40,6 +40,14 @@ rm hax0rpi
 sudo reboot
 ```
 
+# How to install Raspbian from Linux
+```
+wget http://downloads.raspberrypi.org/raspbian/images/raspbian-2016-05-31/2016-05-27-raspbian-jessie.zip
+unzip 2016-05-27-raspbian-jessie.zip
+dd if=2016-05-27-raspbian-jessie.img of=/dev/sdd bs=4M
+```
+more informatio: https://www.raspberrypi.org/documentation/installation/installing-images/linux.md
+
 # How to add Kali repo in Raspbian?
 ```
 apt-key adv --keyserver pgp.mit.edu --recv-keys ED444FF07D8D0BF6
