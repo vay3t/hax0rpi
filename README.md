@@ -19,11 +19,25 @@ pi@raspberrypi:~/hax0rpi $ ./hax0rpi
 ```
 
 # How to run?
+
+### git clone
 ```
 git clone https://github.com/vay3t/hax0rpi
 cd hax0rpi
 chmod +x hax0rpi
 ./hax0rpi
+cd
+sudo rm -r hax0rpi/
+sudo reboot
+```
+
+### curl
+```
+curl https://raw.githubusercontent.com/vay3t/hax0rpi/master/hax0rpi > hax0rpi
+chmod +x hax0rpi
+./hax0rpi
+rm hax0rpi
+sudo reboot
 ```
 
 # New tools?
