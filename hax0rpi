@@ -42,6 +42,7 @@ sudo apt install -y \
 	hydra \
 	iw \
 	libimage-exiftool-perl \
+	locate \
 	macchanger \
 	mysql-client \
 	mysql-server \
