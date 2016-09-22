@@ -208,6 +208,7 @@ cd && cd $secret
 
 # dont need installation
 git clone https://github.com/sqlmapproject/sqlmap
+git clone https://github.com/stasinopoulos/commix
 git clone https://github.com/laramies/theHarvester
 git clone https://github.com/PenturaLabs/Linux_Exploit_Suggester
 git clone https://github.com/samratashok/nishang
