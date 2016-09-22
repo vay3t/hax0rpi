@@ -54,7 +54,8 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 sudo su
 apt-key adv --keyserver pgp.mit.edu --recv-keys ED444FF07D8D0BF6
 echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
-apt-get update -m
+apt update -m
+apt upgraed -y
 ```
 
 # New tools?
