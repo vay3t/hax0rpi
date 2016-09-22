@@ -264,7 +264,7 @@ sudo apt-get -y install \
   zlib1g-dev
 git clone https://github.com/rapid7/metasploit-framework
 cd metasploit-framework
-curl https://raw.githubusercontent.com/vay3t/hax0rpi/master/msfdb > msfdb
+curl -s https://raw.githubusercontent.com/vay3t/hax0rpi/master/msfdb > msfdb
 chmod +x msfdb
 bundle install
 sudo ./msfdb init
