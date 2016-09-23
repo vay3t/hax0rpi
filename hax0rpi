@@ -26,11 +26,11 @@ cd
 mkdir $secret && cd $secret
 
 # update system
-sudo apt update
-sudo apt dist-upgrade -y
+sudo apt-get update
+sudo apt-get dist-upgrade -y
 
 # install from apt-get
-sudo apt install -y \
+sudo apt-get install -y \
 	apache2 \
 	arp-scan \
 	crunch \
@@ -68,7 +68,7 @@ sudo pip install --upgrade pip
 sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket glances
 
 # install ruby
-sudo apt install build-essential ruby-dev libpcap-dev -y
+sudo apt-get install build-essential ruby-dev libpcap-dev -y
 sudo gem update
 sudo gem install bundler
 
@@ -102,14 +102,14 @@ sudo pip install -r requirements.txt
 cd && cd $secret
 
 # install weevely3
-sudo apt install g++ python-pip libyaml-dev python-dev -y
+sudo apt-get install g++ python-pip libyaml-dev python-dev -y
 git clone https://github.com/epinna/weevely3
 cd weevely3
 sudo pip install -r requirements.txt
 cd && cd $secret
 
 # install dnsenum
-sudo apt install cpanminus -y
+sudo apt-get install cpanminus -y
 git clone https://github.com/fwaeytens/dnsenum
 
 # install SET
@@ -131,7 +131,7 @@ sudo make install
 cd && cd $secret
 
 # install reaver
-sudo apt -y install build-essential libpcap-dev sqlite3 libsqlite3-dev
+sudo apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev
 git clone https://github.com/t6x/reaver-wps-fork-t6x
 cd reaver-wps-fork-t6x*/
 cd src/
@@ -141,7 +141,7 @@ sudo make install
 cd && cd $secret
 
 # install aircrack-ng
-sudo apt -y install libssl-dev libnl-3-dev libnl-genl-3-dev libnl-idiag-3-200 libnl-idiag-3-dev ethtool
+sudo apt-get -y install libssl-dev libnl-3-dev libnl-genl-3-dev libnl-idiag-3-200 libnl-idiag-3-dev ethtool
 wget http://download.aircrack-ng.org/aircrack-ng-1.2-rc4.tar.gz
 tar -zxvf aircrack-ng-1.2-rc4.tar.gz
 rm aircrack-ng-1.2-rc4.tar.gz
@@ -201,7 +201,7 @@ chmod +x findmyhash.py
 cd && cd $secret
 
 # install windows exploit suggester
-sudo apt install python-xlrd -y
+sudo apt-get install python-xlrd -y
 git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
 cd Windows-Exploit-Suggester
 ./windows-exploit-suggester.py --update
@@ -273,7 +273,7 @@ bundle install
 cd && cd $secret
 
 # install beef
-sudo apt install libsqlite3-dev sqlite3 -y
+sudo apt-get install libsqlite3-dev sqlite3 -y
 git clone https://github.com/beefproject/beef
 cd beef
 rm Gemfile.lock
