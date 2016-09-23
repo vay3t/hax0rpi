@@ -287,6 +287,6 @@ sudo update-rc.d dnsmasq disable
 sudo update-rc.d mysql disable
 sudo update-rc.d postgresql disable
 
-updatedb
+sudo updatedb
 
 echo "[!] Need reboot"
