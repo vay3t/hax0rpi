@@ -20,6 +20,9 @@ echo "Press ENTER to continue, CTRL+C to abort."
 read INPUT
 echo ""
 
+# change password
+passwd pi
+
 # secret directory
 secret=.tools
 cd
