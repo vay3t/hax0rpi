@@ -53,8 +53,7 @@ http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2016-09-28/2
 unzip 2016-09-23-raspbian-jessie-lite.zip
 dd if=2016-09-23-raspbian-jessie-lite.img of=/dev/sdd bs=4
 ```
-### more information
-https://www.raspberrypi.org/documentation/installation/installing-images/linux.md
+more information: [https://www.raspberrypi.org/documentation/installation/installing-images/linux.md](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
 
 # How to add Kali repo in Raspbian?
 ```
