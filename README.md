@@ -46,6 +46,13 @@ wget http://downloads.raspberrypi.org/raspbian/images/raspbian-2016-09-28/2016-0
 unzip 2016-09-23-raspbian-jessie.zip
 dd if=2016-09-23-raspbian-jessie.img of=/dev/sdd bs=4M
 ```
+
+### Lite version
+```
+http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2016-09-28/2016-09-23-raspbian-jessie-lite.zip
+unzip 2016-09-23-raspbian-jessie-lite.zip
+dd if=2016-09-23-raspbian-jessie-lite.img of=/dev/sdd bs=4
+```
 ### more information
 https://www.raspberrypi.org/documentation/installation/installing-images/linux.md
 
