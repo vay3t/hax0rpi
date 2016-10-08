@@ -22,6 +22,7 @@ pi@raspberrypi:~/hax0rpi $ ./hax0rpi
 
 ### git clone
 ```
+sudo apt-get install git -y
 git clone https://github.com/vay3t/hax0rpi
 cd hax0rpi
 chmod +x hax0rpi
@@ -33,6 +34,7 @@ sudo reboot
 
 ### curl
 ```
+sudo apt-get install curl -y
 curl https://raw.githubusercontent.com/vay3t/hax0rpi/master/hax0rpi > hax0rpi
 chmod +x hax0rpi
 ./hax0rpi
