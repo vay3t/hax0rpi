@@ -21,7 +21,7 @@ read INPUT
 echo ""
 
 # change password
-passwd pi
+#passwd pi
 
 # secret directory
 secret=.tools
