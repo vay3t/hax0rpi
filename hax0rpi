@@ -40,7 +40,6 @@ sudo apt-get install -y \
 	dnsmasq \
 	dsniff \
 	fail2ban \
-	gem \
 	goaccess \
 	hostapd \
 	hping3 \
@@ -60,6 +59,7 @@ sudo apt-get install -y \
 	proxychains \
 	python-dev \
 	rarcrack \
+	rubygems \
 	sslstrip \
 	tcpdump \
 	tree \
