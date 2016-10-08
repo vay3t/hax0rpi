@@ -42,9 +42,9 @@ sudo reboot
 
 # How to install Raspbian from Linux
 ```
-wget http://downloads.raspberrypi.org/raspbian/images/raspbian-2016-05-31/2016-05-27-raspbian-jessie.zip
-unzip 2016-05-27-raspbian-jessie.zip
-dd if=2016-05-27-raspbian-jessie.img of=/dev/sdd bs=4M
+wget http://downloads.raspberrypi.org/raspbian/images/raspbian-2016-09-28/2016-09-23-raspbian-jessie.zip
+unzip 2016-09-23-raspbian-jessie.zip
+dd if=2016-09-23-raspbian-jessie.img of=/dev/sdd bs=4M
 ```
 ### more information
 https://www.raspberrypi.org/documentation/installation/installing-images/linux.md
