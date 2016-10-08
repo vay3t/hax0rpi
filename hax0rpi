@@ -58,6 +58,7 @@ sudo apt-get install -y \
 	pi-bluetooth \
 	proxychains \
 	python-dev \
+	python-pip \
 	rarcrack \
 	rubygems \
 	sslstrip \
