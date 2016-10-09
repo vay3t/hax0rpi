@@ -40,6 +40,7 @@ sudo apt-get install -y \
 	dnsmasq \
 	dsniff \
 	fail2ban \
+	git \
 	goaccess \
 	hostapd \
 	hping3 \
