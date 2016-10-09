@@ -76,6 +76,7 @@ sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket glances
 # install ruby
 sudo apt-get install build-essential ruby-dev libpcap-dev -y
 sudo gem update
+sudo gem install gemspec
 sudo gem install bundler
 
 # install bettercap
