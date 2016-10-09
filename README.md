@@ -46,7 +46,9 @@ sudo reboot
 ```
 wget http://downloads.raspberrypi.org/raspbian/images/raspbian-2016-09-28/2016-09-23-raspbian-jessie.zip
 unzip 2016-09-23-raspbian-jessie.zip
-dd if=2016-09-23-raspbian-jessie.img of=/dev/sdd bs=4M
+umount /dev/mmcblk0p1
+umount /dev/mmcblk0p2
+dd bs=4M if=2016-09-23-raspbian-jessie.img of=/dev/mmcblk0
 ```
 
 more information: [https://www.raspberrypi.org/documentation/installation/installing-images/linux.md](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
