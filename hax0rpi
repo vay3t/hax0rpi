@@ -60,7 +60,6 @@ sudo apt-get install -y \
 	python-dev \
 	python-pip \
 	rarcrack \
-	rubygems \
 	sslstrip \
 	tcpdump \
 	tree \
@@ -75,8 +74,6 @@ sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket glances
 
 # install ruby
 sudo apt-get install build-essential ruby-dev libpcap-dev -y
-sudo gem update
-sudo gem install gemspec
 sudo gem install bundler
 
 # install bettercap
@@ -275,8 +272,6 @@ curl -s https://raw.githubusercontent.com/vay3t/hax0rpi/master/msfdb > msfdb
 chmod +x msfdb
 bundle install
 sudo ./msfdb init
-cd ../packetfu
-bundle install
 cd && cd $secret
 
 # install beef
