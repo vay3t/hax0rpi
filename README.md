@@ -61,8 +61,5 @@ echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/
 apt update -m
 ```
 
-# Issues
-The installation have problems with gems
-
 # New tools?
 I accept suggestions
