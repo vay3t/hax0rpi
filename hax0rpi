@@ -221,7 +221,6 @@ git clone https://github.com/laramies/theHarvester
 git clone https://github.com/PenturaLabs/Linux_Exploit_Suggester
 git clone https://github.com/samratashok/nishang
 git clone https://github.com/offensive-security/exploit-database
-git clone https://github.com/mubix/post-exploitation
 git clone https://github.com/SpiderLabs/Responder
 git clone https://github.com/binkybear/rock3tman
 git clone https://github.com/g0tmi1k/mpc
@@ -230,13 +229,6 @@ git clone https://github.com/g0tmi1k/mpc
 wget http://repo.kali.org/kali/pool/non-free/w/windows-binaries/windows-binaries_0.5.orig.tar.gz
 tar -xzvf windows-binaries_0.5.orig.tar.gz
 rm windows-binaries_0.5.orig.tar.gz
-
-# windows utilities
-mkdir SysinternalsSuit && cd SysinternalsSuit
-wget https://download.sysinternals.com/files/SysinternalsSuite.zip
-unzip SysinternalsSuite.zip
-rm SysinternalsSuite.zip
-cd && cd $secret
 
 # install metasploit
 sudo apt-get -y install \
