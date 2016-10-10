@@ -19,6 +19,7 @@ echo '              |_| |_|\__,_/_/\_\\___/|_|  | .__/|_|             '
 echo "                                          |_|                   "
 echo -e "${NC}"
 echo -e "${RED}                  === hax0rpi Release 1.0 ===                   ${NC}"
+echo -e "${RED}                   codename: Like a Rainbow                   ${NC}"
 echo -e "${YELLOW}           A Raspberry Pi Hacker Tools suite by Vay3t           ${NC}"
 echo ""
 echo "----------------------------------------------------------------"
