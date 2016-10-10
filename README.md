@@ -7,8 +7,7 @@ pi@raspberrypi:~/hax0rpi $ ./hax0rpi
               | | | | (_| |>  <| |_| | |  | |_) | |             
               |_| |_|\__,_/_/\_\\___/|_|  | .__/|_|             
                                           |_|                   
-
-                  === hax0rpi Release 1.0 ===                   
+               
            A Raspberry Pi Hacker Tools suite by Vay3t           
 
 ----------------------------------------------------------------
