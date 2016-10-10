@@ -84,7 +84,7 @@ sudo apt-get install -y \
 	whois \
 	wvdial;
 
-echo -e "\n${YELLOW}[+] install python tools${NC}"
+echo -e "\n${YELLOW}[!] install python tools${NC}"
 sudo pip install --upgrade pip
 sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket glances
 
