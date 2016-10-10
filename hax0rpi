@@ -99,6 +99,7 @@ sudo ./install.sh
 cd && cd $secret
 
 # install pupy
+sudo apt-get install libjpeg-dev -y
 git clone https://github.com/n1nj4sec/pupy.git pupy
 cd pupy
 git submodule update --init --depth 1 pupy/payload_templates
