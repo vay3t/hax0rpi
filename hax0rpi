@@ -283,7 +283,7 @@ tar -xzvf windows-binaries_0.5.orig.tar.gz
 rm windows-binaries_0.5.orig.tar.gz
 
 # install metasploit
-echo -e "\n${YELLOW}[!] install metasploitp${NC}"
+echo -e "\n${YELLOW}[!] install metasploit${NC}"
 sudo apt-get -y install \
   autoconf \
   bison \
