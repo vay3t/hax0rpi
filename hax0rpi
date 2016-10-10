@@ -1,22 +1,33 @@
 #!/bin/bash
 
-echo "               _                 ___             _              "
+BLACK='\e[30m'
+RED='\e[31m'
+GREEN='\e[32m'
+YELLOW='\e[33m'
+BLUE='\e[34m'
+PURPLE='\e[35m'
+CYAN='\e[36m'
+WHITE='\e[37m'
+NC='\e[0m'
+
+
+echo -e "${CYAN}               _                 ___             _              "
 echo "              | |__   __ ___  __/ _ \ _ __ _ __ (_)             "
 echo "              | '_ \ / _' \ \/ / | | | '__| '_ \| |             "
 echo "              | | | | (_| |>  <| |_| | |  | |_) | |             "
 echo '              |_| |_|\__,_/_/\_\\___/|_|  | .__/|_|             '
 echo "                                          |_|                   "
-echo ""
-echo "                  === hax0rpi Release 0.3 ===                   "
-echo "           A Raspberry Pi Hacker Tools suite by Vay3t           "
+echo -e "${NC}"
+echo -e "${RED}                  === hax0rpi Release 1.0 ===                   ${NC}"
+echo -e "${YELLOW}           A Raspberry Pi Hacker Tools suite by Vay3t           ${NC}"
 echo ""
 echo "----------------------------------------------------------------"
-echo "    This installer will load a comprehensive of hacker tools    "
+echo -e "${GREEN}    This installer will load a comprehensive of hacker tools    "
 echo "      suite onto your Raspberry Pi. Note that the Raspbian      "
 echo "     distribution must be installed onto the SD card before     "
-echo "     proceeding. See README (if exist) for more information.    "
+echo -e "     proceeding. See README (if exist) for more information.    ${NC}"
 echo ""
-echo "Press ENTER to continue, CTRL+C to abort."
+echo -e "${CYAN}[>] Press ENTER to continue, CTRL+C to abort.${NC}"
 read INPUT
 echo ""
 
@@ -27,12 +38,15 @@ echo ""
 secret=.tools
 cd
 mkdir $secret && cd $secret
+echo -e "${YELLOW}[+] folder 'secret' created${NC}"
 
 # update system
+echo -e "\n${YELLOW}[!] update and upgrade system${NC}"
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
 # install from apt-get
+echo -e "\n${YELLOW}\n[!] install tools with apt-get${NC}"
 sudo apt-get install -y \
 	apache2 \
 	arp-scan \
@@ -61,7 +75,6 @@ sudo apt-get install -y \
 	python-dev \
 	python-pip \
 	rarcrack \
-	ruby \
 	sslstrip \
 	tcpdump \
 	tree \
@@ -71,14 +84,17 @@ sudo apt-get install -y \
 	whois \
 	wvdial;
 
+echo -e "\n${YELLOW}[+] install python tools${NC}"
 sudo pip install --upgrade pip
 sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket glances
 
 # install ruby
-sudo apt-get install build-essential ruby-dev libpcap-dev -y
+echo -e "\n${YELLOW}[!] install ruby tools${NC}"
+sudo apt-get install build-essential ruby ruby-dev libpcap-dev -y
 sudo gem install bundler
 
 # install bettercap
+echo -e "\n${YELLOW}[!] install bettercap${NC}"
 git clone https://github.com/packetfu/packetfu
 cd packetfu
 bundle install
@@ -86,6 +102,7 @@ sudo gem install bettercap
 cd && cd $secret
 
 # install empire
+echo -e "\n${YELLOW}[!] install empire${NC}"
 git clone https://github.com/PowerShellEmpire/Empire/
 cd Empire/setup
 chmod +x install.sh
@@ -93,12 +110,14 @@ sudo ./install.sh
 cd && cd $secret
 
 # install empyre
+echo -e "\n${YELLOW}[!] install empyre${NC}"
 git clone https://github.com/adaptivethreat/EmPyre
 cd EmPyre/setup
 sudo ./install.sh
 cd && cd $secret
 
 # install pupy
+echo -e "\n${YELLOW}[!] install pupy${NC}"
 sudo apt-get install libjpeg-dev -y
 git clone https://github.com/n1nj4sec/pupy.git pupy
 cd pupy
@@ -109,6 +128,7 @@ sudo pip install -r requirements.txt
 cd && cd $secret
 
 # install weevely3
+echo -e "\n${YELLOW}[!] install weevely${NC}"
 sudo apt-get install g++ python-pip libyaml-dev python-dev -y
 git clone https://github.com/epinna/weevely3
 cd weevely3
@@ -116,20 +136,24 @@ sudo pip install -r requirements.txt
 cd && cd $secret
 
 # install dnsenum
+echo -e "\n${YELLOW}[!] install dnsenum${NC}"
 sudo apt-get install cpanminus -y
 git clone https://github.com/fwaeytens/dnsenum
 
 # install SET
+echo -e "\n${YELLOW}[!] install set${NC}"
 git clone https://github.com/trustedsec/social-engineer-toolkit
 cd social-engineer-toolkit
 sudo python setup.py install
 cd && cd $secret
 
 # install netcreds
+echo -e "\n${YELLOW}[!] install netcreds${NC}"
 git clone https://github.com/DanMcInerney/net-creds
 sudo pip install wsgiref scapy
 
 # install pixie-dust
+echo -e "\n${YELLOW}[!] install pixie-dust${NC}"
 git clone https://github.com/wiire/pixiewps
 cd pixiewps*/
 cd src/
@@ -138,6 +162,7 @@ sudo make install
 cd && cd $secret
 
 # install reaver
+echo -e "\n${YELLOW}[!] install reaver${NC}"
 sudo apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev
 git clone https://github.com/t6x/reaver-wps-fork-t6x
 cd reaver-wps-fork-t6x*/
@@ -148,6 +173,7 @@ sudo make install
 cd && cd $secret
 
 # install aircrack-ng
+echo -e "\n${YELLOW}[!] install aircrack-ng${NC}"
 sudo apt-get -y install libssl-dev libnl-3-dev libnl-genl-3-dev libnl-idiag-3-200 libnl-idiag-3-dev ethtool
 wget http://download.aircrack-ng.org/aircrack-ng-1.2-rc4.tar.gz
 tar -zxvf aircrack-ng-1.2-rc4.tar.gz
@@ -159,6 +185,7 @@ sudo airodump-ng-oui-update
 cd && cd $secret
 
 # instal mdk3
+echo -e "\n${YELLOW}[!] install mdk3${NC}"
 wget http://aspj.aircrack-ng.org/mdk3-v6.tar.bz2
 tar jxvf mdk3-v6.tar.bz2
 rm mdk3-v6.tar.bz2
@@ -168,6 +195,7 @@ sudo make install
 cd && cd $secret
 
 # install dirb
+echo -e "\n${YELLOW}[!] install dirb${NC}"
 sudo apt-get install libcurl4-gnutls-dev -y
 wget https://sourceforge.net/projects/dirb/files/dirb/2.22/dirb222.tar.gz
 tar -xzvf dirb222.tar.gz
@@ -179,6 +207,7 @@ make
 cd && cd $secret
 
 # install p0f
+echo -e "\n${YELLOW}[!] install p0f${NC}"
 wget http://lcamtuf.coredump.cx/p0f3/releases/p0f-3.09b.tgz
 tar -xvzf p0f-3.09b.tgz
 rm p0f-3.09b.tgz
@@ -188,18 +217,21 @@ sudo make install
 cd && cd $secret
 
 # install cewl
+echo -e "\n${YELLOW}[!] install cewl${NC}"
 git clone https://github.com/digininja/CeWL
 cd CeWL
 bundle install
 cd && cd $secret
 
 # install lazagne
+echo -e "\n${YELLOW}[+] download lazagne${NC}"
 wget https://github.com/AlessandroZ/LaZagne/releases/download/1.4/Windows.zip
 unzip Windows.zip
 rm Windows.zip
 mv Windows lazagne
 
 # install findmyhash
+echo -e "\n${YELLOW}[+] donwload findmyhash${NC}"
 mkdir findmyhash
 cd findmyhash
 wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/findmyhash/findmyhash_v1.1.2.py
@@ -208,6 +240,7 @@ chmod +x findmyhash.py
 cd && cd $secret
 
 # install windows exploit suggester
+echo -e "\n${YELLOW}[!] install windows-exploit-suggester${NC}"
 sudo apt-get install python-xlrd -y
 git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
 cd Windows-Exploit-Suggester
@@ -215,22 +248,41 @@ cd Windows-Exploit-Suggester
 cd && cd $secret
 
 # dont need installation
+echo -e "\n${YELLOW}[+] download sqlmap${NC}"
 git clone https://github.com/sqlmapproject/sqlmap
+
+echo -e "\n${YELLOW}[+] download commix${NC}"
 git clone https://github.com/stasinopoulos/commix
+
+echo -e "\n${YELLOW}[+] download theHarvester${NC}"
 git clone https://github.com/laramies/theHarvester
+
+echo -e "\n${YELLOW}[+] download Linux_Exploit_Suggester${NC}"
 git clone https://github.com/PenturaLabs/Linux_Exploit_Suggester
+
+echo -e "\n${YELLOW}[+] download nishang${NC}"
 git clone https://github.com/samratashok/nishang
+
+echo -e "\n${YELLOW}[+] download exploit-database${NC}"
 git clone https://github.com/offensive-security/exploit-database
+
+echo -e "\n${YELLOW}[+] download Responder${NC}"
 git clone https://github.com/SpiderLabs/Responder
+
+echo -e "\n${YELLOW}[+] download rock3tman${NC}"
 git clone https://github.com/binkybear/rock3tman
+
+echo -e "\n${YELLOW}[+] download mpc${NC}"
 git clone https://github.com/g0tmi1k/mpc
 
 # windows binaries
+echo -e "\n${YELLOW}[+] download windows-binaries${NC}"
 wget http://repo.kali.org/kali/pool/non-free/w/windows-binaries/windows-binaries_0.5.orig.tar.gz
 tar -xzvf windows-binaries_0.5.orig.tar.gz
 rm windows-binaries_0.5.orig.tar.gz
 
 # install metasploit
+echo -e "\n${YELLOW}[!] install metasploitp${NC}"
 sudo apt-get -y install \
   autoconf \
   bison \
@@ -260,7 +312,7 @@ sudo apt-get -y install \
   wget \
   xsel \
   zlib1g \
-  zlib1g-dev
+  zlib1g-dev;
 git clone https://github.com/rapid7/metasploit-framework
 cd metasploit-framework
 curl -s https://raw.githubusercontent.com/vay3t/hax0rpi/master/msfdb > msfdb
@@ -270,6 +322,7 @@ sudo ./msfdb init
 cd && cd $secret
 
 # install beef
+echo -e "\n${YELLOW}[!] install beef${NC}"
 sudo apt-get install libsqlite3-dev sqlite3 -y
 git clone https://github.com/beefproject/beef
 cd beef
@@ -279,11 +332,13 @@ bundle install
 cd && cd $secret
 
 # Disable services in boot
+echo -e "\n${YELLOW}[!] disable services${NC}"
 sudo update-rc.d apache2 disable
 sudo update-rc.d dnsmasq disable
 sudo update-rc.d mysql disable
 sudo update-rc.d postgresql disable
 
+echo -e "\n${YELLOW}[!] updatedb${NC}"
 sudo updatedb
 
-echo "[!] Need reboot"
+echo -e "\n${GREEN}[>] Need reboot${NC}"
