@@ -13,7 +13,7 @@ NC='\e[0m'
 if [ `lsb_release -i | awk '{print $3}'` != Raspbian ]; then
 	echo -e "\n${RED}[*] Your distro is not supported\n${NC}"
 	exit 1
-	fi
+fi
 
 echo -e "${CYAN}               _                 ___             _              "
 echo "              | |__   __ ___  __/ _ \ _ __ _ __ (_)             "
