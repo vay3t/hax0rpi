@@ -106,6 +106,13 @@ bundle install
 sudo gem install bettercap
 cd && cd $secret
 
+# install fing
+echo -e "\n${YELLOW}[!] install fing${NC}"
+wget https://www.fing.io/wp-content/uploads/2016/10/overlook-fing-3.0.deb
+sudo dpkg -i overlook-fing-3.0.deb
+rm overlook-fing-3.0.deb
+cd && cd $secret
+
 # install empire
 echo -e "\n${YELLOW}[!] install empire${NC}"
 git clone https://github.com/PowerShellEmpire/Empire/
