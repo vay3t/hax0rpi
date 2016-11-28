@@ -82,6 +82,8 @@ sudo apt-get install -y \
 	rarcrack \
 	sslstrip \
 	tcpdump \
+	tor \
+	tor-arm \
 	tree \
 	vlc \
 	wipe \
@@ -347,9 +349,11 @@ cd && cd $secret
 # Disable services in boot
 echo -e "\n${YELLOW}[!] disable services${NC}"
 sudo update-rc.d apache2 disable
+sudo update-rc.d bluetooth disable
 sudo update-rc.d dnsmasq disable
 sudo update-rc.d mysql disable
 sudo update-rc.d postgresql disable
+sudo update-rc.d tor disable
 
 echo -e "\n${YELLOW}[!] updatedb${NC}"
 sudo updatedb
