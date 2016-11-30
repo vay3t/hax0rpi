@@ -45,7 +45,7 @@ sudo reboot
 
 ### RASPBIAN JESSIE WITH PIXEL
 ```
-wget http://downloads.raspberrypi.org/raspbian/images/raspbian-2016-11-25/2016-11-25-raspbian-jessie.zip
+wget http://downloads.raspberrypi.org/raspbian/images/raspbian-2016-11-29/2016-11-25-raspbian-jessie.zip
 unzip 2016-11-25-raspbian-jessie.zip
 umount /dev/mmcblk0p1
 umount /dev/mmcblk0p2
@@ -54,7 +54,7 @@ dd bs=4M if=2016-11-25-raspbian-jessie.img of=/dev/mmcblk0
 
 ### RASPBIAN JESSIE LITE
 ```
-wget http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2016-11-25/2016-11-25-raspbian-jessie-lite.zip
+wget http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2016-11-29/2016-11-25-raspbian-jessie-lite.zip
 unzip 2016-11-25-raspbian-jessie-lite.zip
 umount /dev/mmcblk0p1
 umount /dev/mmcblk0p2
