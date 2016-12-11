@@ -71,5 +71,14 @@ echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/
 apt update -m
 ```
 
+### KALI LINUX IN RPI
+```
+wget https://build.nethunter.com/rpi3-nexmon/kali-0.1-rpi3-nexmon.img.xz
+xz -d kali-0.1-rpi3-nexmon.img.xz
+umount /dev/mmcblk0p1
+umount /dev/mmcblk0p2
+dd bs=4M if=kali-0.1-rpi3-nexmon.img of=/dev/mmcblk0
+```
+
 # New tools?
 I accept suggestions
