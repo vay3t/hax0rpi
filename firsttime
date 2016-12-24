@@ -21,7 +21,7 @@ echo ""
 
 # enable root
 echo -e "${YELLOW}[!] enable root${NC}"
-sudo su
+sudo su &&
 
 # ssh start
 echo -e "${YELLOW}[!] enable ssh${NC}"
