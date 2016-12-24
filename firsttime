@@ -43,8 +43,9 @@ apt-get install -y i2c-tools python-smbus
 echo "i2c-bcm2708" >> /etc/modules
 echo "dtparam=i2c1=on" >> /boot/config.txt
 echo "dtparam=i2c_arm=on" >> /boot/config.txt
+# http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/
 wget https://gist.githubusercontent.com/vay3t/8b0577acfdb27a78101ed16dd78ecba1/raw/6cc9bc9989e549c97b32b9df44fe17b1db5a8950/I2C_LCD_driver.py
-mv I2C_LCD_driver.py /usr/lib/python2.7/I2C_LCD_driver.py
+mv I2C_LCD_driver.py /usr/lib/python2.7/I2C_LCD_driver.py 
 
 # enable uart
 echo -e "${YELLOW}[!] enable uart${NC}"
