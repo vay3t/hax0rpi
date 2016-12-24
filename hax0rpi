@@ -139,10 +139,9 @@ echo -e "\n${YELLOW}[!] install pupy${NC}"
 sudo apt-get install libjpeg-dev -y
 git clone https://github.com/n1nj4sec/pupy.git pupy
 cd pupy
-git submodule update --init --depth 1 pupy/payload_templates
 git submodule init
 git submodule update
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 cd && cd $secret
 
 # install weevely3
