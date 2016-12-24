@@ -136,7 +136,7 @@ cd && cd $secret
 
 # install pupy
 echo -e "\n${YELLOW}[!] install pupy${NC}"
-sudo apt-get install libjpeg-dev -y
+sudo apt-get install libjpeg-dev libffi-dev -y
 git clone https://github.com/n1nj4sec/pupy.git pupy
 cd pupy
 git submodule init
