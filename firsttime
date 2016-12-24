@@ -1,0 +1,55 @@
+#!/bin/bash
+
+BLACK='\e[30m'
+RED='\e[31m'
+GREEN='\e[32m'
+YELLOW='\e[33m'
+BLUE='\e[34m'
+PURPLE='\e[35m'
+CYAN='\e[36m'
+WHITE='\e[37m'
+NC='\e[0m'
+
+if [ `lsb_release -i | awk '{print $3}'` != Raspbian ]; then
+	echo -e "\n${RED}[*] Your distro is not supported\n${NC}"
+	exit 1
+fi
+
+echo -e "${CYAN}[>] Press ENTER to continue, CTRL+C to abort.${NC}"
+read INPUT
+echo ""
+
+# enable root
+echo -e "${YELLOW}[!] enable root${NC}"
+sudo su
+
+# ssh start
+echo -e "${YELLOW}[!] enable ssh${NC}"
+service ssh start
+update-rc.d ssh enable
+
+# vnc start
+echo -e "${YELLOW}[!] config vnc server${NC}"
+systemctl enable vncserver-x11-serviced.service
+systemctl start vncserver-x11-serviced.service
+# more information https://www.raspberrypi.org/documentation/configuration/config-txt.md
+echo "hdmi_ignore_edid=0xa5000080" >> /boot/config.txt
+echo "hdmi_group=2" >> /boot/config.txt
+echo "hdmi_mode=82" >> /boot/config.txt # u can between 82 for 85
+
+# i2c display enable
+echo -e "${YELLOW}[!] config i2c display${NC}"
+apt-get install -y i2c-tools python-smbus
+echo "i2c-bcm2708" >> /etc/modules
+echo "dtparam=i2c1=on" >> /boot/config.txt
+echo "dtparam=i2c_arm=on" >> /boot/config.txt
+wget https://gist.githubusercontent.com/vay3t/8b0577acfdb27a78101ed16dd78ecba1/raw/6cc9bc9989e549c97b32b9df44fe17b1db5a8950/I2C_LCD_driver.py
+mv I2C_LCD_driver.py /usr/lib/python2.7/I2C_LCD_driver.py
+
+# enable uart
+echo -e "${YELLOW}[!] enable uart${NC}"
+echo "enable_uart=1" >> /boot/config.txt
+
+# reboot
+echo -e "${YELLOW}[!] reboot${NC}"
+reboot
