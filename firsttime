@@ -30,8 +30,8 @@ update-rc.d ssh enable
 
 # vnc start
 echo -e "${YELLOW}[!] config vnc server${NC}"
-systemctl enable vncserver-x11-serviced.service
 systemctl start vncserver-x11-serviced.service
+systemctl enable vncserver-x11-serviced.service
 # more information https://www.raspberrypi.org/documentation/configuration/config-txt.md
 echo "hdmi_ignore_edid=0xa5000080" >> /boot/config.txt
 echo "hdmi_group=2" >> /boot/config.txt
