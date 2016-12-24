@@ -10,18 +10,21 @@ CYAN='\e[36m'
 WHITE='\e[37m'
 NC='\e[0m'
 
+# check distro
 if [ `lsb_release -i | awk '{print $3}'` != Raspbian ]; then
 	echo -e "\n${RED}[*] Your distro is not supported\n${NC}"
+	exit 1
+fi
+
+# check root
+if [ "$(id -u)" != "0" ]; then
+	echo -e "\n${RED}[*] This script must be run as root\n${NC}"
 	exit 1
 fi
 
 echo -e "${CYAN}[>] Press ENTER to continue, CTRL+C to abort.${NC}"
 read INPUT
 echo ""
-
-# enable root
-echo -e "${YELLOW}[!] enable root${NC}"
-sudo su &&
 
 # ssh start
 echo -e "${YELLOW}[!] enable ssh${NC}"
