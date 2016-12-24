@@ -39,11 +39,14 @@ echo ""
 # change password
 #passwd pi
 
+echo -e "${YELLOW}[!] enable ssh${NC}"
+sudo update-rc.d ssh enable
+
 # secret directory
 secret=.tools
 cd
 mkdir $secret && cd $secret
-echo -e "${YELLOW}[+] folder 'secret' created${NC}"
+echo -e "\n${YELLOW}[+] folder 'secret' created${NC}"
 
 # update system
 echo -e "\n${YELLOW}[!] update and upgrade system${NC}"
