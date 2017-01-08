@@ -73,11 +73,11 @@ apt update -m
 
 ### KALI LINUX IN RPI
 ```
-wget https://github.com/nethunteros/rpi3-kalimon/releases/download/0.2/kali-0.2-monmode-rpi3.img.xz
-xz -d kali-0.2-monmode-rpi3.img.xz
+wget https://github.com/nethunteros/rpi3-kalimon/releases/download/0.6/kali-0.6-rpi3.img.xz
+xz -d kali-0.6-rpi3.img.xz
 umount /dev/mmcblk0p1
 umount /dev/mmcblk0p2
-dd bs=4M if=kali-0.2-monmode-rpi3.img of=/dev/mmcblk0
+dd bs=4M if=kali-0.6-rpi3.img of=/dev/mmcblk0
 ```
 
 # New tools?
