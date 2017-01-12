@@ -31,6 +31,10 @@ echo -e "${YELLOW}[!] enable ssh${NC}"
 service ssh start
 update-rc.d ssh enable
 
+# setting keyboard leng
+echo -e "${YELLOW}[!] set lenguage keyboard${NC}"
+echo "setxkbmap latam" >> /home/pi/.bashrc
+
 # vnc start
 echo -e "${YELLOW}[!] config vnc server${NC}"
 systemctl start vncserver-x11-serviced.service
