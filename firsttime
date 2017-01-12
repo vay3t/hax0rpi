@@ -35,6 +35,12 @@ update-rc.d ssh enable
 echo -e "${YELLOW}[!] set lenguage keyboard${NC}"
 echo "setxkbmap latam" >> /home/pi/.bashrc
 
+# sources config
+echo -e "${YELLOW}[!] sources configs${NC}"
+echo -e "deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi\n" > /etc/apt/sources.list
+echo "deb-src http://archive.raspbian.org/raspbian/ jessie main contrib non-free rpi" >> /etc/apt/sources.list
+
+
 # vnc start
 echo -e "${YELLOW}[!] config vnc server${NC}"
 systemctl start vncserver-x11-serviced.service
