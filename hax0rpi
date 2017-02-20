@@ -61,6 +61,7 @@ sudo apt-get install -y \
 	crunch \
 	dnsmasq \
 	dsniff \
+	ettercap \
 	fail2ban \
 	git \
 	goaccess \
