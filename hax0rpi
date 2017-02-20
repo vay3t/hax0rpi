@@ -104,16 +104,6 @@ echo -e "\n${YELLOW}[!] install ruby tools${NC}"
 sudo apt-get install build-essential ruby ruby-dev libpcap-dev -y
 sudo gem install bundler
 
-# install bettercap
-sudo apt-get install curl ruby-dev libpcap-dev -y
-sudo gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-sudo curl -sSL https://get.rvm.io | sudo bash -s stable
-sudo sh -c echo "source /usr/local/rvm/scripts/rvm" >> ~/.bashrc
-sudo source /usr/local/rvm/scripts/rvm
-sudo rvm install ruby-2.3.3
-sudo gem install bettercap
-cd && cd $secret
-
 # install fing
 echo -e "\n${YELLOW}[!] install fing${NC}"
 wget https://www.fing.io/wp-content/uploads/2016/10/overlook-fing-3.0.deb
