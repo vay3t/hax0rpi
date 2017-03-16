@@ -59,3 +59,8 @@ wget https://www.fing.io/wp-content/uploads/2016/10/overlook-fing-3.0.deb
 dpkg -i overlook-fing-3.0.deb
 
 ############################################################
+
+echo "hdmi_ignore_edid=0xa5000080" >> /boot/config.txt
+echo "hdmi_group=2" >> /boot/config.txt
+echo "hdmi_mode=82" >> /boot/config.txt
+echo "enable_uart=1" >> /boot/config.txt
