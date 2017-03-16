@@ -2,8 +2,8 @@
 apt-get install -y kali-linux-full cowsay
 ############## Extra g0tmi1k apps ###############
 
-keyboardLayout=cl
-timezone=America/Santiago
+keyboardLayout=en
+timezone=Europe/London
 
 # Wireshark remove warning
 mkdir -p /root/.wireshark/
