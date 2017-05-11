@@ -14,10 +14,7 @@ mv -f /usr/share/wireshark/init.lua{,.disabled}
 echo "Kali PI3 with Nexmon" | /usr/games/cowsay > /etc/motd
 
 # Install bash colour
-sed -i -e "s/^# export LS_OPTIONS='--color=auto'/export LS_OPTIONS='--color=auto'/" ~/.bashrc
-sed -i -e "s/^# alias ls='ls $LS_OPTIONS'/alias ls='ls $LS_OPTIONS'/" ~/.bashrc
-sed -i 's#^#PS1='"'"'.*'"'"'#PS1='"'"'${debian_chroot:+($debian_chroot)}\\[\\033\[01;31m\\]\\u@\\h\\\[\\033\[00m\\]:\\[\\033\[01;34m\\]\\w\\[\\033\[00m\\]\\$ '"'"'#' ~/.bashrc
-sed -i 's/#PS1=/PS1=/' ~/.bashrc
+
 
 #--- Configure keyboard layout (location)
 if [[ -n "${keyboardLayout}" ]]; then
