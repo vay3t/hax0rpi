@@ -3,28 +3,29 @@
 sudo apt update
 sudo apt dist-upgrade -y
 
-sudo apt install -y 
-
 sudo apt install -y
-				gnome-session-flashback
-				aircrack-ng
-				apache2
-				dnsmasq
-				git
-				hostapd
-				iw
-				filezilla
-				macchanger
-				nmap
-				openvpn
-				php7.0
-				python-dev
-				python-pip
-				wireshark
-				tcpdump
-				vlc
-				wireless-tools
-				ssh
+		gnome-session-flashback
+		aircrack-ng
+		apache2
+		dnsmasq
+		git
+		hostapd
+		iw
+		filezilla
+		macchanger
+		nmap
+		openvpn
+		php7.0
+		python-dev
+		python-pip
+		wireshark
+		tcpdump
+		vlc
+		wireless-tools
+		ssh
+
+sudo pip install --upgrade pip
+sudo pip install requests scapy
 
 wget https://www.fing.io/wp-content/uploads/2016/09/overlook-fing-3.0.deb
 sudo dpkg -i overlook-fing-3.0.deb 
