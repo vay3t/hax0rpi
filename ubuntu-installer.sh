@@ -6,6 +6,7 @@ sudo apt dist-upgrade -y
 sudo apt install -y \
 		gnome-session-flashback \
 		apache2 \
+		curl \
 		dnsmasq \
 		git \
 		hostapd \
@@ -25,28 +26,31 @@ sudo apt install -y \
 		ssh;
 
 sudo pip install --upgrade pip
-sudo pip install requests scapy
+sudo pip install requests scapy scanless
 
 wget https://www.fing.io/wp-content/uploads/2016/09/overlook-fing-3.0.deb
-sudo dpkg -i overlook-fing-3.0.deb 
+sudo dpkg -i overlook-fing-3.0.deb
+mv overlook-fing-3.0.deb Descargas/
 
 wget https://download.sublimetext.com/sublime-text_build-3126_amd64.deb
 sudo dpkg -i sublime-text_build-3126_amd64.deb
+mv sublime-text_build-3126_amd64.deb Descargas/
 
 sudo apt-get install build-essential ruby-dev libpcap-dev -y
 sudo gem install bettercap
 
+mkdir dedsec
 mkdir arsenal
 cd arsenal
 
-sudo apt-get install curl default-jre -y
+sudo apt-get install default-jre -y
 curl https://portswigger.net/DownloadUpdate.ashx?Product=Free -o burpsuite_free.jar
 
-git clone https://github.com/epinna/weevely3
-cd weevely3
-sudo apt-get install libncurses5-dev
-sudo pip install -r requirements.txt --upgrade
-cd ..
+#git clone https://github.com/epinna/weevely3
+#cd weevely3
+#sudo apt-get install libncurses5-dev
+#sudo pip install -r requirements.txt --upgrade
+#cd ..
 
 sudo apt-get -y install libssl-dev libnl-3-dev libnl-genl-3-dev libnl-idiag-3-200 libnl-idiag-3-dev ethtool
 wget http://download.aircrack-ng.org/aircrack-ng-1.2-rc4.tar.gz
@@ -57,7 +61,15 @@ cd aircrack-ng-1.2-rc4
 make
 sudo make install
 sudo airodump-ng-oui-update
-cd ../arsenal
+cd ..
+
+wget https://nmap.org/dist/nmap-7.40.tar.bz2
+bzip2 -cd nmap-7.40.tar.bz2 | tar xvf -
+cd nmap-7.40
+./configure
+make
+sudo make install
+cd ..
 
 sudo apt-get install cpanminus -y
 git clone https://github.com/fwaeytens/dnsenum
@@ -74,3 +86,5 @@ sudo update-rc.d cups disable
 sudo update-rc.d cups-browsed disable
 
 sudo ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+
+sudo reboot
