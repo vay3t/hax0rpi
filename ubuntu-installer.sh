@@ -34,9 +34,9 @@ sudo dpkg -i overlook-fing-3.0.deb
 mv overlook-fing-3.0.deb Descargas/
 
 # install sublime text
-wget https://download.sublimetext.com/sublime-text_build-3126_amd64.deb
-sudo dpkg -i sublime-text_build-3126_amd64.deb
-mv sublime-text_build-3126_amd64.deb Descargas/
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get install sublime-text
 
 # install bettercap
 sudo apt-get install build-essential ruby-dev libpcap-dev -y
