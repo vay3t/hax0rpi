@@ -14,6 +14,7 @@ sudo apt install -y \
 		iw \
 		filezilla \
 		macchanger \
+		nmap \
 		openvpn \
 		php7.0 \
 		python-dev \
@@ -45,10 +46,6 @@ mkdir dedsec
 mkdir arsenal
 cd arsenal
 
-# install burpsuite
-sudo apt-get install default-jre -y
-curl https://portswigger.net/DownloadUpdate.ashx?Product=Free -o burpsuite_free.jar
-
 #git clone https://github.com/epinna/weevely3
 #cd weevely3
 #sudo apt-get install libncurses5-dev
@@ -65,16 +62,6 @@ cd aircrack-ng-1.2-rc4
 make
 sudo make install
 sudo airodump-ng-oui-update
-cd ..
-
-# install nmap
-wget https://nmap.org/dist/nmap-7.40.tar.bz2
-bzip2 -cd nmap-7.40.tar.bz2 | tar xvf -
-rm nmap-7.40.tar.bz2
-cd nmap-7.40
-./configure
-make
-sudo make install
 cd ..
 
 # install dirb
@@ -104,6 +91,12 @@ sudo update-rc.d cups-browsed disable
 
 # fix ifaces
 sudo ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+
+# network manager patch
+sudo cat <<EOF >> /etc/NetworkManager/NetworkManager.conf
+[keyfile]
+unmanaged-devices=interface-name:wlan1
+EOF
 
 # reboot
 sudo reboot
