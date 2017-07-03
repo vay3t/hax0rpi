@@ -63,7 +63,8 @@ cd aircrack-ng-1.2-rc4
 make
 sudo make install
 sudo airodump-ng-oui-update
-cd ..
+cd
+cd arsenal
 
 # install dirb
 wget https://sourceforge.net/projects/dirb/files/dirb/2.22/dirb222.tar.gz
@@ -73,13 +74,19 @@ cd dirb222
 ./configure
 make
 sudo make install
-cd ..
+cd
+cd arsenal
 
 sudo apt-get install cpanminus -y
 git clone https://github.com/fwaeytens/dnsenum
 
 git clone https://github.com/sqlmapproject/sqlmap
 git clone https://github.com/laramies/theHarvester
+
+git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
+cd wifiphisher # Switch to tool's directory
+sudo python setup.py install # Install any dependencies (Currently, hostapd, dnsmasq, PyRIC, blessings)
+cd ..
 
 # disable services
 sudo update-rc.d apache2 disable
@@ -94,10 +101,18 @@ sudo update-rc.d cups-browsed disable
 sudo ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
 # network manager patch
-sudo cat <<EOF >> /etc/NetworkManager/NetworkManager.conf
+echo <<EOF > NetworkManager.conf
+[main]
+plugins=ifupdown,keyfile,ofono
+dns=dnsmasq
+
+[ifupdown]
+managed=false
+
 [keyfile]
 unmanaged-devices=interface-name:wlan1
 EOF
+sudo mv NetworkManager.conf /etc/NetworkManager/
 
 # reboot
 sudo reboot
