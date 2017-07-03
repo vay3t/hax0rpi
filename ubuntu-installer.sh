@@ -83,6 +83,7 @@ git clone https://github.com/fwaeytens/dnsenum
 git clone https://github.com/sqlmapproject/sqlmap
 git clone https://github.com/laramies/theHarvester
 
+sudo apt-get install python-dbus -y
 git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
 cd wifiphisher # Switch to tool's directory
 sudo python setup.py install # Install any dependencies (Currently, hostapd, dnsmasq, PyRIC, blessings)
