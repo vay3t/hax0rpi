@@ -82,6 +82,15 @@ make
 sudo make install
 cd && cd arsenal
 
+# instal mdk3
+wget http://aspj.aircrack-ng.org/mdk3-v6.tar.bz2
+tar jxvf mdk3-v6.tar.bz2
+rm mdk3-v6.tar.bz2
+cd mdk3-v6
+make
+sudo make install
+cd && cd arsenal
+
 # install dirb
 wget https://sourceforge.net/projects/dirb/files/dirb/2.22/dirb222.tar.gz
 tar -xzvf dirb222.tar.gz
