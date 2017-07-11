@@ -56,15 +56,31 @@ cd arsenal
 # install aircrack-ng
 sudo apt-get -y install libssl-dev libnl-3-dev libnl-genl-3-dev libnl-idiag-3-200 libnl-idiag-3-dev ethtool
 wget http://download.aircrack-ng.org/aircrack-ng-1.2-rc4.tar.gz
-echo "decompress aircrack-ng-1.2-rc4.tar.gz"
 tar -zxvf aircrack-ng-1.2-rc4.tar.gz
 rm aircrack-ng-1.2-rc4.tar.gz
 cd aircrack-ng-1.2-rc4
 make
 sudo make install
 sudo airodump-ng-oui-update
-cd
-cd arsenal
+cd && cd arsenal
+
+# install pixie-dust
+git clone https://github.com/wiire/pixiewps
+cd pixiewps*/
+cd src/
+make
+sudo make install
+cd && cd arsenal
+
+# install reaver
+sudo apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev
+git clone https://github.com/t6x/reaver-wps-fork-t6x
+cd reaver-wps-fork-t6x*/
+cd src/
+./configure
+make
+sudo make install
+cd && cd arsenal
 
 # install dirb
 wget https://sourceforge.net/projects/dirb/files/dirb/2.22/dirb222.tar.gz
