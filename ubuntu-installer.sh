@@ -5,6 +5,8 @@ sudo apt dist-upgrade -y
 
 sudo apt install -y \
 		gnome-session-flashback \
+		adb \
+		fastboot \
 		apache2 \
 		curl \
 		dnsmasq \
