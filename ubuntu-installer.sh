@@ -5,6 +5,8 @@ sudo apt dist-upgrade -y
 
 sudo apt install -y \
 		gnome-session-flashback \
+		php \
+		libapache2-mod-php \
 		adb \
 		fastboot \
 		apache2 \
