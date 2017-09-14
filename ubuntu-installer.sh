@@ -12,6 +12,7 @@ sudo apt install -y \
 		apache2 \
 		curl \
 		dnsmasq \
+		dsniff \
 		git \
 		hostapd \
 		htop \
