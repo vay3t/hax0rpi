@@ -108,6 +108,7 @@ cd
 cd arsenal
 
 sudo apt-get install cpanminus -y
+sudo apt-get install libnet-netmask-perl libxml-writer-perl libstring-random-perl -y
 git clone https://github.com/fwaeytens/dnsenum
 
 git clone https://github.com/sqlmapproject/sqlmap
