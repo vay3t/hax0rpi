@@ -60,14 +60,9 @@ cd arsenal
 
 # install aircrack-ng
 sudo apt-get -y install libssl-dev libnl-3-dev libnl-genl-3-dev libnl-idiag-3-200 libnl-idiag-3-dev ethtool
-wget http://download.aircrack-ng.org/aircrack-ng-1.2-rc4.tar.gz
-tar -zxvf aircrack-ng-1.2-rc4.tar.gz
-rm aircrack-ng-1.2-rc4.tar.gz
-cd aircrack-ng-1.2-rc4
-make
-sudo make install
-sudo airodump-ng-oui-update
-cd && cd arsenal
+wget http://ubuntu2.cica.es/ubuntu/ubuntu/pool/universe/a/aircrack-ng/aircrack-ng_1.2-0~rc4-2_amd64.deb
+sudo dpkg -i aircrack-ng_1.2-0~rc4-2_amd64.deb
+mv aircrack-ng_1.2-0~rc4-2_amd64.deb Descargas/aircrack-ng_1.2-0~rc4-2_amd64.deb
 
 # install pixie-dust
 git clone https://github.com/wiire/pixiewps
