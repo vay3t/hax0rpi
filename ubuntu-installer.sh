@@ -21,7 +21,7 @@ sudo apt install -y \
 		macchanger \
 		nmap \
 		openvpn \
-		php7.0 \
+		php \
 		python-dev \
 		python-pip \
 		wireshark \
@@ -31,7 +31,7 @@ sudo apt install -y \
 		ssh;
 
 sudo pip install --upgrade pip
-sudo pip install requests scapy scanless
+sudo pip install requests scapy sqlmap
 
 # install fing
 wget https://www.fing.io/wp-content/uploads/2016/09/overlook-fing-3.0.deb
@@ -60,9 +60,14 @@ cd arsenal
 
 # install aircrack-ng
 sudo apt-get -y install libssl-dev libnl-3-dev libnl-genl-3-dev libnl-idiag-3-200 libnl-idiag-3-dev ethtool
-wget http://ubuntu2.cica.es/ubuntu/ubuntu/pool/universe/a/aircrack-ng/aircrack-ng_1.2-0~rc4-2_amd64.deb
-sudo dpkg -i aircrack-ng_1.2-0~rc4-2_amd64.deb
-mv aircrack-ng_1.2-0~rc4-2_amd64.deb Descargas/aircrack-ng_1.2-0~rc4-2_amd64.deb
+wget http://download.aircrack-ng.org/aircrack-ng-1.2-rc4.tar.gz
+tar -zxvf aircrack-ng-1.2-rc4.tar.gz
+rm aircrack-ng-1.2-rc4.tar.gz
+cd aircrack-ng-1.2-rc4
+make
+sudo make install
+sudo airodump-ng-oui-update
+cd && cd arsenal
 
 # install pixie-dust
 git clone https://github.com/wiire/pixiewps
@@ -91,29 +96,16 @@ make
 sudo make install
 cd && cd arsenal
 
-# install dirb
-wget https://sourceforge.net/projects/dirb/files/dirb/2.22/dirb222.tar.gz
-tar -xzvf dirb222.tar.gz
-rm dirb222.tar.gz
-cd dirb222
-./configure
-make
-sudo make install
-cd
-cd arsenal
+# install sublist3r
+git clone https://github.com/aboul3la/Sublist3r
+cd Sublist3r
+sudo pip install -r requirements.txt
+cd && cd arsenal
 
-sudo apt-get install cpanminus -y
-sudo apt-get install libnet-netmask-perl libxml-writer-perl libstring-random-perl -y
-git clone https://github.com/fwaeytens/dnsenum
-
-git clone https://github.com/sqlmapproject/sqlmap
+# install theharvester
 git clone https://github.com/laramies/theHarvester
 
-sudo apt-get install python-dbus -y
-git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
-cd wifiphisher # Switch to tool's directory
-sudo python setup.py install # Install any dependencies (Currently, hostapd, dnsmasq, PyRIC, blessings)
-cd ..
+#wget http://lcamtuf.coredump.cx/afl/releases/afl-latest.tgz
 
 # disable services
 sudo update-rc.d apache2 disable
