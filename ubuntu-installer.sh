@@ -10,6 +10,7 @@ sudo apt install -y \
 		adb \
 		fastboot \
 		apache2 \
+		cherrytree \
 		curl \
 		dnsmasq \
 		dsniff \
