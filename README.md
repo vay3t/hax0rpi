@@ -73,7 +73,7 @@ apt update -m
 
 ### KALI LINUX IN RPI
 ```
-wget https://github.com/nethunteros/rpi3-kalimon/releases/download/0.6/kali-0.6-rpi3.img.xz
+wget https://images.offensive-security.com/arm-images/kali-linux-2018.1a-rpi3-nexmon.img.xz
 xz -d kali-0.6-rpi3.img.xz
 umount /dev/mmcblk0p1
 umount /dev/mmcblk0p2
