@@ -74,10 +74,10 @@ apt update -m
 ### KALI LINUX IN RPI
 ```
 wget https://images.offensive-security.com/arm-images/kali-linux-2018.1a-rpi3-nexmon.img.xz
-xz -d kali-0.6-rpi3.img.xz
+xz -d kali-linux-2018.1a-rpi3-nexmon.img.xz
 umount /dev/mmcblk0p1
 umount /dev/mmcblk0p2
-dd bs=4M if=kali-0.6-rpi3.img of=/dev/mmcblk0
+dd bs=4M if=kali-linux-2018.1a-rpi3-nexmon.img of=/dev/mmcblk0
 ```
 
 # Tools List
