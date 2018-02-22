@@ -61,7 +61,7 @@ sudo apt-get install -y \
 	crunch \
 	dnsmasq \
 	dsniff \
-	ettercap \
+	ettercap-text-only \
 	fail2ban \
 	git \
 	goaccess \
@@ -79,7 +79,7 @@ sudo apt-get install -y \
 	nmap \
 	openvpn \
 	pdfcrack \
-	php5 \
+	php \
 	pi-bluetooth \
 	proxychains \
 	python-dev \
