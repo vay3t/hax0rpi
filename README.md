@@ -82,7 +82,7 @@ dd bs=4M if=kali-0.6-rpi3.img of=/dev/mmcblk0
 
 # Tools List
 
-Installed via apt-get:
+### Installed via apt-get:
  * apache2 - http daemon
  * arp-scan - scans lan
  * crunch - password list generator
@@ -123,7 +123,7 @@ Installed via apt-get:
  * whois - internet address lookup utility
  * wvdial - PPP/modem utility
 
-Python tools:
+### Python tools:
  * hasid
  * scapy
  * python-nmap
@@ -133,7 +133,7 @@ Python tools:
  * glances
  * sqlmap
 
-Miscellanous:
+### Miscellanous:
  * fing - network scanner
  * empire - powershell empire, post exploitation framework
  * emPyre - python post-exploitation OS X/Linux agent
