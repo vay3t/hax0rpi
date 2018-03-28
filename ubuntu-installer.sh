@@ -48,6 +48,7 @@ sudo apt install -y \
 		masscan \
 		nmap \
 		net-tools \
+		obs-studio \
 		openvpn \
 		php \
 		python-dev \
