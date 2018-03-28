@@ -1,12 +1,33 @@
 #!/bin/bash
 
+# Colors
+BLACK='\e[30m'
+RED='\e[31m'
+GREEN='\e[32m'
+YELLOW='\e[33m'
+BLUE='\e[34m'
+PURPLE='\e[35m'
+CYAN='\e[36m'
+WHITE='\e[37m'
+NC='\e[0m'
+
+# Check distro
+if [ `lsb_release -c | awk '{print $2}'` != bionic ]; then
+	echo -e "\n${RED}[!] Your distro is not supported\n${NC}"
+	exit 1
+fi
+
+# Check root
+if [ "$(id -u)" == 0 ]; then
+	echo -e "\n${RED}[!] Do not use this script with sudo\n${NC}"
+	exit 1
+fi
+
 sudo apt update
 sudo apt dist-upgrade -y
 
 sudo apt install -y \
 		gnome-session-flashback \
-		php \
-		libapache2-mod-php \
 		aircrack-ng \
 		mdk3 \
 		adb \
@@ -16,25 +37,34 @@ sudo apt install -y \
 		curl \
 		dnsmasq \
 		dsniff \
+		filezilla \
+		gimp \
 		git \
 		hostapd \
 		htop \
 		iw \
-		filezilla \
+		libapache2-mod-php \
 		macchanger \
+		masscan \
 		nmap \
+		net-tools \
 		openvpn \
 		php \
 		python-dev \
 		python-pip \
-		wireshark \
+		python3-dev \
+		python3-pip \
+		sqlmap \
+		ssh \
 		tcpdump \
+		telegram-desktop \
 		vlc \
 		wireless-tools \
-		ssh;
-
-sudo pip install --upgrade pip
-sudo pip install requests scapy sqlmap
+		wireshark;
+		
+# install scapy
+sudo pip install scapy
+sudo apt install -y python-matplotlib python-pyx python-ipython
 
 # install fing
 wget https://www.fing.io/wp-content/uploads/2016/09/overlook-fing-3.0.deb
@@ -48,8 +78,14 @@ sudo apt-get update
 sudo apt-get install sublime-text
 
 # install bettercap
-#sudo apt-get install build-essential ruby-dev libpcap-dev -y
-#sudo gem install bettercap
+sudo apt install go -y
+go get github.com/bettercap/bettercap
+
+# install thefuck
+sudo apt install python3-dev python3-pip
+sudo pip3 install thefuck
+sed -i "94i\eval \$(thefuck --alias)\n# You can use whatever you want as an alias, like for Mondays:\neval \$(thefuck --alias FUCK)\n" .bashrc
+source .bashrc
 
 mkdir dedsec
 mkdir arsenal
@@ -57,7 +93,7 @@ cd arsenal
 
 git clone https://github.com/epinna/weevely3
 cd weevely3
-sudo apt-get install libncurses5-dev
+sudo apt-get install libncurses5-dev -y
 sudo pip install -r requirements.txt --upgrade
 cd ..
 
@@ -90,6 +126,24 @@ git clone https://github.com/laramies/theHarvester
 
 #wget http://lcamtuf.coredump.cx/afl/releases/afl-latest.tgz
 
+
+# install kvm
+if [grep vmx /proc/cpuinfo == true]; then
+	sudo apt install -y qemu-kvm libvirt0 libvirt-bin virt-manager bridge-utils
+	sudo systemctl enable libvirt-bin
+	sudo gpasswd libvirt -a $(whoami)
+	sudo apt install -y bridge-utils
+	cat <<EOF | sudo tee /etc/network/interfaces
+auto lo
+iface lo inet loopback
+auto br0
+iface br0 inet dhcp
+      bridge_ports ens3
+      bridge_stp off
+      bridge_maxwait 0
+EOF
+fi
+
 # disable services
 sudo update-rc.d apache2 disable
 sudo update-rc.d bluetooth disable
@@ -97,8 +151,15 @@ sudo update-rc.d dnsmasq disable
 sudo update-rc.d openvpn disable
 sudo update-rc.d ssh disable
 
+# disable cups
+sudo systemctl stop cups
+sudo systemctl stop cups-browsed
+sudo systemctl disable cups
+sudo systemctl disable cups-browsed
+
 # fix ifaces
-sudo ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"/g' /etc/default/grub
+sudo update-grub
 
 # network manager patch
 echo <<EOF > NetworkManager.conf
