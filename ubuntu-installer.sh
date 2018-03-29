@@ -111,7 +111,7 @@ source .bashrc
 
 # Wireshark remove warning
 sudo mkdir -p /root/.wireshark/
-sudo -c 'echo "privs.warn_if_elevated: FALSE" > /root/.wireshark/recent_common'
+sudo sh -c 'echo "privs.warn_if_elevated: FALSE" > /root/.wireshark/recent_common'
 sudo mv -f /usr/share/wireshark/init.lua{,.disabled}
 
 
