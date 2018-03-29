@@ -90,6 +90,12 @@ wget https://www.fing.io/wp-content/uploads/2016/09/overlook-fing-3.0.deb
 sudo dpkg -i overlook-fing-3.0.deb
 mv overlook-fing-3.0.deb Descargas/
 
+# install etcher
+echo "deb https://dl.bintray.com/resin-io/debian stable etcher" | sudo tee /etc/apt/sources.list.d/etcher.list
+sudo apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 379CE192D401AB61
+sudo apt-get update
+sudo apt-get install etcher-electron -y
+
 # install sublime text
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
@@ -114,6 +120,31 @@ sudo mkdir -p /root/.wireshark/
 sudo sh -c 'echo "privs.warn_if_elevated: FALSE" > /root/.wireshark/recent_common'
 sudo mv -f /usr/share/wireshark/init.lua{,.disabled}
 
+# install kvm
+if [grep vmx /proc/cpuinfo == true]; then
+	sudo apt install -y qemu-kvm libvirt0 libvirt-bin virt-manager bridge-utils
+	sudo systemctl enable libvirt-bin
+	sudo gpasswd libvirt -a $(whoami)
+	sudo apt install -y bridge-utils
+	cat <<EOF | sudo tee /etc/network/interfaces
+auto lo
+iface lo inet loopback
+auto br0
+iface br0 inet dhcp
+      bridge_ports ens3
+      bridge_stp off
+      bridge_maxwait 0
+EOF
+fi
+
+# install docker
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" | tee /etc/apt/sources.list.d/docker.list
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt update
+sudo apt install docker-ce -y
+
 
 # create dedsec & arsenal
 mkdir dedsec
@@ -137,6 +168,9 @@ cd && cd arsenal
 
 # install theharvester
 git clone https://github.com/laramies/theHarvester
+
+# install dirsearch
+git clone https://github.com/maurosoria/dirsearch
 
 # install kickthemout
 git clone https://github.com/k4m4/kickthemout
@@ -164,24 +198,6 @@ cd && cd arsenal
 #cd && cd arsenal
 
 #wget http://lcamtuf.coredump.cx/afl/releases/afl-latest.tgz
-
-
-# install kvm
-if [grep vmx /proc/cpuinfo == true]; then
-	sudo apt install -y qemu-kvm libvirt0 libvirt-bin virt-manager bridge-utils
-	sudo systemctl enable libvirt-bin
-	sudo gpasswd libvirt -a $(whoami)
-	sudo apt install -y bridge-utils
-	cat <<EOF | sudo tee /etc/network/interfaces
-auto lo
-iface lo inet loopback
-auto br0
-iface br0 inet dhcp
-      bridge_ports ens3
-      bridge_stp off
-      bridge_maxwait 0
-EOF
-fi
 
 # disable services
 sudo update-rc.d apache2 disable
