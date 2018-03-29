@@ -41,7 +41,6 @@ sudo apt install -y \
 		cherrytree \
 		curl \
 		crunch \
-		docker \
 		dnsmasq \
 		dsniff \
 		encfs \
@@ -71,6 +70,7 @@ sudo apt install -y \
 		ssh \
 		tcpdump \
 		telegram-desktop \
+		terminator \
 		testdisk \
 		tor \
 		transmission \
@@ -97,7 +97,7 @@ sudo apt-get update
 sudo apt-get install sublime-text
 
 # install bettercap
-sudo apt install go -y
+sudo apt install golang -y
 go get github.com/bettercap/bettercap
 cd go/bin/
 git clone https://github.com/bettercap/caplets
