@@ -124,7 +124,7 @@ sudo mv -f /usr/share/wireshark/init.lua{,.disabled}
 if [grep vmx /proc/cpuinfo == true]; then
 	sudo apt install -y qemu-kvm libvirt0 libvirt-bin virt-manager bridge-utils
 	sudo systemctl enable libvirt-bin
-	sudo gpasswd libvirt -a $(whoami)
+	sudo gpasswd libvirt -a vay3t
 	sudo apt install -y bridge-utils
 	cat <<EOF | sudo tee /etc/network/interfaces
 auto lo
