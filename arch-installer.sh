@@ -11,6 +11,22 @@ CYAN='\e[36m'
 WHITE='\e[37m'
 NC='\e[0m'
 
+# Check distro
+if [ `lsb-release | grep ID | cut -d"=" -f2` != Anarchy ]; then
+	echo -e "\n${RED}[!] Your distro is not supported\n${NC}"
+	exit 1
+fi
+
+# Check root
+if [ "$(id -u)" == 0 ]; then
+	echo -e "\n${RED}[!] Do not use this script with sudo\n${NC}"
+	exit 1
+fi
+
+echo -e "${CYAN}[>] Press ENTER to continue, CTRL+C to abort.${NC}"
+read INPUT
+echo ""
+
 
 sudo pacman -Sy
 sudo pacman -Syu
@@ -120,14 +136,18 @@ cd Sublist3r
 sudo pip install -r requirements.txt
 cd && cd arsenal
 
+cd
 
+# fix terminal xfce4
+sed -i "s/MiscMenubarDefault=FALSE/MiscMenubarDefault=TRUE/g" ~/.config/xfce4/terminal/terminalrc
+source ~/.config/xfce4/terminal/terminalrc
 
 # install nano-highlight
 git clone git://github.com/serialhex/nano-highlight ~/.nano
 echo include ~/.nano/* > ~/.nanorc
 
 # install kvm
-#if [LC_ALL=C lscpu | grep Virtualization | awk '{print $2}' == "VT-x"]; then
+#if [ `LC_ALL=C lscpu | grep Virtualization | awk '{print $2}'` == "VT-x"]; then
 #fi
 
 # fix ifaces
