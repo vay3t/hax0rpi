@@ -77,12 +77,19 @@ yaourt -S \
 		sublime-text-dev \
 		weevely;
 
+# fix wifi
+sudo pacman -S 
+
+# oh-my-zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.zshrc ~/.zshrc.orig
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 # set alias grep color
-sed -i "73i\ alias grep='grep --color=auto " .zshrc
+echo "alias grep='grep --color=auto " >> ~/.zshrc
 
 # set alias thefuck
-sed -i "73i\ \neval \$(thefuck --alias)\n# You can use whatever you want as an alias, like for Mondays:\neval \$(thefuck --alias FUCK)\n" .zshrc
+echo "eval \$(thefuck --alias)\n# You can use whatever you want as an alias, like for Mondays:\neval \$(thefuck --alias FUCK)\n" >> ~/.zshrc
 source .zshrc
 
 # Wireshark remove warning
