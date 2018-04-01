@@ -71,11 +71,11 @@ sudo pacman -S \
 		zeal;
 
 yaourt -Syu
-yaourt -S \
-		crunch \
-		etcher \
-		sublime-text-dev \
-		weevely;
+yaourt -S crunch
+yaourt -S etcher
+yaourt -S sublime-text-dev
+yaourt -S weevely
+sudo pip2 install pyyaml # for weevely
 
 # fix wifi
 sudo pacman -S gnome-keyring
@@ -132,7 +132,7 @@ echo include ~/.nano/* > ~/.nanorc
 
 # fix ifaces
 sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"/g' /etc/default/grub
-sudo update-grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # network manager patch
 echo <<EOF > NetworkManager.conf
