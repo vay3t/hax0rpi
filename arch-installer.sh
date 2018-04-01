@@ -22,7 +22,6 @@ sudo pacman -S \
 		arp-scan \
 		bettercap \
 		curl \
-		crunch \
 		dnsmasq \
 		docker \
 		dsniff \
@@ -63,20 +62,20 @@ sudo pacman -S \
 		thefuck \
 		tmux \
 		tor \
-		transmission \
+		transmission-gtk \
 		tree \
 		vim \
 		vlc \
-		wireless-tools \
-		wireshark \
+		wireshark-gtk \
 		whois \
-		zeal \
+		zeal;
 
 yaourt -Syu
 yaourt -S \
+		crunch \
 		etcher \
 		sublime-text-dev \
-		weevely \
+		weevely;
 
 
 # set alias grep color
