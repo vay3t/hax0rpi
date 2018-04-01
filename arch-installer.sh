@@ -86,11 +86,11 @@ cp ~/.zshrc ~/.zshrc.orig
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 # set alias grep color
-echo "alias grep='grep --color=auto " >> ~/.zshrc
+echo "alias grep='grep --color=auto '" >> ~/.zshrc
 
 # set alias thefuck
 echo "eval \$(thefuck --alias)\n# You can use whatever you want as an alias, like for Mondays:\neval \$(thefuck --alias FUCK)\n" >> ~/.zshrc
-source .zshrc
+source ~/.zshrc
 
 # Wireshark remove warning
 sudo mkdir -p /root/.wireshark/
@@ -127,20 +127,8 @@ git clone git://github.com/serialhex/nano-highlight ~/.nano
 echo include ~/.nano/* > ~/.nanorc
 
 # install kvm
-if [LC_ALL=C lscpu | grep Virtualization | awk '{print $2}' == "VT-x"]; then
-	sudo pacman -S qemu-kvm libvirt0 libvirt-bin virt-manager bridge-utils
-	sudo systemctl enable libvirt-bin
-	sudo gpasswd libvirt -a vay3t
-	cat <<EOF | sudo tee /etc/network/interfaces
-auto lo
-iface lo inet loopback
-auto br0
-iface br0 inet dhcp
-      bridge_ports ens3
-      bridge_stp off
-      bridge_maxwait 0
-EOF
-fi
+#if [LC_ALL=C lscpu | grep Virtualization | awk '{print $2}' == "VT-x"]; then
+#fi
 
 # fix ifaces
 sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"/g' /etc/default/grub
