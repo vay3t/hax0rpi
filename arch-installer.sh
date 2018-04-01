@@ -78,7 +78,7 @@ yaourt -S \
 		weevely;
 
 # fix wifi
-sudo pacman -S 
+sudo pacman -S gnome-keyring
 
 # oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
