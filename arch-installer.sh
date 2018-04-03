@@ -23,6 +23,7 @@ if [ "$(id -u)" == 0 ]; then
 	exit 1
 fi
 
+
 echo -e "${CYAN}[>] Press ENTER to continue, CTRL+C to abort.${NC}"
 read INPUT
 echo ""
@@ -84,6 +85,7 @@ sudo pacman -S \
 		vlc \
 		wireshark-gtk \
 		whois \
+		xarchiver \
 		zeal;
 
 yaourt -Syu
@@ -147,8 +149,9 @@ git clone git://github.com/serialhex/nano-highlight ~/.nano
 echo include ~/.nano/* > ~/.nanorc
 
 # install kvm
-#if [ `LC_ALL=C lscpu | grep Virtualization | awk '{print $2}'` == "VT-x"]; then
-#fi
+if [ `LC_ALL=C lscpu | grep Virtualization | awk '{print $2}'` == "VT-x"]; then
+	sudo pacman -S qemu virt-manager dnsmasq iptables vde2 bridge-utils openbsd-netcat
+fi
 
 # fix ifaces
 sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"/g' /etc/default/grub
