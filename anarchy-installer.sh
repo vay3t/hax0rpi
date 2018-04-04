@@ -48,6 +48,8 @@ sudo pacman -S \
 		firefox-i18n-es-cl \
 		gimp \
 		git \
+		glances \
+		gnome-keyring \
 		hexchat \
 		hostapd \
 		htop \
@@ -86,17 +88,20 @@ sudo pacman -S \
 		wireshark-gtk \
 		whois \
 		xarchiver \
+		zaproxy \
 		zeal;
 
 yaourt -Syu
+yaourt -S burpsuite
 yaourt -S crunch
 yaourt -S etcher
+yoaurt -S evince-no-gnome
 yaourt -S sublime-text-dev
 yaourt -S weevely
 sudo pip2 install pyyaml # for weevely
 
-# fix wifi
-sudo pacman -S gnome-keyring
+# install shodan
+sudo pip2 install shodan
 
 # oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -120,11 +125,21 @@ cd arsenal
 
 # install from git
 
+# download caplets bettercap
+git clone https://github.com/bettercap/caplets
+
 # install theharvester
 git clone https://github.com/laramies/theHarvester
 
 # install dirsearch
 git clone https://github.com/maurosoria/dirsearch
+
+# install knockpy
+sudo pacman -S python2-dnspython
+git clone https://github.com/guelfoweb/knock
+cd knock
+sudo python2 setup.py install
+cd && cd arsenal
 
 # install kickthemout
 git clone https://github.com/k4m4/kickthemout
@@ -151,6 +166,7 @@ echo include ~/.nano/* > ~/.nanorc
 # install kvm
 if [ `LC_ALL=C lscpu | grep Virtualization | awk '{print $2}'` == "VT-x"]; then
 	sudo pacman -S qemu virt-manager dnsmasq iptables vde2 bridge-utils openbsd-netcat
+	#sudo systemctl enable libvirtd.service
 fi
 
 # fix ifaces
