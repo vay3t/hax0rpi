@@ -123,6 +123,7 @@ sudo sh -c 'echo "privs.warn_if_elevated: FALSE" > /root/.wireshark/recent_commo
 sudo mv -f /usr/share/wireshark/init.lua{,.disabled}
 
 mkdir arsenal
+mkdir dev
 cd arsenal
 
 # install from git
@@ -168,10 +169,10 @@ echo include ~/.nano/* > ~/.nanorc
 # install kvm
 if [ `LC_ALL=C lscpu | grep Virtualization | awk '{print $2}'` == "VT-x"]; then
 	sudo pacman -S qemu virt-manager dnsmasq iptables vde2 bridge-utils openbsd-netcat
-	echo <<EOF > ~/virt-start.sh
+	echo <<EOF > ~/arsenal/virt-start.sh
 #!/usr/sh
 
-iface = wlan0
+iface = $(route | grep default | awk '{print $8}' | grep -v Iface)
 
 if [ "$(id -u)" != 0 ]; then
 	echo -e "\n${RED}[!] Do use this script with sudo\n${NC}"
@@ -187,7 +188,7 @@ iptables -A FORWARD -i br0 -o $iface -j ACCEPT
 echo '1' > /proc/sys/net/ipv4/ip_forward
 fi
 EOF
-	chmod +x ~/virt-start.sh
+	chmod +x ~/arsenal/virt-start.sh
 
 wget https://www.wifipineapple.com/wp6.sh
 chmod +x wp6.sh
