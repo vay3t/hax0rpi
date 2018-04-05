@@ -185,6 +185,9 @@ iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 iptables -A FORWARD -i net0 -o internet0 -j ACCEPT
 fi
 EOF
+	chmod +x ~/virt-start.sh
+
+wget https://www.wifipineapple.com/wp6.sh
 
 # fix ifaces
 sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"/g' /etc/default/grub
