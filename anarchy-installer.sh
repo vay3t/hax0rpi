@@ -167,8 +167,24 @@ echo include ~/.nano/* > ~/.nanorc
 # install kvm
 if [ `LC_ALL=C lscpu | grep Virtualization | awk '{print $2}'` == "VT-x"]; then
 	sudo pacman -S qemu virt-manager dnsmasq iptables vde2 bridge-utils openbsd-netcat
-	#sudo systemctl enable libvirtd.service
+	echo <<EOF > ~/virt-start.sh
+#!/usr/sh
+
+iface = wlan0
+
+if [ "$(id -u)" != 0 ]; then
+	echo -e "\n${RED}[!] Do use this script with sudo\n${NC}"
+	exit 1
 fi
+systemctl start libvirtd
+ip addr add 172.20.0.1/16 dev br0
+ip link set br0 up
+dnsmasq --interface=br0 --bind-interfaces --dhcp-range=172.20.0.2,172.20.255.254
+iptables -t nat -A POSTROUTING -o internet0 -j MASQUERADE
+iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i net0 -o internet0 -j ACCEPT
+fi
+EOF
 
 # fix ifaces
 sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"/g' /etc/default/grub
