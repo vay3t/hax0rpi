@@ -81,6 +81,7 @@ sudo pacman -S \
 		thefuck \
 		tmux \
 		tor \
+		tor-socks \
 		transmission-gtk \
 		tree \
 		vim \
