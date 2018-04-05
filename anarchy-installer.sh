@@ -169,46 +169,25 @@ echo include ~/.nano/* > ~/.nanorc
 # install kvm
 if [ `LC_ALL=C lscpu | grep Virtualization | awk '{print $2}'` == "VT-x"]; then
 	sudo pacman -S qemu virt-manager dnsmasq iptables vde2 bridge-utils openbsd-netcat
-	echo <<EOF > ~/arsenal/virt-start.sh
-#!/usr/sh
-
-iface = $(route | grep default | awk '{print $8}' | grep -v Iface)
-
-if [ "$(id -u)" != 0 ]; then
-	echo -e "\n${RED}[!] Do use this script with sudo\n${NC}"
-	exit 1
-fi
-systemctl start libvirtd
-ip addr add 172.20.0.1/16 dev br0
-ip link set br0 up
-dnsmasq --interface=br0 --bind-interfaces --dhcp-range=172.20.0.2,172.20.255.254
-iptables -t nat -A POSTROUTING -o $iface -j MASQUERADE
-iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-iptables -A FORWARD -i br0 -o $iface -j ACCEPT
-echo '1' > /proc/sys/net/ipv4/ip_forward
-fi
-EOF
+	curl https://raw.githubusercontent.com/vay3t/hax0rpi/master/virt-start.sh > ~/arsenal/virt-start.sh
 	chmod +x ~/arsenal/virt-start.sh
+fi
 
-wget https://www.wifipineapple.com/wp6.sh
-chmod +x wp6.sh
+# download wp6
+curl https://www.wifipineapple.com/wp6.sh > ~/arsenal/wp6.sh
+chmod +x ~/arsenal/wp6.sh
+
+# create msfdb for metasploit
+curl https://raw.githubusercontent.com/vay3t/hax0rpi/master/arch-msfdb > ~/arsenal/msfdb
+chmod +x ~/arsenal/msfdb
+sudo ~/arsenal/msfdb init
 
 # fix ifaces
 sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"/g' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # network manager patch
-echo <<EOF > NetworkManager.conf
-[main]
-plugins=ifupdown,keyfile,ofono
-dns=dnsmasq
-
-[ifupdown]
-managed=false
-
-[keyfile]
-unmanaged-devices=interface-name:wlan1
-EOF
+curl https://raw.githubusercontent.com/vay3t/hax0rpi/master/NetworkManager.conf > NetworkManager.conf
 sudo mv NetworkManager.conf /etc/NetworkManager/
 
 echo -e "${CYAN}[>] Press ENTER to reboot, CTRL+C to abort.${NC}"
