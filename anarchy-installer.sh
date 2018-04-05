@@ -40,10 +40,10 @@ sudo pacman -S \
 		bettercap \
 		curl \
 		dnsmasq \
+		dnsutils \
 		docker \
 		dsniff \
 		encfs \
-		dns-utils \
 		filezilla \
 		firefox \
 		firefox-i18n-es-cl \
