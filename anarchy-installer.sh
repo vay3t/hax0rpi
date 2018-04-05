@@ -180,14 +180,16 @@ systemctl start libvirtd
 ip addr add 172.20.0.1/16 dev br0
 ip link set br0 up
 dnsmasq --interface=br0 --bind-interfaces --dhcp-range=172.20.0.2,172.20.255.254
-iptables -t nat -A POSTROUTING -o internet0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o $iface -j MASQUERADE
 iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-iptables -A FORWARD -i net0 -o internet0 -j ACCEPT
+iptables -A FORWARD -i br0 -o $iface -j ACCEPT
+echo '1' > /proc/sys/net/ipv4/ip_forward
 fi
 EOF
 	chmod +x ~/virt-start.sh
 
 wget https://www.wifipineapple.com/wp6.sh
+chmod +x wp6.sh
 
 # fix ifaces
 sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"/g' /etc/default/grub
