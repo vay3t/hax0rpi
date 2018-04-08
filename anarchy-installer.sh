@@ -195,3 +195,7 @@ read INPUT
 echo ""
 # reboot
 sudo reboot
+
+
+
+# https://unix.stackexchange.com/questions/101806/why-doesnt-my-screen-lock-in-xfce
