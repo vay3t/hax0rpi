@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # Colors
 BLACK='\e[30m'
@@ -12,13 +12,13 @@ WHITE='\e[37m'
 NC='\e[0m'
 
 # Check distro
-if [ `lsb-release | grep ID | cut -d"=" -f2` != Anarchy ]; then
+if [ `cat /etc/lsb-release | grep ID | cut -d"=" -f2` -ne Anarchy ]; then
 	echo -e "\n${RED}[!] Your distro is not supported\n${NC}"
 	exit 1
 fi
 
 # Check root
-if [ "$(id -u)" == 0 ]; then
+if [ "$(id -u)" -eq 0 ]; then
 	echo -e "\n${RED}[!] Do not use this script with sudo\n${NC}"
 	exit 1
 fi
