@@ -82,7 +82,7 @@ sudo pacman -S \
 		thefuck \
 		tmux \
 		tor \
-		tor-socks \
+		torsocks \
 		transmission-gtk \
 		tree \
 		vim \
