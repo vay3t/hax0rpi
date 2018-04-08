@@ -32,7 +32,7 @@ echo ""
 sudo pacman -Sy
 sudo pacman -Syu
 
-sudo pacman -S \
+sudo pacman -S -y \
 		aircrack-ng \
 		android-tools \
 		apache \
