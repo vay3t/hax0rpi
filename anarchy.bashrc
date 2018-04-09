@@ -131,7 +131,7 @@ mcd () {
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 
-export PS1="${BLGreen}\u@\h ${BBlue}\w${Green} $ "
+export PS1="${BLGreen}\u@\h ${BBlue}\w${LGreen} $ ${NC}"
 
 [ -e "/etc/DIR_COLORS" ] && DIR_COLORS="/etc/DIR_COLORS"
 [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
