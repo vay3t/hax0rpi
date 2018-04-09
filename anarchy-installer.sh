@@ -105,13 +105,17 @@ sudo pip2 install pyyaml # for weevely
 # install shodan
 sudo pip2 install shodan
 
-# oh-my-zsh
+# xfce4 & .bashrc
+curl https://raw.githubusercontent.com/vay3t/hax0rpi/master/terminalrc > ~/.config/xfce4/terminal/terminalrc
+source ~/.config/xfce4/terminal/terminalrc
+curl https://raw.githubusercontent.com/vay3t/hax0rpi/master/anarchy.bashrc > ~/.bashrc
+source ~/.bashrc
 
 # set alias grep color
 #echo "alias grep='grep --color=auto'" >> ~/.zshrc
 
 # set alias thefuck
-echo "eval \$(thefuck --alias)\n# You can use whatever you want as an alias, like for Mondays:\neval \$(thefuck --alias FUCK)\n" >> ~/.zshrc
+echo "eval \$(thefuck --alias)\n# You can use whatever you want as an alias, like for Mondays:\neval \$(thefuck --alias FUCK)\n" >> ~/.bashrc
 source ~/.bashrc
 
 # Wireshark remove warning
