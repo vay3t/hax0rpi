@@ -106,16 +106,13 @@ sudo pip2 install pyyaml # for weevely
 sudo pip2 install shodan
 
 # oh-my-zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-cp ~/.zshrc ~/.zshrc.orig
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 # set alias grep color
-echo "alias grep='grep --color=auto '" >> ~/.zshrc
+#echo "alias grep='grep --color=auto'" >> ~/.zshrc
 
 # set alias thefuck
 echo "eval \$(thefuck --alias)\n# You can use whatever you want as an alias, like for Mondays:\neval \$(thefuck --alias FUCK)\n" >> ~/.zshrc
-source ~/.zshrc
+source ~/.bashrc
 
 # Wireshark remove warning
 sudo mkdir -p /root/.wireshark/
@@ -159,8 +156,6 @@ cd && cd arsenal
 cd
 
 # fix terminal xfce4
-sed -i "s/MiscMenubarDefault=FALSE/MiscMenubarDefault=TRUE/g" ~/.config/xfce4/terminal/terminalrc
-source ~/.config/xfce4/terminal/terminalrc
 
 # install nano-highlight
 git clone git://github.com/serialhex/nano-highlight ~/.nano
