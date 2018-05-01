@@ -65,7 +65,6 @@ sudo apt install -y \
 		python-pip \
 		python3-dev \
 		python3-pip \
-		shred \
 		sqlmap \
 		ssh \
 		tcpdump \
@@ -73,6 +72,7 @@ sudo apt install -y \
 		terminator \
 		testdisk \
 		tor \
+		torsocks \
 		transmission \
 		tree \
 		vlc \
@@ -84,11 +84,6 @@ sudo apt install -y \
 # install scapy
 sudo pip install scapy
 sudo apt install -y python-matplotlib python-pyx python-ipython
-
-# install fing
-wget https://www.fing.io/wp-content/uploads/2016/09/overlook-fing-3.0.deb
-sudo dpkg -i overlook-fing-3.0.deb
-mv overlook-fing-3.0.deb Descargas/
 
 # install etcher
 echo "deb https://dl.bintray.com/resin-io/debian stable etcher" | sudo tee /etc/apt/sources.list.d/etcher.list
@@ -105,9 +100,7 @@ sudo apt-get install sublime-text
 # install bettercap
 sudo apt install golang -y
 go get github.com/bettercap/bettercap
-cd go/bin/
-git clone https://github.com/bettercap/caplets
-cd
+git clone https://github.com/bettercap/caplets ~/go/bin/caplets
 
 # install thefuck
 sudo apt install python3-dev python3-pip
@@ -154,29 +147,23 @@ cd arsenal
 # arsenal tools
 
 # install weevely
-git clone https://github.com/epinna/weevely3
-cd weevely3
+git clone https://github.com/epinna/weevely3 ~/arsenal/weevely3
 sudo apt-get install libncurses5-dev -y
-sudo pip install -r requirements.txt --upgrade
-cd && cd arsenal
+sudo pip install -r ~/arsenal/weevely3/requirements.txt --upgrade
 
 # install sublist3r
-git clone https://github.com/aboul3la/Sublist3r
-cd Sublist3r
-sudo pip install -r requirements.txt
-cd && cd arsenal
+git clone https://github.com/aboul3la/Sublist3r ~/arsenal/Sublist3r
+sudo pip install -r ~/arsenal/Sublist3r/requirements.txt
 
 # install theharvester
-git clone https://github.com/laramies/theHarvester
+git clone https://github.com/laramies/theHarvester ~/arsenal/theHarvester
 
 # install dirsearch
-git clone https://github.com/maurosoria/dirsearch
+git clone https://github.com/maurosoria/dirsearch ~/arsenal/dirsearch
 
 # install kickthemout
-git clone https://github.com/k4m4/kickthemout
-cd kickthemout
-sudo pip3 install -r requirements.txt
-cd && cd arsenal
+git clone https://github.com/k4m4/kickthemout ~/arsenal/kickthemout
+sudo pip3 install -r ~/arsenal/kickthemout/requirements.txt
 
 
 # install pixie-dust
