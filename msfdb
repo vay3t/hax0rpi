@@ -1,6 +1,6 @@
 #!/bin/sh
 
-secret=/home/pi/.tools
+secret=/home/pi/arsenal
 
 METASPLOIT_BASEDIR=$secret/metasploit-framework
 
