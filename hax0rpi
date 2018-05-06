@@ -43,7 +43,7 @@ echo -e "${YELLOW}[!] enable ssh${NC}"
 sudo update-rc.d ssh enable
 
 # secret directory
-secret=.tools
+secret=.arsenal
 cd
 mkdir $secret && cd $secret
 echo -e "\n${YELLOW}[+] folder 'secret' created${NC}"
@@ -61,81 +61,40 @@ sudo apt-get install -y \
 	crunch \
 	dnsmasq \
 	dsniff \
-	ettercap-text-only \
 	fail2ban \
 	git \
-	goaccess \
 	hostapd \
-	hping3 \
 	hydra \
 	iw \
 	libimage-exiftool-perl \
 	locate \
 	macchanger \
 	masscan \
-	mysql-client \
-	mysql-server \
-	nbtscan \
 	nmap \
 	openvpn \
-	pdfcrack \
 	php \
-	pi-bluetooth \
 	proxychains \
 	python-dev \
 	python-pip \
-	rarcrack \
-	sslstrip \
+	smbclient \
 	tcpdump \
+	tmux \
 	tor \
-	tor-arm \
+	torsocks \
 	tree \
-	vlc \
-	wipe \
 	wireless-tools \
-	whois \
-	wvdial;
+	whois;
 
 echo -e "\n${YELLOW}[!] install python tools${NC}"
-sudo pip install --upgrade pip
-sudo pip install hashid scapy python-nmap crackmapexec wafw00f impacket glances sqlmap
+sudo pip install sqlmap shodan
+
+# install scapy
+sudo apt install -y python-scapy python-matplotlib python-pyx python-ecdsa
 
 # install ruby
 echo -e "\n${YELLOW}[!] install ruby tools${NC}"
 sudo apt-get install build-essential ruby ruby-dev libpcap-dev -y
 sudo gem install bundler
-
-# install fing
-echo -e "\n${YELLOW}[!] install fing${NC}"
-wget https://www.fing.io/wp-content/uploads/2016/10/overlook-fing-3.0.deb
-sudo dpkg -i overlook-fing-3.0.deb
-rm overlook-fing-3.0.deb
-cd && cd $secret
-
-# install empire
-echo -e "\n${YELLOW}[!] install empire${NC}"
-git clone https://github.com/PowerShellEmpire/Empire/
-cd Empire/setup
-chmod +x install.sh
-sudo ./install.sh
-cd && cd $secret
-
-# install empyre
-echo -e "\n${YELLOW}[!] install empyre${NC}"
-git clone https://github.com/adaptivethreat/EmPyre
-cd EmPyre/setup
-sudo ./install.sh
-cd && cd $secret
-
-# install pupy
-echo -e "\n${YELLOW}[!] install pupy${NC}"
-sudo apt-get install libjpeg-dev libffi-dev -y
-git clone https://github.com/n1nj4sec/pupy.git pupy
-cd pupy
-git submodule init
-git submodule update
-sudo pip install -r requirements.txt
-cd && cd $secret
 
 # install weevely3
 echo -e "\n${YELLOW}[!] install weevely${NC}"
@@ -144,23 +103,6 @@ git clone https://github.com/epinna/weevely3
 cd weevely3
 sudo pip install -r requirements.txt
 cd && cd $secret
-
-# install dnsenum
-echo -e "\n${YELLOW}[!] install dnsenum${NC}"
-sudo apt-get install cpanminus -y
-git clone https://github.com/fwaeytens/dnsenum
-
-# install SET
-echo -e "\n${YELLOW}[!] install set${NC}"
-git clone https://github.com/trustedsec/social-engineer-toolkit
-cd social-engineer-toolkit
-sudo python setup.py install
-cd && cd $secret
-
-# install netcreds
-echo -e "\n${YELLOW}[!] install netcreds${NC}"
-git clone https://github.com/DanMcInerney/net-creds
-sudo pip install wsgiref scapy
 
 # install pixie-dust
 echo -e "\n${YELLOW}[!] install pixie-dust${NC}"
@@ -185,7 +127,7 @@ cd && cd $secret
 # install aircrack-ng
 echo -e "\n${YELLOW}[!] install aircrack-ng${NC}"
 sudo apt-get -y install libssl-dev libnl-3-dev libnl-genl-3-dev libnl-idiag-3-200 libnl-idiag-3-dev ethtool
-wget http://download.aircrack-ng.org/aircrack-ng-1.2-rc4.tar.gz
+wget http://download.aircrack-ng.org/aircrack-ng-1.2.tar.gz
 echo "decompress aircrack-ng-1.2-rc4.tar.gz"
 tar -zxvf aircrack-ng-1.2-rc4.tar.gz
 rm aircrack-ng-1.2-rc4.tar.gz
@@ -205,57 +147,13 @@ make
 sudo make install
 cd && cd $secret
 
-# install dirb
-echo -e "\n${YELLOW}[!] install dirb${NC}"
-sudo apt-get install libcurl4-gnutls-dev -y
-wget https://sourceforge.net/projects/dirb/files/dirb/2.22/dirb222.tar.gz
-tar -xzvf dirb222.tar.gz
-rm dirb222.tar.gz
-chmod -R 777 dirb222
-cd dirb222
-./configure
-make
-cd && cd $secret
-
-# install p0f
-echo -e "\n${YELLOW}[!] install p0f${NC}"
-wget http://lcamtuf.coredump.cx/p0f3/releases/p0f-3.09b.tgz
-tar -xvzf p0f-3.09b.tgz
-rm p0f-3.09b.tgz
-cd p0f-3.09b
-make
-sudo make install
-cd && cd $secret
-
 # install cewl
+sudo apt-get install build-essential ruby-dev
+sudo gem install bundle
 echo -e "\n${YELLOW}[!] install cewl${NC}"
 git clone https://github.com/digininja/CeWL
 cd CeWL
 bundle install
-cd && cd $secret
-
-# install lazagne
-echo -e "\n${YELLOW}[+] download lazagne${NC}"
-wget https://github.com/AlessandroZ/LaZagne/releases/download/1.4/Windows.zip
-unzip Windows.zip
-rm Windows.zip
-mv Windows lazagne
-
-# install findmyhash
-echo -e "\n${YELLOW}[+] donwload findmyhash${NC}"
-mkdir findmyhash
-cd findmyhash
-wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/findmyhash/findmyhash_v1.1.2.py
-mv findmyhash_v1.1.2.py findmyhash.py
-chmod +x findmyhash.py
-cd && cd $secret
-
-# install windows exploit suggester
-echo -e "\n${YELLOW}[!] install windows-exploit-suggester${NC}"
-sudo apt-get install python-xlrd -y
-git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
-cd Windows-Exploit-Suggester
-./windows-exploit-suggester.py --update
 cd && cd $secret
 
 # dont need installation
@@ -265,62 +163,43 @@ git clone https://github.com/stasinopoulos/commix
 echo -e "\n${YELLOW}[+] download theHarvester${NC}"
 git clone https://github.com/laramies/theHarvester
 
-echo -e "\n${YELLOW}[+] download Linux_Exploit_Suggester${NC}"
-git clone https://github.com/PenturaLabs/Linux_Exploit_Suggester
-
-echo -e "\n${YELLOW}[+] download nishang${NC}"
-git clone https://github.com/samratashok/nishang
-
 echo -e "\n${YELLOW}[+] download exploit-database${NC}"
 git clone https://github.com/offensive-security/exploit-database
 
-echo -e "\n${YELLOW}[+] download Responder${NC}"
-git clone https://github.com/SpiderLabs/Responder
-
-echo -e "\n${YELLOW}[+] download rock3tman${NC}"
-git clone https://github.com/binkybear/rock3tman
-
-echo -e "\n${YELLOW}[+] download mpc${NC}"
-git clone https://github.com/g0tmi1k/mpc
-
-# windows binaries
-echo -e "\n${YELLOW}[+] download windows-binaries${NC}"
-wget http://repo.kali.org/kali/pool/non-free/w/windows-binaries/windows-binaries_0.5.orig.tar.gz
-tar -xzvf windows-binaries_0.5.orig.tar.gz
-rm windows-binaries_0.5.orig.tar.gz
-
 # install metasploit
+sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
+sudo gem install bundle
 echo -e "\n${YELLOW}[!] install metasploit${NC}"
 sudo apt-get -y install \
-  autoconf \
-  bison \
-  build-essential \
-  curl \
-  git-core \
-  libapr1 \
-  libaprutil1 \
-  libcurl4-openssl-dev \
-  libgmp3-dev \
-  libpcap-dev \
-  libpq-dev \
-  libreadline6-dev \
-  libsqlite3-dev \
-  libssl-dev \
-  libsvn1 \
-  libtool \
-  libxml2 \
-  libxml2-dev \
-  libxslt-dev \
-  libyaml-dev \
-  locate \
-  ncurses-dev \
-  openssl \
-  postgresql \
-  postgresql-contrib \
-  wget \
-  xsel \
-  zlib1g \
-  zlib1g-dev;
+	autoconf \
+	bison \
+	build-essential \
+	curl \
+	git-core \
+	libapr1 \
+	libaprutil1 \
+	libcurl4-openssl-dev \
+	libgmp3-dev \
+	libpcap-dev \
+	libpq-dev \
+	libreadline6-dev \
+	libsqlite3-dev \
+	libssl-dev \
+	libsvn1 \
+	libtool \
+	libxml2 \
+	libxml2-dev \
+	libxslt-dev \
+	libyaml-dev \
+	locate \
+	ncurses-dev \
+	openssl \
+	postgresql \
+	postgresql-contrib \
+	wget \
+	xsel \
+	zlib1g \
+	zlib1g-dev;
 git clone https://github.com/rapid7/metasploit-framework
 cd metasploit-framework
 curl -s https://raw.githubusercontent.com/vay3t/hax0rpi/master/msfdb > msfdb
@@ -329,22 +208,11 @@ bundle install
 sudo ./msfdb init
 cd && cd $secret
 
-# install beef
-echo -e "\n${YELLOW}[!] install beef${NC}"
-sudo apt-get install libsqlite3-dev sqlite3 -y
-git clone https://github.com/beefproject/beef
-cd beef
-rm Gemfile.lock
-curl -s https://raw.githubusercontent.com/vay3t/hax0rpi/master/beef-Gemfile.lock > Gemfile.lock
-bundle install
-cd && cd $secret
-
 # Disable services in boot
 echo -e "\n${YELLOW}[!] disable services${NC}"
 sudo update-rc.d apache2 disable
 sudo update-rc.d bluetooth disable
 sudo update-rc.d dnsmasq disable
-sudo update-rc.d mysql disable
 sudo update-rc.d postgresql disable
 sudo update-rc.d tor disable
 
