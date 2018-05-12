@@ -43,7 +43,7 @@ echo -e "${YELLOW}[!] enable ssh${NC}"
 sudo update-rc.d ssh enable
 
 # secret directory
-secret=.arsenal
+secret=arsenal
 cd
 mkdir $secret && cd $secret
 echo -e "\n${YELLOW}[+] folder 'secret' created${NC}"
@@ -151,10 +151,8 @@ cd && cd $secret
 sudo apt-get install build-essential ruby-dev
 sudo gem install bundle
 echo -e "\n${YELLOW}[!] install cewl${NC}"
-git clone https://github.com/digininja/CeWL
-cd CeWL
-bundle install
-cd && cd $secret
+git clone https://github.com/digininja/CeWL ~/arsenal/CeWL
+bundle install ~/arsenal/CeWL
 
 # dont need installation
 echo -e "\n${YELLOW}[+] download commix${NC}"
