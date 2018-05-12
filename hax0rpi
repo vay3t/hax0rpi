@@ -151,8 +151,10 @@ cd && cd $secret
 sudo apt-get install build-essential ruby-dev
 sudo gem install bundle
 echo -e "\n${YELLOW}[!] install cewl${NC}"
-git clone https://github.com/digininja/CeWL ~/arsenal/CeWL
-bundle install ~/arsenal/CeWL
+git clone https://github.com/digininja/CeWL
+cd CewL
+bundle install
+cd && cd $secret
 
 # dont need installation
 echo -e "\n${YELLOW}[+] download commix${NC}"
