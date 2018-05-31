@@ -43,7 +43,6 @@ sudo apt install -y \
 		crunch \
 		dnsmasq \
 		dsniff \
-		encfs \
 		filezilla \
 		gimp \
 		git \
