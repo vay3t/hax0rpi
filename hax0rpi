@@ -167,7 +167,7 @@ echo -e "\n${YELLOW}[+] download exploit-database${NC}"
 git clone https://github.com/offensive-security/exploit-database
 
 # install metasploit
-sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
+sudo apt-get -y install build-essential patch ruby-dev zlib1g-dev liblzma-dev
 sudo gem install bundle
 echo -e "\n${YELLOW}[!] install metasploit${NC}"
 sudo apt-get -y install \
