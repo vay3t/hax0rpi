@@ -152,7 +152,7 @@ sudo apt-get install build-essential ruby-dev
 sudo gem install bundle
 echo -e "\n${YELLOW}[!] install cewl${NC}"
 git clone https://github.com/digininja/CeWL
-cd CewL
+cd CeWL
 bundle install
 cd && cd $secret
 
