@@ -172,7 +172,7 @@ wget https://apt.metasploit.com/pool/main/m/metasploit-framework/metasploit-fram
 sudo dpkg -i metasploit-framework_4.17.1+20180712133528.git.8.5e891c9~1rapid7-1_armhf.deb
 rm -f metasploit-framework_4.17.1+20180712133528.git.8.5e891c9~1rapid7-1_armhf.deb
 sudo msfupdate
-sudo apt install postgresql
+sudo apt install postgresql -y
 wget https://raw.githubusercontent.com/vay3t/hax0rpi/master/msfdb
 chmod +x msfdb
 sudo ./msfdb init
@@ -263,12 +263,12 @@ sudo ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit
 
 # disable service
 echo -e "\n${YELLOW}[!] disable services${NC}"
-sudo update-rc.d apache2 disable
-sudo update-rc.d bluetooth disable
-sudo update-rc.d dnsmasq disable
-sudo update-rc.d mariadb disable
-sudo update-rc.d postgresql disable
-sudo update-rc.d tor disable
+sudo systemctl disable apache2
+sudo systemctl disable bluetooth
+sudo systemctl disable dnsmasq
+sudo systemctl disable mariadb
+sudo systemctl disable postgresql
+sudo systemctl disable tor
 
 # update updatedb
 echo -e "\n${YELLOW}[!] updatedb${NC}"
