@@ -34,10 +34,7 @@ sudo reboot
 ### curl
 ```
 sudo apt-get install curl -y
-curl -s https://raw.githubusercontent.com/vay3t/hax0rpi/master/hax0rpi > hax0rpi
-chmod +x hax0rpi
-./hax0rpi
-rm hax0rpi
+curl -s https://raw.githubusercontent.com/vay3t/hax0rpi/master/hax0rpi | bash
 sudo reboot
 ```
 
