@@ -100,7 +100,7 @@ sudo apt-get install -y \
 
 # install from gems
 echo -e "\n${YELLOW}[!] install from gems${NC}"
-sudo gem install anemone wpascan bundle
+sudo gem install anemone wpscan bundle
 
 # install from pip
 echo -e "\n${YELLOW}[!] install from pip${NC}"
