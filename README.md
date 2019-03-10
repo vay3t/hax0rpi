@@ -17,6 +17,9 @@ pi@raspberrypi:~/hax0rpi $ ./hax0rpi
      proceeding. See README (if exist) for more information.
 ```
 
+# Why
+I do not like to be filled with tools, so I try to put the least possible
+
 # How to run?
 
 ### git clone
@@ -118,45 +121,29 @@ dd bs=4M if=kali-linux-2018.1a-rpi3-nexmon.img of=/dev/mmcblk0
 
 
 ### Python tools:
- * hasid
  * scapy
- * python-nmap
  * crackmapexec
  * wafw00f
- * impacket
- * glances
  * sqlmap
+ * shodan
+ * webtech
 
 ### Miscellanous:
- * fing - network scanner
- * empire - powershell empire, post exploitation framework
- * emPyre - python post-exploitation OS X/Linux agent
- * pupy - Cross platform RAT/post-exploitation tool
- * weevely - Web shell RAT, obfuscated PHP * Similar to utility used in 2000.
- * dnsenum - perl script, enumerates DNS information
- * set - Social-Engineer Toolkit
- * net-creds - sniff's passwords and hashes from an interface or pcap file
  * pixiewps - Offline WiFi protected setup brute-force utility
  * reaver - Wifi cracking utility
  * aircrack-ng - wifi cracking utility
- * airodump-ng - wifi cracking utility
  * mdk3 - aircrack utility?
- * dirb - web content scanner
- * p0f - passive operating system identification utility
  * cewl - Ruby utility to spider a website, collecting data for password cracking
- * lazagne - utility to recover passwords from a local computer
- * findmyhash - Online hash lookup utility to find instances of hashes online
  * Windows exploit suggester - self-explanatory, compares Windows patch level against vulnerabilities
  * commix - utility to exploit web vulnerabilities through query command injection
  * theharvester - utility to gather searchable open information about a host address
- * linux exploit suggester - Same as the windows utility but for Linux
- * nishang - Powershell exploitation framework
  * exploit database - command line utility to search exploit database
  * rock3tman - script to setup a VPN
  * mpc - utility to generate meterpreter payloads for the metasploit framework
  * Kali Linux Windows binaries - win32 binaries for use on windows systems
  * metasploit - exploitation framework
- * beef - browser exploitation framework
+ * anemone
+ * wpscan
 
 
 
