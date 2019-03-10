@@ -22,8 +22,8 @@ echo "              | | | | (_| |>  <| |_| | |  | |_) | |             "
 echo '              |_| |_|\__,_/_/\_\\___/|_|  | .__/|_|             '
 echo "                                          |_|                   "
 echo -e "${NC}"
-echo -e "${RED}                  === hax0rpi Release 1.0 ===                   ${NC}"
-echo -e "${RED}                   codename: Like a Rainbow                   ${NC}"
+echo -e "${RED}                  === hax0rpi Release 1.1 ===                   ${NC}"
+echo -e "${RED}                   codename: Maromota Dorada                   ${NC}"
 echo -e "${YELLOW}           A Raspberry Pi Hacker Tools suite by Vay3t           ${NC}"
 echo ""
 echo "----------------------------------------------------------------"
@@ -59,49 +59,171 @@ sudo apt-get install -y \
 	apache2 \
 	arp-scan \
 	crunch \
+	curl \
+	dhex \
 	dnsmasq \
 	dsniff \
-	fail2ban \
+	ettercap-text-only \
+	gdb \
 	git \
+	hexedit \
 	hostapd \
 	hydra \
 	iw \
+	john \
+	kismet \
 	libimage-exiftool-perl \
 	locate \
 	macchanger \
 	masscan \
+	mariadb-client \
+	mariadb-server \
+	mycli \
 	nmap \
 	openvpn \
 	php \
 	proxychains \
 	python-dev \
 	python-pip \
+	ruby-full \
+	screen \
 	smbclient \
 	tcpdump \
 	tmux \
 	tor \
 	torsocks \
 	tree \
+	vim \
+	wipe \
 	wireless-tools \
 	whois;
 
-echo -e "\n${YELLOW}[!] install python tools${NC}"
-sudo pip install sqlmap shodan
+# install from gems
+echo -e "\n${YELLOW}[!] install from gems${NC}"
+sudo gem install anemone wpascan bundle
+
+# install from pip
+echo -e "\n${YELLOW}[!] install from pip${NC}"
+sudo pip install exrex sqlmap shodan webtech wafw00f requests beautifulsoup4
 
 # install scapy
+echo -e "\n${YELLOW}[!] install scapy${NC}"
 sudo apt install -y python-scapy python-matplotlib python-pyx python-ecdsa
 
-# install ruby
-echo -e "\n${YELLOW}[!] install ruby tools${NC}"
-sudo apt-get install build-essential ruby ruby-dev libpcap-dev -y
-sudo gem install bundler
+# clone repos
+echo -e "\n${YELLOW}[!] clone repos${NC}"
+git clone https://github.com/danielmiessler/SecLists
+git clone https://github.com/berzerk0/Probable-Wordlists
+git clone https://github.com/Mebus/cupp
+git clone https://github.com/drwetter/testssl.sh
+git clone https://github.com/m4ll0k/Atlas
+git clone https://github.com/binkybear/rock3tman
+git clone https://github.com/commixproject/commix
+git clone https://github.com/maurosoria/dirsearch
+git clone https://github.com/lgandx/Responder
+git clone https://github.com/g0tmi1k/msfpc
+wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse
 
-# install weevely3
-echo -e "\n${YELLOW}[!] install weevely${NC}"
-sudo apt-get install g++ python-pip libyaml-dev python-dev -y
-git clone https://github.com/epinna/weevely3
-cd weevely3
-sudo pip install -r requirements.txt
+# install sublist3r
+echo -e "\n${YELLOW}[!] install Sublist3r${NC}"
+git clone https://github.com/aboul3la/Sublist3r
+cd Sublist3r
+sudo pip install -r requirements.txt 
+cd && cd $secret
+
+# install whatwaf
+echo -e "\n${YELLOW}[!] install WhatWaf${NC}"
+git clone https://github.com/Ekultek/WhatWaf
+cd WhatWaf
+sudo pip install -r requirements.txt 
+cd && cd $secret
+
+# install routersploit
+echo -e "\n${YELLOW}[!] install routersploit${NC}"
+git clone https://github.com/threat9/routersploit
+cd routersploit
+sudo pip install -r requirements.txt 
+cd && cd $secret
+
+# install theharvester
+echo -e "\n${YELLOW}[!] install theharvester${NC}"
+git clone https://github.com/laramies/theHarvester
+cd theHarvester
+sudo pip install -r requirements.txt 
+cd && cd $secret
+
+# install windows-exploit-suggester
+echo -e "\n${YELLOW}[!] install windows-exploit-suggester${NC}"
+git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
+cd Windows-Exploit-Suggester
+./windows-exploit-suggester.py --update
+cd && cd $secret
+
+#install cewl
+echo -e "\n${YELLOW}[!] install cewl${NC}"
+git clone https://github.com/digininja/CeWL
+cd CeWL
+bundle install
+cd && cd $secret
+
+# install metasploit
+echo -e "\n${YELLOW}[!] install metasploit${NC}"
+wget https://apt.metasploit.com/pool/main/m/metasploit-framework/metasploit-framework_4.17.1%2B20180712133528.git.8.5e891c9~1rapid7-1_armhf.deb
+sudo dpkg -i metasploit-framework_4.17.1+20180712133528.git.8.5e891c9~1rapid7-1_armhf.deb
+rm -f metasploit-framework_4.17.1+20180712133528.git.8.5e891c9~1rapid7-1_armhf.deb
+sudo msfupdate
+sudo apt install postgresql
+wget https://raw.githubusercontent.com/vay3t/hax0rpi/master/msfdb
+chmod +x msfdb
+sudo ./msfdb init
+cd && cd $secret
+
+# install golang
+echo -e "\n${YELLOW}[!] install golang${NC}"
+sudo apt install golang
+cd && mkdir go
+echo 'export GOPATH=$HOME/go' >> ~/.profile
+echo 'PATH="$HOME/go/bin:$PATH"' >> ~/.profile
+source ~/.profile
+cd && cd $secret
+
+# install gobuster
+echo -e "\n${YELLOW}[!] install gobuster${NC}"
+go get github.com/OJ/gobuster
+cd && cd $secret
+
+# install bettercap
+echo -e "\n${YELLOW}[!] install bettercap${NC}"
+sudo apt install libpcap-dev libnetfilter-queue-dev
+wget https://github.com/bettercap/bettercap/releases/download/v2.17/bettercap_linux_arm7_2.17.zip
+unzip bettercap_linux_arm7_2.17.zip
+rm README.md 
+rm LICENSE.md
+cd && cd $secret
+
+# install aircrack-ng
+echo -e "\n${YELLOW}[!] install aircrack-ng${NC}"
+sudo apt install -y autoconf automake libtool
+sudo apt install -y libssl-dev libgcrypt20-dev libnl-3-dev libnl-genl-3-dev ethtool
+wget https://download.aircrack-ng.org/aircrack-ng-1.5.2.tar.gz
+echo "decompress aircrack-ng-1.2.tar.gz"
+tar -zxvf aircrack-ng-1.5.2.tar.gz
+rm aircrack-ng-1.5.2.tar.gz
+cd aircrack-ng-1.5.2
+./autogen
+make
+sudo make install
+sudo airodump-ng-oui-update
+cd && cd $secret
+
+# instal mdk3
+echo -e "\n${YELLOW}[!] install mdk3${NC}"
+wget http://aspj.aircrack-ng.org/mdk3-v6.tar.bz2
+tar jxvf mdk3-v6.tar.bz2
+rm mdk3-v6.tar.bz2
+cd mdk3-v6
+make
+sudo make install
 cd && cd $secret
 
 # install pixie-dust
@@ -124,99 +246,27 @@ make
 sudo make install
 cd && cd $secret
 
-# install aircrack-ng
-echo -e "\n${YELLOW}[!] install aircrack-ng${NC}"
-sudo apt-get -y install libssl-dev libnl-3-dev libnl-genl-3-dev libnl-idiag-3-200 libnl-idiag-3-dev ethtool
-wget http://download.aircrack-ng.org/aircrack-ng-1.2.tar.gz
-echo "decompress aircrack-ng-1.2.tar.gz"
-tar -zxvf aircrack-ng-1.2.tar.gz
-rm aircrack-ng-1.2.tar.gz
-cd aircrack-ng-1.2
-make
-sudo make install
-sudo airodump-ng-oui-update
-cd && cd $secret
-
-# instal mdk3
-echo -e "\n${YELLOW}[!] install mdk3${NC}"
-wget http://aspj.aircrack-ng.org/mdk3-v6.tar.bz2
-tar jxvf mdk3-v6.tar.bz2
-rm mdk3-v6.tar.bz2
-cd mdk3-v6
+# install shc
+echo -e "\n${YELLOW}[!] install shc${NC}"
+git clone https://github.com/neurobin/shc
+cd shc
+./configure
 make
 sudo make install
 cd && cd $secret
 
-# install cewl
-sudo apt-get install build-essential ruby-dev
-sudo gem install bundle
-echo -e "\n${YELLOW}[!] install cewl${NC}"
-git clone https://github.com/digininja/CeWL
-cd CeWL
-bundle install
-cd && cd $secret
-
-# dont need installation
-echo -e "\n${YELLOW}[+] download commix${NC}"
-git clone https://github.com/stasinopoulos/commix
-
-echo -e "\n${YELLOW}[+] download theHarvester${NC}"
-git clone https://github.com/laramies/theHarvester
-
-echo -e "\n${YELLOW}[+] download exploit-database${NC}"
-git clone https://github.com/offensive-security/exploit-database
-
-# install metasploit
-sudo apt-get -y install build-essential patch ruby-dev zlib1g-dev liblzma-dev
-sudo gem install bundle
-echo -e "\n${YELLOW}[!] install metasploit${NC}"
-sudo apt-get -y install \
-	autoconf \
-	bison \
-	build-essential \
-	curl \
-	git-core \
-	libapr1 \
-	libaprutil1 \
-	libcurl4-openssl-dev \
-	libgmp3-dev \
-	libpcap-dev \
-	libpq-dev \
-	libreadline6-dev \
-	libsqlite3-dev \
-	libssl-dev \
-	libsvn1 \
-	libtool \
-	libxml2 \
-	libxml2-dev \
-	libxslt-dev \
-	libyaml-dev \
-	locate \
-	ncurses-dev \
-	openssl \
-	postgresql \
-	postgresql-contrib \
-	wget \
-	xsel \
-	zlib1g \
-	zlib1g-dev;
-git clone https://github.com/rapid7/metasploit-framework
-cd metasploit-framework
-curl -s https://raw.githubusercontent.com/vay3t/hax0rpi/master/msfdb > msfdb
-chmod +x msfdb
-bundle install
-sudo ./msfdb init
-cd && cd $secret
-
-# Disable services in boot
+# disable service
 echo -e "\n${YELLOW}[!] disable services${NC}"
 sudo update-rc.d apache2 disable
 sudo update-rc.d bluetooth disable
 sudo update-rc.d dnsmasq disable
+sudo update-rc.d mariadb disable
 sudo update-rc.d postgresql disable
 sudo update-rc.d tor disable
 
+# update updatedb
 echo -e "\n${YELLOW}[!] updatedb${NC}"
 sudo updatedb
 
+# need reboot
 echo -e "\n${GREEN}[>] Need reboot${NC}"
