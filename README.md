@@ -63,14 +63,6 @@ dd bs=4M if=2016-11-25-raspbian-jessie-lite.img of=/dev/mmcblk0
 
 more information: [https://www.raspberrypi.org/documentation/installation/installing-images/linux.md](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
 
-# How to add Kali repo in Raspbian? (not recomended)
-```
-sudo su
-apt-key adv --keyserver pgp.mit.edu --recv-keys ED444FF07D8D0BF6
-echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
-apt update -m
-```
-
 ### KALI LINUX IN RPI
 ```
 wget https://images.offensive-security.com/arm-images/kali-linux-2018.1a-rpi3-nexmon.img.xz
