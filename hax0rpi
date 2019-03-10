@@ -79,6 +79,7 @@ sudo apt-get install -y \
 	mariadb-client \
 	mariadb-server \
 	mycli \
+	nbtscan \
 	nmap \
 	openvpn \
 	php \
