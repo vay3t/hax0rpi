@@ -255,6 +255,11 @@ make
 sudo make install
 cd && cd $secret
 
+# install searchsploit
+sudo git clone https://github.com/offensive-security/exploitdb.git /opt/exploitdb
+sed 's|path_array+=(.*)|path_array+=("/opt/exploitdb")|g' /opt/exploitdb/.searchsploit_rc > ~/.searchsploit_rc
+sudo ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit
+
 # disable service
 echo -e "\n${YELLOW}[!] disable services${NC}"
 sudo update-rc.d apache2 disable
