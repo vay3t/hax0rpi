@@ -107,7 +107,7 @@ sudo gem install anemone wpscan bundle
 
 # install from pip
 echo -e "\n${YELLOW}[!] install from pip${NC}"
-sudo pip install exrex sqlmap shodan webtech wafw00f requests beautifulsoup4
+sudo pip install exrex sqlmap shodan webtech wafw00f requests beautifulsoup4 crackmapexec
 
 # install scapy
 echo -e "\n${YELLOW}[!] install scapy${NC}"
