@@ -75,42 +75,47 @@ dd bs=4M if=kali-linux-2018.1a-rpi3-nexmon.img of=/dev/mmcblk0
  * apache2 - http daemon
  * arp-scan - scans lan
  * crunch - password list generator
+ * curl -
+ * dhex -
  * dnsmasq - DNS forwarder
  * dsniff - packet sniffer
- * ettercap - packet sniffer
- * fail2ban - rule based security for services
+ * ettercap-text-only - packet sniffer
+ * gdb - gnu debugger
  * git - development tool for cloning repositories
- * goaccess - visual web analyzer
+ * hexedit -
  * hostapd - wireless utility for hosting an access point
- * hping3 - ICMP network utility
  * hydra - Login bruteforce utility
  * iw - wireless utilities
- * libimage-exiftool-perl - perl tool for generating images
+ * john -
+ * kismet -
+ * libimage-exiftool-perl - perl tool for metadata files
  * locate - local file location database
  * macchanger - utility to change network MAC address
  * masscan - Port scanning utility
- * mysql-client - SQL client
- * mysql-server - SQL server
+ * mariadb-client - mariadb database client
+ * mariadb-server - mariadb database server
  * nbtscan - Utility for scanning Windows or Samba network shares
  * nmap - Port scanning utility
+ * mycli - mysql client
  * openvpn - VPN software
- * pdfcrack - Cracks PDF passwords
  * php - Dynamic scripting language for web applications
- * pi-bluetooth - Bluetooth support for Raspberry Pi
  * proxychains - Utility to forward selected apps through a proxy or chain of proxies
  * python-dev - Python development libraries
  * python-pip - Python packages
- * rarcrack - Password cracker for RAR files
+ * ruby-full - install ruby
+ * screen - screen terminal
+ * smbclient - samba client
  * sslstrip - Utility to scan for HTTPS connections and obfuscate to non-SSL addresses
  * tcpdump - Packet sniffing utility
+ * tmux - terminal with anabolics
  * tor - Anonymous onion routing
- * tor-arm - Tor package for ARM processors
+ * torsocks - utility socks for tor
  * tree - Directory listing utility
- * vlc - Video player
+ * vim - text editor and IDE
  * wipe - Secure drive/data erasure utility
  * wireless-tools - Linux Wireless tools
  * whois - internet address lookup utility
- * wvdial - PPP/modem utility
+
 
 ### Python tools:
  * hasid
