@@ -43,22 +43,12 @@ sudo reboot
 
 # How to install Raspbian from Linux
 
-### RASPBIAN JESSIE WITH PIXEL
 ```
-wget http://downloads.raspberrypi.org/raspbian/images/raspbian-2016-11-29/2016-11-25-raspbian-jessie.zip
-unzip 2016-11-25-raspbian-jessie.zip
+wget http://director.downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2018-11-15/2018-11-13-raspbian-stretch-lite.zip
+unzip 2018-11-13-raspbian-stretch-lite.zip
 umount /dev/mmcblk0p1
 umount /dev/mmcblk0p2
-dd bs=4M if=2016-11-25-raspbian-jessie.img of=/dev/mmcblk0
-```
-
-### RASPBIAN JESSIE LITE
-```
-wget http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2016-11-29/2016-11-25-raspbian-jessie-lite.zip
-unzip 2016-11-25-raspbian-jessie-lite.zip
-umount /dev/mmcblk0p1
-umount /dev/mmcblk0p2
-dd bs=4M if=2016-11-25-raspbian-jessie-lite.img of=/dev/mmcblk0
+dd bs=4M if=2018-11-13-raspbian-stretch-lite.img of=/dev/mmcblk0
 ```
 
 more information: [https://www.raspberrypi.org/documentation/installation/installing-images/linux.md](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
