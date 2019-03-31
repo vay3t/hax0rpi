@@ -214,7 +214,7 @@ echo "decompress aircrack-ng-1.2.tar.gz"
 tar -zxvf aircrack-ng-1.5.2.tar.gz
 rm aircrack-ng-1.5.2.tar.gz
 cd aircrack-ng-1.5.2
-./autogen
+./autogen.sh
 make
 sudo make install
 sudo airodump-ng-oui-update
