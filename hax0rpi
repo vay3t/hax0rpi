@@ -40,7 +40,7 @@ echo ""
 #passwd pi
 
 echo -e "${YELLOW}[!] enable ssh${NC}"
-sudo update-rc.d ssh enable
+sudo systemctl enable ssh
 
 # secret directory
 secret=arsenal
@@ -70,12 +70,10 @@ sudo apt-get install -y \
 	hostapd \
 	hydra \
 	iw \
-	john \
 	kismet \
 	libimage-exiftool-perl \
 	locate \
 	macchanger \
-	masscan \
 	mariadb-client \
 	mariadb-server \
 	mycli \
@@ -83,7 +81,6 @@ sudo apt-get install -y \
 	nmap \
 	openvpn \
 	php \
-	proxychains \
 	python-dev \
 	python3-dev \
 	python-pip \
@@ -108,25 +105,94 @@ sudo gem install anemone wpscan bundle
 # install from pip
 echo -e "\n${YELLOW}[!] install from pip${NC}"
 sudo apt install -y libffi-dev
-sudo pip install exrex sqlmap shodan webtech wafw00f requests beautifulsoup4 crackmapexec
-
-# install scapy
-echo -e "\n${YELLOW}[!] install scapy${NC}"
-sudo apt install -y python-scapy python-matplotlib python-pyx python-ecdsa
+sudo pip3 install exrex sqlmap shodan wafw00f requests beautifulsoup4 scapy wfuzz
 
 # clone repos
 echo -e "\n${YELLOW}[!] clone repos${NC}"
-git clone https://github.com/danielmiessler/SecLists
-git clone https://github.com/berzerk0/Probable-Wordlists
 git clone https://github.com/Mebus/cupp
 git clone https://github.com/drwetter/testssl.sh
 git clone https://github.com/m4ll0k/Atlas
-git clone https://github.com/binkybear/rock3tman
 git clone https://github.com/commixproject/commix
 git clone https://github.com/maurosoria/dirsearch
 git clone https://github.com/lgandx/Responder
-git clone https://github.com/g0tmi1k/msfpc
-wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse
+git clone https://github.com/vulnersCom/nmap-vulners
+git clone https://github.com/byt3bl33d3r/python-Wappalyzer
+git clone https://github.com/arthaud/git-dumper
+
+# portspoof
+git clone https://github.com/drk1wi/portspoof
+cd portspoof
+./configure
+make
+sudo make install
+cd && cd $secret
+
+# git-dumper
+git clone https://github.com/arthaud/git-dumper
+cd git-dumper
+sudo pip3 install -r requirements.txt
+cd && cd $secret
+
+# crackmapexec
+git clone --recursive https://github.com/byt3bl33d3r/CrackMapExec
+cd CrackMapExec
+python3 setup.py install
+cd && cd $secret
+
+# photon
+git clone https://github.com/s0md3v/Photon
+cd Photon
+sudo pip3 install -r requirements.txt
+cd && cd $secret
+
+# amass
+wget https://github.com/OWASP/Amass/releases/download/v3.5.5/amass_v3.5.5_linux_arm.zip
+unzip amass_v3.5.5_linux_arm.zip
+rm amass_v3.5.5_linux_arm.zip
+cd && cd $secret
+
+# intruder payloads
+git clone https://github.com/1N3/IntruderPayloads
+cd IntruderPayloads
+./install.sh
+cd && cd $secret
+
+# massscan
+sudo apt-get install git gcc make libpcap-dev
+git clone https://github.com/robertdavidgraham/masscan
+cd masscan
+make -j
+sudo make install
+cd && cd $secret
+
+# proxychains
+git clone https://github.com/rofl0r/proxychains-ng
+cd proxychains-ng
+./configure --prefix=/usr --sysconfdir=/etc
+make -j
+sudo make install
+sudo make install-config
+cd && cd $secret
+
+# rexgen-john
+echo -e "\n${YELLOW}[!] install rexgen-john${NC}"
+sudo apt-get -y install cmake bison flex libicu-dev
+mkdir ~/src
+cd ~/src
+git clone https://github.com/vay3t/rexgen-john rexgen
+cd rexgen
+./install.sh
+sudo ldconfig
+cd && cd $secret
+
+# john
+echo -e "\n${YELLOW}[!] install john${NC}"
+sudo apt-get -y install git build-essential libssl-dev zlib1g-dev
+sudo apt-get -y install yasm pkg-config libgmp-dev libpcap-dev libbz2-dev
+git clone https://github.com/magnumripper/JohnTheRipper john
+cd john/src
+./configure --enable-rexgen && make -s clean && make -sj4
+cd && cd $secret
 
 # install sublist3r
 echo -e "\n${YELLOW}[!] install Sublist3r${NC}"
@@ -135,19 +201,6 @@ cd Sublist3r
 sudo pip install -r requirements.txt 
 cd && cd $secret
 
-# install whatwaf
-echo -e "\n${YELLOW}[!] install WhatWaf${NC}"
-git clone https://github.com/Ekultek/WhatWaf
-cd WhatWaf
-sudo pip install -r requirements.txt 
-cd && cd $secret
-
-# install routersploit
-echo -e "\n${YELLOW}[!] install routersploit${NC}"
-git clone https://github.com/threat9/routersploit
-cd routersploit
-sudo pip3 install -r requirements.txt 
-cd && cd $secret
 
 # install theharvester
 echo -e "\n${YELLOW}[!] install theharvester${NC}"
@@ -172,14 +225,11 @@ cd && cd $secret
 
 # install metasploit
 echo -e "\n${YELLOW}[!] install metasploit${NC}"
-wget https://apt.metasploit.com/pool/main/m/metasploit-framework/metasploit-framework_4.17.1%2B20180712133528.git.8.5e891c9~1rapid7-1_armhf.deb
+wget https://apt.metasploit.com/pool/main/m/metasploit-framework/metasploit-framework_5.0.85%2B20200414093809~1rapid7-1_armhf.deb
 sudo dpkg -i metasploit-framework_4.17.1+20180712133528.git.8.5e891c9~1rapid7-1_armhf.deb
 rm -f metasploit-framework_4.17.1+20180712133528.git.8.5e891c9~1rapid7-1_armhf.deb
 sudo msfupdate
-sudo apt install postgresql -y
-wget https://raw.githubusercontent.com/vay3t/hax0rpi/master/msfdb
-chmod +x msfdb
-sudo ./msfdb init
+msfdb init
 cd && cd $secret
 
 # install golang
@@ -209,11 +259,11 @@ cd && cd $secret
 echo -e "\n${YELLOW}[!] install aircrack-ng${NC}"
 sudo apt install -y autoconf automake libtool
 sudo apt install -y libssl-dev libgcrypt20-dev libnl-3-dev libnl-genl-3-dev ethtool
-wget https://download.aircrack-ng.org/aircrack-ng-1.5.2.tar.gz
-echo "decompress aircrack-ng-1.2.tar.gz"
-tar -zxvf aircrack-ng-1.5.2.tar.gz
-rm aircrack-ng-1.5.2.tar.gz
-cd aircrack-ng-1.5.2
+wget https://download.aircrack-ng.org/aircrack-ng-1.6.tar.gz
+echo "decompress aircrack-ng..."
+tar -zxvf aircrack-ng-1.6.tar.gz
+rm aircrack-ng-1.6.tar.gz
+cd aircrack-ng-1.6
 ./autogen.sh
 make
 sudo make install
@@ -222,10 +272,9 @@ cd && cd $secret
 
 # instal mdk3
 echo -e "\n${YELLOW}[!] install mdk3${NC}"
-wget http://aspj.aircrack-ng.org/mdk3-v6.tar.bz2
-tar jxvf mdk3-v6.tar.bz2
-rm mdk3-v6.tar.bz2
-cd mdk3-v6
+sudo apt-get install pkg-config libnl-3-dev libnl-genl-3-dev libpcap-dev 
+git clone https://github.com/aircrack-ng/mdk4
+cd mdk4
 make
 sudo make install
 cd && cd $secret
