@@ -44,25 +44,16 @@ sudo reboot
 # How to install Raspbian from Linux
 
 ```
-wget http://director.downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2018-11-15/2018-11-13-raspbian-stretch-lite.zip
-unzip 2018-11-13-raspbian-stretch-lite.zip
+wget https://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2020-02-14/2020-02-13-raspbian-buster-lite.zip
+unzip 2020-02-13-raspbian-buster-lite.zip
 umount /dev/mmcblk0p1
 umount /dev/mmcblk0p2
-dd bs=4M if=2018-11-13-raspbian-stretch-lite.img of=/dev/mmcblk0
+dd bs=4M if=2020-02-13-raspbian-buster-lite.img of=/dev/mmcblk0
 ```
 
 more information: [https://www.raspberrypi.org/documentation/installation/installing-images/linux.md](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
 
-### KALI LINUX IN RPI
-```
-wget https://images.offensive-security.com/arm-images/kali-linux-2018.1a-rpi3-nexmon.img.xz
-xz -d kali-linux-2018.1a-rpi3-nexmon.img.xz
-umount /dev/mmcblk0p1
-umount /dev/mmcblk0p2
-dd bs=4M if=kali-linux-2018.1a-rpi3-nexmon.img of=/dev/mmcblk0
-```
-
-# Tools List
+# Tools List (not updated)
 
 ### Installed via apt-get:
  * apache2 - http daemon
@@ -116,20 +107,18 @@ dd bs=4M if=kali-linux-2018.1a-rpi3-nexmon.img of=/dev/mmcblk0
  * wafw00f
  * sqlmap
  * shodan
- * webtech
 
 ### Miscellanous:
  * pixiewps - Offline WiFi protected setup brute-force utility
  * reaver - Wifi cracking utility
  * aircrack-ng - wifi cracking utility
- * mdk3 - aircrack utility?
+ * mdk4 - aircrack utility?
  * cewl - Ruby utility to spider a website, collecting data for password cracking
  * Windows exploit suggester - self-explanatory, compares Windows patch level against vulnerabilities
  * commix - utility to exploit web vulnerabilities through query command injection
  * theharvester - utility to gather searchable open information about a host address
  * exploit database - command line utility to search exploit database
  * rock3tman - script to setup a VPN
- * mpc - utility to generate meterpreter payloads for the metasploit framework
  * Kali Linux Windows binaries - win32 binaries for use on windows systems
  * metasploit - exploitation framework
  * anemone
