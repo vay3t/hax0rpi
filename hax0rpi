@@ -226,8 +226,8 @@ cd && cd $secret
 # install metasploit
 echo -e "\n${YELLOW}[!] install metasploit${NC}"
 wget https://apt.metasploit.com/pool/main/m/metasploit-framework/metasploit-framework_5.0.85%2B20200414093809~1rapid7-1_armhf.deb
-sudo dpkg -i metasploit-framework_4.17.1+20180712133528.git.8.5e891c9~1rapid7-1_armhf.deb
-rm -f metasploit-framework_4.17.1+20180712133528.git.8.5e891c9~1rapid7-1_armhf.deb
+sudo dpkg -i metasploit-framework_5.0.85%2B20200414093809~1rapid7-1_armhf.deb
+rm -f metasploit-framework_5.0.85%2B20200414093809~1rapid7-1_armhf.deb
 sudo msfupdate
 msfdb init
 cd && cd $secret
