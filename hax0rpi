@@ -248,7 +248,7 @@ cd && cd $secret
 
 # install metasploit
 echo -e "\n${YELLOW}[!] install metasploit${NC}"
-wget http://apt.metasploit.com/pool/main/m/metasploit-framework/metasploit-framework_5.0.99%2B20200713093516~1rapid7-1_armhf.deb
+wget https://apt.metasploit.com/pool/main/m/metasploit-framework/metasploit-framework_5.0.99%2B20200713093516~1rapid7-1_armhf.deb
 sudo dpkg -i metasploit-framework_5.0.99%2B20200713093516~1rapid7-1_armhf.deb
 rm -f metasploit-framework_5.0.99%2B20200713093516~1rapid7-1_armhf.deb
 sudo msfupdate
@@ -272,7 +272,7 @@ sudo airodump-ng-oui-update
 cd && cd $secret
 
 # instal mdk3
-echo -e "\n${YELLOW}[!] install mdk34${NC}"
+echo -e "\n${YELLOW}[!] install mdk4${NC}"
 sudo apt-get install pkg-config libnl-3-dev libnl-genl-3-dev libpcap-dev 
 git clone https://github.com/aircrack-ng/mdk4
 cd mdk4
@@ -315,6 +315,14 @@ git clone https://github.com/lijiejie/ds_store_exp
 cd ds_store_exp
 sudo pip3 install -r requirements.txt
 cd && cd $secret
+
+# install fing
+mkdir fing
+cd fing
+wget https://www.fing.com/images/uploads/general/CLI_Linux_Debian_5.5.2.zip
+sudo dpkg -i fing-5.5.2-armhf.deb
+cd && cd $secret
+rm -rf fing
 
 # install searchsploit
 echo -e "\n${YELLOW}[!] install searchsploit${NC}"
