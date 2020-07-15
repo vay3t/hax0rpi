@@ -22,7 +22,7 @@ echo "              | | | | (_| |>  <| |_| | |  | |_) | |             "
 echo '              |_| |_|\__,_/_/\_\\___/|_|  | .__/|_|             '
 echo "                                          |_|                   "
 echo -e "${NC}"
-echo -e "${RED}                  === hax0rpi Release 1.1 ===                   ${NC}"
+echo -e "${RED}                  === hax0rpi Release 1.2 ===                   ${NC}"
 echo -e "${RED}                   codename: Maromota Dorada                   ${NC}"
 echo -e "${YELLOW}           A Raspberry Pi Hacker Tools suite by Vay3t           ${NC}"
 echo ""
@@ -64,7 +64,6 @@ sudo apt-get install -y \
 	dnsmasq \
 	dsniff \
 	ettercap-text-only \
-	gdb \
 	git \
 	hexedit \
 	hostapd \
@@ -78,16 +77,17 @@ sudo apt-get install -y \
 	mariadb-server \
 	mycli \
 	nbtscan \
+	netcat \
+	netdiscover \
 	nmap \
 	openvpn \
 	php \
-	python-dev \
 	python3-dev \
-	python-pip \
 	python3-pip \
 	ruby-full \
 	screen \
 	smbclient \
+	snap \
 	tcpdump \
 	tmux \
 	tor \
@@ -98,14 +98,37 @@ sudo apt-get install -y \
 	wireless-tools \
 	whois;
 
+# snap
+sudo snap install amass
+sudo snap install go --classic
+
+
+# install golang programs
+go get -v -u github.com/iamstoxe/urlgrab
+go get -v -u github.com/asciimoo/wuzz
+go get -v -u github.com/tomnomnom/fff
+go get -v -u github.com/tomnomnom/httprobe
+go get -v -u github.com/tomnomnom/waybackurls
+go get -v -u github.com/mvdan/xurls
+go get -v -u github.com/tomnomnom/unfurl
+go get -v -u github.com/xxxserxxx/gotop/cmd/gotop
+go get -v -u github.com/BBVA/kapow
+go get -v -u github.com/ffuf/pencode/cmd/pencode
+go get -v -u github.com/tomnomnom/gron
+go get -v -u github.com/davecheney/httpstat
+go get -v -u github.com/OJ/gobuster
+go get -v -u github.com/ffuf/ffuf
+go get -v -u github.com/ericchiang/pup
+go get -v -u github.com/bettercap/bettercap
+
 # install from gems
 echo -e "\n${YELLOW}[!] install from gems${NC}"
-sudo gem install anemone wpscan bundle
+sudo gem install wpscan bundle evil-winrm
 
 # install from pip
 echo -e "\n${YELLOW}[!] install from pip${NC}"
 sudo apt install -y libffi-dev
-sudo pip3 install exrex sqlmap shodan wafw00f requests beautifulsoup4 scapy wfuzz
+sudo pip3 install exrex sqlmap shodan wafw00f requests beautifulsoup4 scapy
 
 # clone repos
 echo -e "\n${YELLOW}[!] clone repos${NC}"
@@ -116,8 +139,13 @@ git clone https://github.com/commixproject/commix
 git clone https://github.com/maurosoria/dirsearch
 git clone https://github.com/lgandx/Responder
 git clone https://github.com/vulnersCom/nmap-vulners
-git clone https://github.com/byt3bl33d3r/python-Wappalyzer
-git clone https://github.com/arthaud/git-dumper
+
+sudo pip3 install git+https://github.com/byt3bl33d3r/python-Wappalyzer
+
+# frp
+wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_arm.tar.gz
+tar zxvf frp_0.33.0_linux_arm.tar.gz
+rm frp_0.33.0_linux_arm.tar.gz
 
 # portspoof
 git clone https://github.com/drk1wi/portspoof
@@ -143,12 +171,6 @@ cd && cd $secret
 git clone https://github.com/s0md3v/Photon
 cd Photon
 sudo pip3 install -r requirements.txt
-cd && cd $secret
-
-# amass
-wget https://github.com/OWASP/Amass/releases/download/v3.5.5/amass_v3.5.5_linux_arm.zip
-unzip amass_v3.5.5_linux_arm.zip
-rm amass_v3.5.5_linux_arm.zip
 cd && cd $secret
 
 # intruder payloads
@@ -221,39 +243,18 @@ echo -e "\n${YELLOW}[!] install cewl${NC}"
 git clone https://github.com/digininja/CeWL
 cd CeWL
 bundle install
+ruby -W0 ./cewl.rb
 cd && cd $secret
 
 # install metasploit
 echo -e "\n${YELLOW}[!] install metasploit${NC}"
-wget https://apt.metasploit.com/pool/main/m/metasploit-framework/metasploit-framework_5.0.85%2B20200414093809~1rapid7-1_armhf.deb
-sudo dpkg -i metasploit-framework_5.0.85%2B20200414093809~1rapid7-1_armhf.deb
-rm -f metasploit-framework_5.0.85%2B20200414093809~1rapid7-1_armhf.deb
+wget http://apt.metasploit.com/pool/main/m/metasploit-framework/metasploit-framework_5.0.99%2B20200713093516~1rapid7-1_armhf.deb
+sudo dpkg -i metasploit-framework_5.0.99%2B20200713093516~1rapid7-1_armhf.deb
+rm -f metasploit-framework_5.0.99%2B20200713093516~1rapid7-1_armhf.deb
 sudo msfupdate
 msfdb init
 cd && cd $secret
 
-# install golang
-echo -e "\n${YELLOW}[!] install golang${NC}"
-sudo apt install golang
-cd && mkdir go
-echo 'export GOPATH=$HOME/go' >> ~/.profile
-echo 'PATH="$HOME/go/bin:$PATH"' >> ~/.profile
-source ~/.profile
-cd && cd $secret
-
-# install gobuster
-echo -e "\n${YELLOW}[!] install gobuster${NC}"
-go get github.com/OJ/gobuster
-cd && cd $secret
-
-# install bettercap
-echo -e "\n${YELLOW}[!] install bettercap${NC}"
-sudo apt install libpcap-dev libnetfilter-queue-dev
-wget https://github.com/bettercap/bettercap/releases/download/v2.17/bettercap_linux_arm7_2.17.zip
-unzip bettercap_linux_arm7_2.17.zip
-rm README.md 
-rm LICENSE.md
-cd && cd $secret
 
 # install aircrack-ng
 echo -e "\n${YELLOW}[!] install aircrack-ng${NC}"
@@ -271,7 +272,7 @@ sudo airodump-ng-oui-update
 cd && cd $secret
 
 # instal mdk3
-echo -e "\n${YELLOW}[!] install mdk3${NC}"
+echo -e "\n${YELLOW}[!] install mdk34${NC}"
 sudo apt-get install pkg-config libnl-3-dev libnl-genl-3-dev libpcap-dev 
 git clone https://github.com/aircrack-ng/mdk4
 cd mdk4
@@ -306,6 +307,13 @@ cd shc
 ./configure
 make
 sudo make install
+cd && cd $secret
+
+# install ds_store_exp
+echo -e "\n${YELLOW}[!] install ds_store_exp${NC}"
+git clone https://github.com/lijiejie/ds_store_exp
+cd ds_store_exp
+sudo pip3 install -r requirements.txt
 cd && cd $secret
 
 # install searchsploit
