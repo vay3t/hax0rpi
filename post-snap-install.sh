@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ !$(which snap) ]; then
-    echo please install snap 'sudo apt install snap'
+    echo "please install snap 'sudo apt install snap'"
     exit
 fi
 
