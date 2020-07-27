@@ -26,4 +26,6 @@ go get -v -u github.com/davecheney/httpstat
 go get -v -u github.com/OJ/gobuster
 go get -v -u github.com/ffuf/ffuf
 go get -v -u github.com/ericchiang/pup
-go get -v -u github.com/bettercap/bettercap
+
+echo 'GOBIN=$HOME/go/bin' >> ~/.bashrc
+echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
