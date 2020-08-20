@@ -26,6 +26,7 @@ go get -v -u github.com/davecheney/httpstat
 go get -v -u github.com/OJ/gobuster
 go get -v -u github.com/ffuf/ffuf
 go get -v -u github.com/ericchiang/pup
+GO111MODULE=on go get -v -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 
 echo 'GOBIN=$HOME/go/bin' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
