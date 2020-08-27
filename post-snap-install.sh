@@ -29,6 +29,8 @@ go get -v -u github.com/ericchiang/pup
 GO111MODULE=on go get -v -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 GO111MODULE=auto go get -v -u github.com/projectdiscovery/httpx/cmd/httpx
 GO111MODULE=auto go get -v -u github.com/projectdiscovery/subfinder/cmd/subfinder
+go get -v -u github.com/haccer/subjack
+go get -v -u github.com/tomnomnom/assetfinder
 
 echo 'GOBIN=$HOME/go/bin' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
