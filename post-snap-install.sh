@@ -30,11 +30,15 @@ go get -v -u github.com/ffuf/ffuf
 go get -v -u github.com/ffuf/pencode/cmd/pencode
 go get -v -u github.com/ericchiang/pup
 go get -v -u github.com/haccer/subjack
+go get -v -u github.com/1ndianl33t/urlprobe
+GO111MODULE=on go get -v -u github.com/lc/gau
 GO111MODULE=on go get -v .u github.com/OWASP/Amass/v3/...
 GO111MODULE=on go get -v -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 GO111MODULE=on go get -v -u github.com/projectdiscovery/naabu/cmd/naabu
+GO111MODULE=on go get -v -u github.com/projectdiscovery/shuffledns/cmd/shuffledns
 GO111MODULE=auto go get -v -u github.com/projectdiscovery/httpx/cmd/httpx
 GO111MODULE=auto go get -v -u github.com/projectdiscovery/subfinder/cmd/subfinder
+
 
 
 
