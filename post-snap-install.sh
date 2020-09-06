@@ -21,6 +21,7 @@ go get -v -u github.com/tomnomnom/assetfinder
 go get -v -u github.com/tomnomnom/unfurl
 go get -v -u github.com/tomnomnom/gron
 go get -v -u github.com/tomnomnom/qsreplace
+go get -v -u github.com/tomnomnom/gf
 go get -v -u github.com/mvdan/xurls
 go get -v -u github.com/xxxserxxx/gotop/cmd/gotop
 go get -v -u github.com/BBVA/kapow
