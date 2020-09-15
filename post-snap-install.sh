@@ -32,6 +32,7 @@ go get -v -u github.com/ffuf/pencode/cmd/pencode
 go get -v -u github.com/ericchiang/pup
 go get -v -u github.com/haccer/subjack
 go get -v -u github.com/1ndianl33t/urlprobe
+go get -v -u github.com/shenwei356/rush/
 GO111MODULE=on go get -v -u github.com/lc/gau
 GO111MODULE=on go get -v .u github.com/OWASP/Amass/v3/...
 GO111MODULE=on go get -v -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei
