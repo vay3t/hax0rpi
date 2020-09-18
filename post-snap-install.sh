@@ -17,34 +17,34 @@ function exit_trap() {
 
 # install golang programs
 
-go get -u github.com/asciimoo/wuzz
-go get -u github.com/tomnomnom/fff
-go get -u github.com/tomnomnom/httprobe
-go get -u github.com/tomnomnom/waybackurls
-go get -u github.com/tomnomnom/assetfinder
-go get -u github.com/tomnomnom/unfurl
-go get -u github.com/tomnomnom/gron
-go get -u github.com/tomnomnom/qsreplace
-go get -u github.com/tomnomnom/gf
-go get -u github.com/mvdan/xurls
-go get -u github.com/xxxserxxx/gotop/cmd/gotop
-go get -u github.com/BBVA/kapow
-go get -u github.com/davecheney/httpstat
-go get -u github.com/OJ/gobuster
-go get -u github.com/ffuf/ffuf
-go get -u github.com/ffuf/pencode/cmd/pencode
-go get -u github.com/ericchiang/pup
-go get -u github.com/haccer/subjack
-go get -u github.com/1ndianl33t/urlprobe
-go get -u github.com/shenwei356/rush
-go get -u github.com/jaeles-project/gospider
-go get -u github.com/hakluke/hakrawler
-GO111MODULE=on go get -u github.com/lc/gau
-GO111MODULE=on go get -u github.com/OWASP/Amass/v3/...
-GO111MODULE=on go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei
-GO111MODULE=on go get -u github.com/projectdiscovery/naabu/cmd/naabu
-GO111MODULE=on go get -u github.com/projectdiscovery/shuffledns/cmd/shuffledns
-GO111MODULE=auto go get -u github.com/projectdiscovery/httpx/cmd/httpx
-GO111MODULE=auto go get -u github.com/projectdiscovery/subfinder/cmd/subfinder
+go get -u github.com/asciimoo/wuzz &>/dev/null
+go get -u github.com/tomnomnom/fff &>/dev/null
+go get -u github.com/tomnomnom/httprobe &>/dev/null
+go get -u github.com/tomnomnom/waybackurls &>/dev/null
+go get -u github.com/tomnomnom/assetfinder &>/dev/null
+go get -u github.com/tomnomnom/unfurl &>/dev/null
+go get -u github.com/tomnomnom/gron &>/dev/null
+go get -u github.com/tomnomnom/qsreplace &>/dev/null
+go get -u github.com/tomnomnom/gf &>/dev/null
+go get -u github.com/mvdan/xurls &>/dev/null
+go get -u github.com/xxxserxxx/gotop/cmd/gotop &>/dev/null
+go get -u github.com/BBVA/kapow &>/dev/null
+go get -u github.com/davecheney/httpstat &>/dev/null
+go get -u github.com/OJ/gobuster &>/dev/null
+go get -u github.com/ffuf/ffuf &>/dev/null
+go get -u github.com/ffuf/pencode/cmd/pencode &>/dev/null
+go get -u github.com/ericchiang/pup &>/dev/null
+go get -u github.com/haccer/subjack &>/dev/null
+go get -u github.com/1ndianl33t/urlprobe &>/dev/null
+go get -u github.com/shenwei356/rush &>/dev/null
+go get -u github.com/jaeles-project/gospider &>/dev/null
+go get -u github.com/hakluke/hakrawler &>/dev/null
+GO111MODULE=on go get -u github.com/lc/gau &>/dev/null
+GO111MODULE=on go get -u github.com/OWASP/Amass/v3/... &>/dev/null
+GO111MODULE=on go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei &>/dev/null
+GO111MODULE=on go get -u github.com/projectdiscovery/naabu/cmd/naabu &>/dev/null
+GO111MODULE=on go get -u github.com/projectdiscovery/shuffledns/cmd/shuffledns &>/dev/null
+GO111MODULE=auto go get -u github.com/projectdiscovery/httpx/cmd/httpx &>/dev/null
+GO111MODULE=auto go get -u github.com/projectdiscovery/subfinder/cmd/subfinder &>/dev/null
 
 echo "[+] Completed"
