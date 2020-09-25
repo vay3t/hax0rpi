@@ -47,6 +47,6 @@ GO111MODULE=on go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei &>/dev
 GO111MODULE=on go get -u github.com/projectdiscovery/naabu/cmd/naabu &>/dev/null
 GO111MODULE=on go get -u github.com/projectdiscovery/shuffledns/cmd/shuffledns &>/dev/null
 GO111MODULE=auto go get -u github.com/projectdiscovery/httpx/cmd/httpx &>/dev/null
-GO111MODULE=auto go get -u github.com/projectdiscovery/subfinder/cmd/subfinder &>/dev/null
+GO111MODULE=on go get -u github.com/projectdiscovery/subfinder/v2/cmd/subfinder &>/dev/null
 
 echo "[+] Completed"
