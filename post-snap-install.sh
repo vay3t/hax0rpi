@@ -15,6 +15,8 @@ function exit_trap() {
 	echo "Command [$lc] exited with code [$rc]"
 }
 
+trap exit_trap err
+
 # install golang programs
 
 go get -u github.com/asciimoo/wuzz &>/dev/null
