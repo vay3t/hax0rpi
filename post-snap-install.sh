@@ -20,16 +20,12 @@ trap exit_trap err
 # install golang programs
 
 go get -u github.com/asciimoo/wuzz &>/dev/null
-go get -u github.com/tomnomnom/fff &>/dev/null
-go get -u github.com/tomnomnom/httprobe &>/dev/null
 go get -u github.com/tomnomnom/waybackurls &>/dev/null
-go get -u github.com/tomnomnom/assetfinder &>/dev/null
 go get -u github.com/tomnomnom/unfurl &>/dev/null
 go get -u github.com/tomnomnom/gron &>/dev/null
 go get -u github.com/tomnomnom/qsreplace &>/dev/null
 go get -u github.com/tomnomnom/gf &>/dev/null
 go get -u github.com/mvdan/xurls &>/dev/null
-go get -u github.com/xxxserxxx/gotop/cmd/gotop &>/dev/null
 go get -u github.com/BBVA/kapow &>/dev/null
 go get -u github.com/davecheney/httpstat &>/dev/null
 go get -u github.com/OJ/gobuster &>/dev/null
@@ -39,14 +35,12 @@ go get -u github.com/ffuf/pencode/cmd/pencode &>/dev/null
 go get -u github.com/ericchiang/pup &>/dev/null
 go get -u github.com/haccer/subjack &>/dev/null
 go get -u github.com/1ndianl33t/urlprobe &>/dev/null
-go get -u github.com/shenwei356/rush &>/dev/null
 go get -u github.com/jaeles-project/gospider &>/dev/null
-go get -u github.com/hakluke/hakrawler &>/dev/null
 GO111MODULE=on go get -u github.com/lc/gau &>/dev/null
 GO111MODULE=on go get -u github.com/OWASP/Amass/v3/... &>/dev/null
 GO111MODULE=on go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei &>/dev/null
 GO111MODULE=on go get -u github.com/projectdiscovery/naabu/cmd/naabu &>/dev/null
-GO111MODULE=on go get -u github.com/projectdiscovery/shuffledns/cmd/shuffledns &>/dev/null
+GO111MODULE=on go get -u github.com/projectdiscovery/dnsprobe &>/dev/null
 GO111MODULE=auto go get -u github.com/projectdiscovery/httpx/cmd/httpx &>/dev/null
 GO111MODULE=auto go get -u github.com/projectdiscovery/subfinder/v2/cmd/subfinder &>/dev/null
 
