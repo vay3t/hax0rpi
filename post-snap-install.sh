@@ -20,6 +20,7 @@ trap exit_trap err
 # install golang programs
 
 go get -u github.com/asciimoo/wuzz &>/dev/null
+go get -u github.com/tomnomnom/fff &> /dev/null
 go get -u github.com/tomnomnom/waybackurls &>/dev/null
 go get -u github.com/tomnomnom/unfurl &>/dev/null
 go get -u github.com/tomnomnom/gron &>/dev/null
