@@ -6,7 +6,8 @@ pi@raspberrypi:~/hax0rpi $ ./hax0rpi
               | '_ \ / _' \ \/ / | | | '__| '_ \| |             
               | | | | (_| |>  <| |_| | |  | |_) | |             
               |_| |_|\__,_/_/\_\\___/|_|  | .__/|_|             
-                                          |_|                   
+                     by B.G Puneeth
+                          |_|                   
                
            A Raspberry Pi Hacker Tools suite by Vay3t           
 
