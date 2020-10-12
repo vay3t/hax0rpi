@@ -36,7 +36,7 @@ go get -u github.com/ffuf/pencode/cmd/pencode &>/dev/null
 go get -u github.com/ericchiang/pup &>/dev/null
 go get -u github.com/haccer/subjack &>/dev/null
 go get -u github.com/1ndianl33t/urlprobe &>/dev/null
-go get -u github.com/jaeles-project/gospider &>/dev/null
+go get -u github.com/hakluke/hakrawler &>/dev/null
 GO111MODULE=on go get -u github.com/lc/gau &>/dev/null
 GO111MODULE=on go get -u github.com/OWASP/Amass/v3/... &>/dev/null
 GO111MODULE=on go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei &>/dev/null
