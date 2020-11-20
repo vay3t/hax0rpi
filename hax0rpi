@@ -197,7 +197,7 @@ cd && cd $secret
 echo -e "\n${YELLOW}[!] install Sublist3r${NC}"
 git clone https://github.com/aboul3la/Sublist3r
 cd Sublist3r
-sudo pip install -r requirements.txt 
+sudo pip3 install -r requirements.txt 
 cd && cd $secret
 
 
@@ -205,7 +205,7 @@ cd && cd $secret
 echo -e "\n${YELLOW}[!] install theharvester${NC}"
 git clone https://github.com/laramies/theHarvester
 cd theHarvester
-sudo pip install -r requirements.txt 
+sudo pip3 install -r requirements.txt 
 cd && cd $secret
 
 # install windows-exploit-suggester
@@ -225,9 +225,16 @@ cd && cd $secret
 
 # install metasploit
 echo -e "\n${YELLOW}[!] install metasploit${NC}"
-wget https://apt.metasploit.com/pool/main/m/metasploit-framework/metasploit-framework_5.0.99%2B20200713093516~1rapid7-1_armhf.deb
-sudo dpkg -i metasploit-framework_5.0.99%2B20200713093516~1rapid7-1_armhf.deb
-rm -f metasploit-framework_5.0.99%2B20200713093516~1rapid7-1_armhf.deb
+cd /opt
+sudo git clone https://github.com/rapid7/metasploit-framework.git
+sudo chown -R `whoami` /opt/metasploit-framework
+gem install bundler
+bundle install
+sudo bash -c 'for MSF in $(ls msf*); do ln -s /opt/metasploit-framework/$MSF /usr/local/bin/$MSF;done'
+echo "export PATH=$PATH:/usr/lib/postgresql/11/bin" >> ~/.bashrc
+sudo usermod -a -G postgres `whoami`
+sudo su - `whoami`
+cd /opt/metasploit-framework/
 sudo msfupdate
 msfdb init
 cd && cd $secret
