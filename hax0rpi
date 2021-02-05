@@ -330,3 +330,35 @@ sudo updatedb
 # need reboot
 echo -e "\n${GREEN}[>] Need reboot${NC}"
 echo "Please run 'bash post-snap-install.sh' after reboot"
+
+##### more tools
+# https://github.com/sensepost/go-out
+# https://github.com/ustayready/fireprox
+# https://github.com/ssh-mitm/ssh-mitm
+# https://github.com/Sjord/jwtcrack
+# https://github.com/hahwul/jwt-hack
+# https://github.com/aircrack-ng/mdk4
+# https://github.com/cathugger/mkp224o
+# https://github.com/NickCarneiro/curlconverter
+# https://github.com/jamhall/s3rver
+
+# curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+# sudo apt-get install -y nodejs
+# sudo npm install yarn -g
+
+# https://github.com/s4vitar/rpcenum
+# https://github.com/clarketm/s3recon
+# https://github.com/nnposter/nndefaccts
+# https://github.com/sharkdp/bat
+# https://github.com/shazow/ssh-chat
+# https://github.com/sharkdp/hexyl
+# https://github.com/bitsadmin/wesng
+# https://github.com/gtanner/qrcode-terminal
+# https://github.com/evilsocket/ditto
+# https://github.com/bettercap/bettercap
+# https://github.com/mitmproxy/mitmproxy
+
+# https://github.com/SecureAuthCorp/impacket
+# https://github.com/byt3bl33d3r/CrackMapExec
+# https://github.com/samratashok/nishang
+# https://github.com/BC-SECURITY/Empire
