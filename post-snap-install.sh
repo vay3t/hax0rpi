@@ -38,6 +38,8 @@ go get -u github.com/1ndianl33t/urlprobe &>/dev/null
 go get -u github.com/hakluke/hakrawler &>/dev/null
 go get -u github.com/haccer/subjack &>/dev/null
 go get -u github.com/rverton/webanalyze/cmd/webanalyze &>/dev/null
+go get -u github.com/ameenmaali/qsfuzz &>/dev/null
+go get -u github.com/ameenmaali/qsinject &>/dev/null
 GO111MODULE=on go get -u github.com/lc/gau &>/dev/null
 GO111MODULE=on go get -u github.com/OWASP/Amass/v3/... &>/dev/null
 GO111MODULE=on go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei &>/dev/null
