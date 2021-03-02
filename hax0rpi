@@ -359,6 +359,9 @@ echo "Please run 'bash post-snap-install.sh' after reboot"
 # https://github.com/mitmproxy/mitmproxy
 # https://github.com/pry0cc/soxy
 
+# https://github.com/s0md3v/Arjun
+
+
 # https://github.com/SecureAuthCorp/impacket
 # https://github.com/byt3bl33d3r/CrackMapExec
 # https://github.com/samratashok/nishang
