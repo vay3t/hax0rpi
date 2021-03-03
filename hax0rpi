@@ -366,3 +366,4 @@ echo "Please run 'bash post-snap-install.sh' after reboot"
 # https://github.com/byt3bl33d3r/CrackMapExec
 # https://github.com/samratashok/nishang
 # https://github.com/BC-SECURITY/Empire
+# https://github.com/nettitude/PoshC2
