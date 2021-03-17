@@ -105,7 +105,7 @@ sudo gem install wpscan bundle evil-winrm
 # install from pip
 echo -e "\n${YELLOW}[!] install from pip${NC}"
 sudo apt install -y libffi-dev
-sudo pip3 install exrex sqlmap shodan wafw00f requests beautifulsoup4 scapy
+sudo pip3 install exrex sqlmap shodan wafw00f requests beautifulsoup4 scapy proxy.py
 
 # clone repos
 echo -e "\n${YELLOW}[!] clone repos${NC}"
