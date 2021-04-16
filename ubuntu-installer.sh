@@ -34,7 +34,6 @@ sudo apt-get install -y \
 	hydra \
 	iw \
 	jq \
-	kismet \
 	libimage-exiftool-perl \
 	locate \
 	macchanger \
