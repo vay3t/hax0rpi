@@ -388,12 +388,6 @@ curl -sSL https://raw.githubusercontent.com/nettitude/PoshC2/master/Install.sh |
 # gitjacker
 curl -s "https://raw.githubusercontent.com/liamg/gitjacker/master/scripts/install.sh" | sudo bash
 
-# TheFatRat
-git clone https://github.com/Screetsec/TheFatRat.git
-cd TheFatRat
-chmod +x setup.sh && sudo ./setup.sh
-cd && cd $secret
-
 # rexgen-john
 echo -e "\n${YELLOW}[!] install rexgen-john${NC}"
 sudo apt-get -y install cmake bison flex libicu-dev
