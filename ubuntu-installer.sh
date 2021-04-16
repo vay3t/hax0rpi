@@ -391,7 +391,7 @@ curl -s "https://raw.githubusercontent.com/liamg/gitjacker/master/scripts/instal
 # TheFatRat
 git clone https://github.com/Screetsec/TheFatRat.git
 cd TheFatRat
-chmod +x setup.sh && ./setup.sh
+chmod +x setup.sh && sudo ./setup.sh
 cd && cd $secret
 
 # rexgen-john
