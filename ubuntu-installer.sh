@@ -3,7 +3,8 @@
 # secret directory
 secret=arsenal
 cd
-mkdir $secret && cd $secret
+mkdir $secret
+cd $secret
 echo -e "\n${YELLOW}[+] folder 'secret' created${NC}"
 
 
@@ -32,6 +33,7 @@ sudo apt-get install -y \
 	filezilla \
 	git \
 	hexedit \
+	hexyl \
 	hostapd \
 	htop \
 	hydra \
@@ -116,6 +118,7 @@ sudo pip3 install \
 	python-telegram-bot \
 	python-whois \
 	requests \
+	s3recon \
 	scapy \
 	search-that-hash \
 	shadowsocks \
@@ -129,11 +132,13 @@ sudo pip3 install \
 ##### Snap #####
 sudo snap install \
 	amass \
+	beekeeper-studio \
 	binwalk-spirotot \
 	chromium \
 	drawio \
 	flameshot \
 	jwt-hack \
+	leafpad \
 	lolcat \
 	mycli \
 	postman \
@@ -141,6 +146,13 @@ sudo snap install \
 
 sudo snap install code --classic
 sudo snap install golang --classic
+sudo snap install netbeans --classic
+sudo snap install node --classic
+#sudo snap install intellij-idea-community --classic
+#sudo snap install pycharm-community --classic
+
+curl https://raw.githubusercontent.com/vay3t/hax0rpi/master/post-snap-install.sh | bash 
+
 
 ##### Git #####
 git clone https://github.com/maurosoria/dirsearch
@@ -173,15 +185,20 @@ wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.2/BloodHou
 wget "https://portswigger.net/burp/releases/download?product=community&version=2021.4.1&type=Linux" -O burp.sh
 wget https://downloads.es.net/pub/iperf/iperf-3.9.tar.gz
 wget https://github.com/hashcat/hashcat/releases/download/v6.1.1/hashcat-6.1.1.7z
-
-
+wget https://github.com/Studio3T/robomongo/releases/download/v1.4.3/robo3t-1.4.3-linux-x86_64-48f7dfd.tar.gz
+wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+wget https://github.com/projectdiscovery/nuclei/releases/download/v2.3.4/nuclei_2.3.4_linux_amd64.tar.gz
+wget https://github.com/projectdiscovery/proxify/releases/download/v0.0.3/proxify_0.0.3_macOS_amd64.tar.gz
+wget https://github.com/projectdiscovery/httpx/releases/download/v1.0.5/httpx_1.0.5_linux_amd64.tar.gz
+wget https://github.com/projectdiscovery/subfinder/releases/download/v2.4.7/subfinder_2.4.7_linux_amd64.tar.gz
 
 ##### npm #####
+sudo npm install -g yarn
 sudo npm install -g elasticdump
-sudo npm install -g curlconverter
+#sudo npm install -g curlconverter
 sudo npm install -g qrcode-terminal
-sudo npm install -g wappalyzer
 sudo npm install -g s3rver
+sudo yarn global add wappalyzer
 
 ##### Git install #####
 
@@ -423,15 +440,20 @@ sudo apt-get install gcc make git wget
 git clone https://gitlab.com/akihe/radamsa.git && cd radamsa && make && sudo make install
 cd && cd $secret
 
-
-##### Rust #####
-curl https://sh.rustup.rs -sSf | sh
-cargo install bat
-cargo install hexyl
-cargo install --features=ssl websocat
+# bat
+wget https://github.com/sharkdp/bat/releases/download/v0.18.0/bat_0.18.0_amd64.deb
+sudo dpkg -i bat_0.18.0_amd64.deb
+rm bat_0.18.0_amd64.deb
 
 
-
+# disable service
+echo -e "\n${YELLOW}[!] disable services${NC}"
+sudo systemctl disable apache2
+sudo systemctl disable bluetooth
+sudo systemctl disable dnsmasq
+sudo systemctl disable mariadb
+sudo systemctl disable postgresql
+sudo systemctl disable tor
 
 
 #install_rustbuster() {
