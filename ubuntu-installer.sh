@@ -173,7 +173,7 @@ git clone https://github.com/samratashok/nishang
 git clone https://github.com/danielbohannon/Invoke-Obfuscation
 git clone https://github.com/nnposter/nndefaccts
 git clone https://github.com/CISOfy/lynis
-git clone https://github.com/astryzia/BashScan
+#git clone https://github.com/astryzia/BashScan
 git clone https://github.com/s4vitar/rpcenum
 
 
