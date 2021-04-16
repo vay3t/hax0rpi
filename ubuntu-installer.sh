@@ -350,6 +350,7 @@ cd && cd $secret
 mkdir finggg
 cd finggg
 wget https://www.fing.com/images/uploads/general/CLI_Linux_Debian_5.5.2.zip
+unzip CLI_Linux_Debian_5.5.2.zip
 sudo dpkg -i fing-5.5.2-amd64.deb
 cd ..
 rm -rf finggg
