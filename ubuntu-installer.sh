@@ -14,6 +14,9 @@ sudo apt-get update
 sudo apt-get dist-upgrade -y
 
 
+sudo add-apt-repository --yes ppa:apt-fast/stable
+sudo apt-get install apt-fast -y
+
 ##### Repo #####
 
 # install from apt-get
