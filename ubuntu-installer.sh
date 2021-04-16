@@ -40,6 +40,8 @@ sudo apt-get install -y \
 	iw \
 	jq \
 	libimage-exiftool-perl \
+	libreoffice \
+	libreoffice-l10n-es \
 	locate \
 	macchanger \
 	mariadb-client \
@@ -104,8 +106,6 @@ sudo pip3 install \
 	glances \
 	grip \
 	intensio-obfuscator \
-	libreoffice \
-	libreoffice-l10n-es \
 	myjwt \
 	name-that-hash \
 	nfstream \
@@ -145,7 +145,7 @@ sudo snap install \
 	scrcpy;
 
 sudo snap install code --classic
-sudo snap install golang --classic
+sudo snap install go --classic
 sudo snap install netbeans --classic
 sudo snap install node --classic
 #sudo snap install intellij-idea-community --classic
