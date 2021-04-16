@@ -134,6 +134,7 @@ sudo snap install \
 	amass \
 	beekeeper-studio \
 	binwalk-spirotot \
+	brave \
 	chromium \
 	drawio \
 	flameshot \
