@@ -57,6 +57,7 @@ sudo apt-get install -y \
 	smbclient \
 	snapd \
 	tcpdump \
+	terminator \
 	tmux \
 	tor \
 	torsocks \
