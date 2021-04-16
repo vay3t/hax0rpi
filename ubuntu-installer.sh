@@ -188,7 +188,7 @@ wget https://github.com/hashcat/hashcat/releases/download/v6.1.1/hashcat-6.1.1.7
 wget https://github.com/Studio3T/robomongo/releases/download/v1.4.3/robo3t-1.4.3-linux-x86_64-48f7dfd.tar.gz
 wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
 wget https://github.com/projectdiscovery/nuclei/releases/download/v2.3.4/nuclei_2.3.4_linux_amd64.tar.gz
-wget https://github.com/projectdiscovery/proxify/releases/download/v0.0.3/proxify_0.0.3_macOS_amd64.tar.gz
+wget https://github.com/projectdiscovery/proxify/releases/download/v0.0.3/proxify_0.0.3_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/httpx/releases/download/v1.0.5/httpx_1.0.5_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/subfinder/releases/download/v2.4.7/subfinder_2.4.7_linux_amd64.tar.gz
 
