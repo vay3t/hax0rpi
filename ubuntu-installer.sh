@@ -87,7 +87,6 @@ sudo gem install \
 sudo pip3 install \
 	autopep8 \
 	beautifulsoup4 \
-	chepy[extras] \
 	cloudscraper \
 	diagrams \
 	dnspython \
