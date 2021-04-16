@@ -62,6 +62,7 @@ sudo apt-get install -y \
 	torsocks \
 	tree \
 	trickle \
+	unrar \
 	vim \
 	wipe \
 	wireless-tools \
