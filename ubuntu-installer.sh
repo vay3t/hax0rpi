@@ -22,9 +22,12 @@ sudo apt-get install -y \
 	apache2 \
 	arp-scan \
 	curl \
+	default-jdk \
+	default-jre \
 	dhex \
 	dnsmasq \
 	ettercap-text-only \
+	evince \
 	fastboot \
 	filezilla \
 	git \
@@ -99,6 +102,8 @@ sudo pip3 install \
 	glances \
 	grip \
 	intensio-obfuscator \
+	libreoffice \
+	libreoffice-l10n-es \
 	myjwt \
 	name-that-hash \
 	nfstream \
@@ -134,7 +139,8 @@ sudo snap install \
 	postman \
 	scrcpy;
 
-sudo snap install code golang --classic
+sudo snap install code --classic
+sudo snap install golang --classic
 
 ##### Git #####
 git clone https://github.com/maurosoria/dirsearch
@@ -142,7 +148,6 @@ git clone https://github.com/lgandx/Responder
 git clone https://github.com/drwetter/testssl.sh
 git clone --recursive https://github.com/evgeni/qifi.git
 git clone https://github.com/trustedsec/unicorn
-git clone https://github.com/AlessandroZ/BeRoot
 git clone https://github.com/L-codes/Neo-reGeorg
 git clone https://github.com/defparam/smuggler
 git clone https://github.com/blackarrowsec/mssqlproxy
@@ -168,6 +173,8 @@ wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.2/BloodHou
 wget "https://portswigger.net/burp/releases/download?product=community&version=2021.4.1&type=Linux" -O burp.sh
 wget https://downloads.es.net/pub/iperf/iperf-3.9.tar.gz
 wget https://github.com/hashcat/hashcat/releases/download/v6.1.1/hashcat-6.1.1.7z
+
+
 
 ##### npm #####
 sudo npm install -g elasticdump
