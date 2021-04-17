@@ -60,6 +60,7 @@ sudo apt-get install -y \
 	ruby-full \
 	s3fs \
 	screen \
+	simplescreenrecorder \
 	smbclient \
 	snapd \
 	tcpdump \
@@ -80,16 +81,7 @@ sudo apt-get install -y \
 # aircrack-ng
 sudo apt install -y aircrack-ng mdk4
 
-# Sublime text
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-sudo apt-get install apt-transport-https -y
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt-get update
-sudo apt-get install sublime-text -y
-
 ##### Ruby ######
-
-# install from gems
 echo -e "\n${YELLOW}[!] install from gems${NC}"
 sudo gem install \
 	wpscan \
@@ -186,21 +178,18 @@ git clone https://github.com/magnumripper/JohnTheRipper john
 ##### Wget #####
 wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cmedb-ubuntu-latest.zip
 wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cme-ubuntu-latest.4.zip
-wget https://github.com/fatedier/frp/releases/download/v0.36.2/frp_0.36.2_linux_amd64.tar.gz
+
 wget https://snapshots.mitmproxy.org/6.0.2/mitmproxy-6.0.2-linux.tar.gz
 wget https://github.com/jpillora/chisel/releases/download/v1.7.6/chisel_1.7.6_linux_amd64.gz
 wget https://github.com/EgeBalci/amber/releases/download/v3.1/amber_linux_amd64_3.1.zip
 wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.2/BloodHound-linux-x64.zip
-wget "https://portswigger.net/burp/releases/download?product=community&version=2021.4.1&type=Linux" -O burp.sh
 wget https://downloads.es.net/pub/iperf/iperf-3.9.tar.gz
-wget https://github.com/hashcat/hashcat/releases/download/v6.1.1/hashcat-6.1.1.7z
 wget https://github.com/Studio3T/robomongo/releases/download/v1.4.3/robo3t-1.4.3-linux-x86_64-48f7dfd.tar.gz
-wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+
 wget https://github.com/projectdiscovery/nuclei/releases/download/v2.3.4/nuclei_2.3.4_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/proxify/releases/download/v0.0.3/proxify_0.0.3_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/httpx/releases/download/v1.0.5/httpx_1.0.5_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/subfinder/releases/download/v2.4.7/subfinder_2.4.7_linux_amd64.tar.gz
-wget https://github.com/BC-SECURITY/Starkiller/releases/download/v1.7.0/starkiller-1.7.0.AppImage
 
 
 ##### npm #####
@@ -434,15 +423,72 @@ sudo apt-get install gcc make git wget
 git clone https://gitlab.com/akihe/radamsa.git && cd radamsa && make && sudo make install
 cd && cd $secret
 
-# bat
-wget https://github.com/sharkdp/bat/releases/download/v0.18.0/bat_0.18.0_amd64.deb
-sudo dpkg -i bat_0.18.0_amd64.deb
-rm bat_0.18.0_amd64.deb
+# Sublime text
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt-get install apt-transport-https -y
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
+sudo apt-get install sublime-text -y
 
-# websocat
-wget https://github.com/vi/websocat/releases/download/v1.8.0/websocat_1.8.0_newer_amd64.deb
-sudo dpkg -i websocat_1.8.0_newer_amd64.deb
-rm websocat_1.8.0_newer_amd64.deb
+##### Download git release and more
+
+function websocat_install(){
+	echo "Installing latest version of websocat"
+	latest_version=$(curl -s https://github.com/vi/websocat/releases/ | grep "websocat_" | head -1 | cut -d'/' -f6)
+	wget -qP "https://github.com/vi/websocat/releases/download/$latest_version/websocat_$(echo $latest_version | sed 's/v//')_newer_amd64.deb"
+	sudo dpkg -i "websocat_$(echo $latest_version | sed 's/v//')_newer_amd64.deb"
+	rm "websocat_$(echo $latest_version | sed 's/v//')_newer_amd64.deb"
+}
+
+function bat_install(){
+	echo "Installing latest version of bat"
+	latest_version=$(curl -s https://github.com/sharkdp/bat/releases | grep "bat_" | head -1 | cut -d'/' -f6)
+	wget -qP "https://github.com/sharkdp/bat/releases/download/$latest_version/bat_$(echo $latest_version | sed 's/v//')_amd64.deb"
+	sudo dpkg -i "bat_$(echo $latest_version | sed 's/v//')_amd64.deb"
+	rm "bat_$(echo $latest_version | sed 's/v//')_amd64.deb"
+}
+
+function starkiller_install(){
+	echo "Installing latest version of Starkiller"
+	latest_version=$(curl -s https://github.com/BC-SECURITY/Starkiller/releases | grep "starkiller-" | head -1 | cut -d'/' -f6)
+	wget -qP "https://github.com/BC-SECURITY/Starkiller/releases/download/$latest_version/starkiller-$(echo $latest_version | sed 's/v//').AppImage"
+	chmod +x "starkiller-$(echo $latest_version | sed 's/v//').AppImage"
+}
+
+function burp_download(){
+	echo "Downloading latest version of Burpsuite Community"
+	latest_version=$(curl "https://portswigger.net/burp/releases/data?previousLastId=-1&lastId=-1&pageSize=10" -s | jq ".ResultSet.Results[].builds" | grep -A5 '"community"' | grep -A4 '"Linux"' | grep Version | cut -d '"' -f 4 | sort -n | tail -1)
+	wget "https://portswigger.net/burp/releases/download?product=community&version=$latest_version&type=Linux" -O burp.sh
+	chmox +x burp.sh
+}
+
+function hashcat_download(){
+	echo "Downloading latest version of hashcat"
+	latest_version=$(curl -s https://github.com/hashcat/hashcat/releases | grep "hashcat-" | head -1 | cut -d'/' -f6)
+	wget "https://github.com/hashcat/hashcat/releases/download/$latest_versio/hashcat-$(echo $latest_version | sed 's/v//').7z"
+	7z x "hashcat-$(echo $latest_version | sed 's/v//').7z"
+	rm "hashcat-$(echo $latest_version | sed 's/v//').7z"
+}
+
+function frp_download(){
+	echo "Downloading latest version of fast reverse proxy"
+	latest_version=$(curl -s https://github.com/fatedier/frp/releases | grep "frp_" | head -1 | cut -d'/' -f6)
+	wget "https://github.com/fatedier/frp/releases/download/$latest_version/frp_$(echo $latest_version | sed 's/v//')_linux_amd64.tar.gz"
+	tar xzvf "frp_$(echo $latest_version | sed 's/v//')_linux_amd64.tar.gz"
+	rm "frp_$(echo $latest_version | sed 's/v//')_linux_amd64.tar.gz"
+}
+
+
+# run functions
+websocat_install
+bat_install
+starkiller_install
+burp_download
+hashcat_download
+frp_download
+
+
+
 
 # disable service
 echo -e "\n${YELLOW}[!] disable services${NC}"
@@ -465,5 +511,7 @@ sudo systemctl disable tor
 #    echo "Done! Try running"
 #    echo "/opt/rustbuster/rustbuster -h"
 #}
+
+
 
 #install_rustbuster
