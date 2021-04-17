@@ -439,7 +439,10 @@ wget https://github.com/sharkdp/bat/releases/download/v0.18.0/bat_0.18.0_amd64.d
 sudo dpkg -i bat_0.18.0_amd64.deb
 rm bat_0.18.0_amd64.deb
 
-
+# websocat
+wget https://github.com/vi/websocat/releases/download/v1.8.0/websocat_1.8.0_newer_amd64.deb
+sudo dpkg -i websocat_1.8.0_newer_amd64.deb
+rm websocat_1.8.0_newer_amd64.deb
 
 # disable service
 echo -e "\n${YELLOW}[!] disable services${NC}"
