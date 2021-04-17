@@ -395,12 +395,11 @@ curl -s "https://raw.githubusercontent.com/liamg/gitjacker/master/scripts/instal
 
 # rexgen-john
 echo -e "\n${YELLOW}[!] install rexgen-john${NC}"
-sudo apt-get -y install cmake bison flex libicu-dev
-mkdir ~/src
+sudo apt-get -y install cmake bison flex libicu-dev automake
 cd ~/src
-git clone https://github.com/vay3t/rexgen-john rexgen
+git clone --recursive https://github.com/teeshop/rexgen.git
 cd rexgen
-./install.sh
+sudo ./install.sh
 sudo ldconfig
 cd && cd $secret
 
