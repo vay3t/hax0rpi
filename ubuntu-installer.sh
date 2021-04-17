@@ -145,6 +145,7 @@ sudo snap install \
 	chromium \
 	drawio \
 	flameshot \
+	john-the-ripper \
 	jwt-hack \
 	leafpad \
 	lolcat \
@@ -180,7 +181,7 @@ git clone https://github.com/nnposter/nndefaccts
 git clone https://github.com/CISOfy/lynis
 #git clone https://github.com/astryzia/BashScan
 git clone https://github.com/s4vitar/rpcenum
-
+git clone https://github.com/magnumripper/JohnTheRipper john
 
 ##### Wget #####
 wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cmedb-ubuntu-latest.zip
@@ -199,6 +200,8 @@ wget https://github.com/projectdiscovery/nuclei/releases/download/v2.3.4/nuclei_
 wget https://github.com/projectdiscovery/proxify/releases/download/v0.0.3/proxify_0.0.3_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/httpx/releases/download/v1.0.5/httpx_1.0.5_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/subfinder/releases/download/v2.4.7/subfinder_2.4.7_linux_amd64.tar.gz
+wget https://github.com/BC-SECURITY/Starkiller/releases/download/v1.7.0/starkiller-1.7.0.AppImage
+
 
 ##### npm #####
 sudo npm install -g yarn
@@ -390,27 +393,16 @@ cd && cd $secret
 # PoshC2
 curl -sSL https://raw.githubusercontent.com/nettitude/PoshC2/master/Install.sh | sudo bash
 
+# Empire
+sudo pip3 install poetry
+git clone --recursive https://github.com/BC-SECURITY/Empire.git
+cd Empire
+sudo ./setup/install.sh
+sudo poetry install
+cd && cd $secret
+
 # gitjacker
 curl -s "https://raw.githubusercontent.com/liamg/gitjacker/master/scripts/install.sh" | sudo bash
-
-# rexgen-john
-echo -e "\n${YELLOW}[!] install rexgen-john${NC}"
-sudo apt-get -y install cmake bison flex libicu-dev automake
-cd ~/src
-git clone --recursive https://github.com/teeshop/rexgen.git
-cd rexgen
-sudo ./install.sh
-sudo ldconfig
-cd && cd $secret
-
-# john
-echo -e "\n${YELLOW}[!] install john${NC}"
-sudo apt-get -y install git build-essential libssl-dev zlib1g-dev
-sudo apt-get -y install yasm pkg-config libgmp-dev libpcap-dev libbz2-dev
-git clone https://github.com/magnumripper/JohnTheRipper john
-cd john/src
-./configure --enable-rexgen && make -s clean && make -sj4
-cd && cd $secret
 
 # eaphammer
 git clone https://github.com/s0lst1c3/eaphammer
@@ -446,6 +438,7 @@ cd && cd $secret
 wget https://github.com/sharkdp/bat/releases/download/v0.18.0/bat_0.18.0_amd64.deb
 sudo dpkg -i bat_0.18.0_amd64.deb
 rm bat_0.18.0_amd64.deb
+
 
 
 # disable service
