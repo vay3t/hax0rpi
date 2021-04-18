@@ -7,7 +7,7 @@ mkdir $secret
 cd $secret
 echo -e "\n${YELLOW}[+] folder 'secret' created${NC}"
 
-sudo -s
+sudo -K
 
 # update system
 echo -e "\n${YELLOW}[!] update and upgrade system${NC}"
