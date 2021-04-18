@@ -7,6 +7,7 @@ mkdir $secret
 cd $secret
 echo -e "\n${YELLOW}[+] folder 'secret' created${NC}"
 
+sudo -s
 
 # update system
 echo -e "\n${YELLOW}[!] update and upgrade system${NC}"
@@ -515,3 +516,6 @@ sudo systemctl disable tor
 
 
 #install_rustbuster
+
+
+sudo -k
