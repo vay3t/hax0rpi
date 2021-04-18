@@ -7,7 +7,7 @@ mkdir $secret
 cd $secret
 echo -e "\n${YELLOW}[+] folder 'secret' created${NC}"
 
-sudo -K
+sudo sh -c 'echo "\nDefaults timestamp_timeout=-1">>/etc/sudoers'
 
 # update system
 echo -e "\n${YELLOW}[!] update and upgrade system${NC}"
@@ -518,4 +518,4 @@ sudo systemctl disable tor
 #install_rustbuster
 
 
-sudo -k
+sudo sed -i '$ d' /etc/sudoers
