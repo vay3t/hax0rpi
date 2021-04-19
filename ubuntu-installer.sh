@@ -273,6 +273,7 @@ cd && cd $secret
 
 # RsaCtfTool
 git clone https://github.com/Ganapati/RsaCtfTool
+cd RsaCtfTool
 sudo apt-get install libgmp3-dev libmpc-dev -y
 pip3 install -r requirements.txt
 cd && cd $secret
