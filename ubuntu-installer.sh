@@ -23,6 +23,7 @@ sudo apt-get install -y \
 	adb \
 	apache2 \
 	arp-scan \
+	baobab \
 	curl \
 	default-jdk \
 	default-jre \
