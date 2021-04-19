@@ -278,12 +278,6 @@ sudo apt-get install libgmp3-dev libmpc-dev -y
 pip3 install -r requirements.txt
 cd && cd $secret
 
-# tplmap
-git clone https://github.com/epinna/tplmap
-cd tplmap
-sudo pip3 install -r requirements.txt
-cd && cd $secret
-
 # uncompyle6
 git clone https://github.com/rocky/python-uncompyle6
 cd python-uncompyle6
