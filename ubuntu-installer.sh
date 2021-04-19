@@ -76,6 +76,7 @@ sudo apt-get install -y \
 	vim \
 	wipe \
 	wireless-tools \
+	wireshark-qt \
 	whois \
 	xclip \
 	zeal;
@@ -145,7 +146,8 @@ sudo snap install \
 	lolcat \
 	mycli \
 	postman \
-	scrcpy;
+	scrcpy \
+	vlc;
 
 sudo snap install code --classic
 sudo snap install go --classic
@@ -154,6 +156,12 @@ sudo snap install node --classic
 #sudo snap install intellij-idea-community --classic
 #sudo snap install pycharm-community --classic
 
+# install chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+rm -rf google-chrome-stable_current_amd64.deb
+
+# Go tools
 curl https://raw.githubusercontent.com/vay3t/hax0rpi/master/post-snap-install.sh | bash 
 
 
@@ -173,26 +181,31 @@ git clone https://github.com/samratashok/nishang
 git clone https://github.com/danielbohannon/Invoke-Obfuscation
 git clone https://github.com/nnposter/nndefaccts
 git clone https://github.com/CISOfy/lynis
-#git clone https://github.com/astryzia/BashScan
 git clone https://github.com/s4vitar/rpcenum
 git clone https://github.com/magnumripper/JohnTheRipper john
 
 ##### Wget #####
 wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cmedb-ubuntu-latest.zip
 wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cme-ubuntu-latest.4.zip
-
 wget https://snapshots.mitmproxy.org/6.0.2/mitmproxy-6.0.2-linux.tar.gz
 wget https://github.com/jpillora/chisel/releases/download/v1.7.6/chisel_1.7.6_linux_amd64.gz
 wget https://github.com/EgeBalci/amber/releases/download/v3.1/amber_linux_amd64_3.1.zip
 wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.2/BloodHound-linux-x64.zip
 wget https://downloads.es.net/pub/iperf/iperf-3.9.tar.gz
 wget https://github.com/Studio3T/robomongo/releases/download/v1.4.3/robo3t-1.4.3-linux-x86_64-48f7dfd.tar.gz
-
 wget https://github.com/projectdiscovery/nuclei/releases/download/v2.3.4/nuclei_2.3.4_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/proxify/releases/download/v0.0.3/proxify_0.0.3_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/httpx/releases/download/v1.0.5/httpx_1.0.5_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/subfinder/releases/download/v2.4.7/subfinder_2.4.7_linux_amd64.tar.gz
 
+
+##### Install from URL #####
+
+# joplin
+wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
+
+# gitjacker
+curl -s "https://raw.githubusercontent.com/liamg/gitjacker/master/scripts/install.sh" | sudo bash
 
 ##### npm #####
 sudo npm install -g yarn
@@ -376,9 +389,6 @@ cd IntruderPayloads
 ./install.sh
 cd && cd $secret
 
-# PoshC2
-curl -sSL https://raw.githubusercontent.com/nettitude/PoshC2/master/Install.sh | sudo bash
-
 # Empire
 sudo pip3 install poetry
 git clone --recursive https://github.com/BC-SECURITY/Empire.git
@@ -386,9 +396,6 @@ cd Empire
 sudo ./setup/install.sh
 sudo poetry install
 cd && cd $secret
-
-# gitjacker
-curl -s "https://raw.githubusercontent.com/liamg/gitjacker/master/scripts/install.sh" | sudo bash
 
 # eaphammer
 git clone https://github.com/s0lst1c3/eaphammer
@@ -432,7 +439,7 @@ sudo apt-get install sublime-text -y
 function websocat_install(){
 	echo "Installing latest version of websocat"
 	latest_version=$(curl -s https://github.com/vi/websocat/releases/ | grep "websocat_" | head -1 | cut -d'/' -f6)
-	wget -qP "https://github.com/vi/websocat/releases/download/$latest_version/websocat_$(echo $latest_version | sed 's/v//')_newer_amd64.deb"
+	curl -L "https://github.com/vi/websocat/releases/download/$latest_version/websocat_$(echo $latest_version | sed 's/v//')_newer_amd64.deb" --output "websocat_$(echo $latest_version | sed 's/v//')_newer_amd64.deb"
 	sudo dpkg -i "websocat_$(echo $latest_version | sed 's/v//')_newer_amd64.deb"
 	rm "websocat_$(echo $latest_version | sed 's/v//')_newer_amd64.deb"
 }
@@ -440,29 +447,37 @@ function websocat_install(){
 function bat_install(){
 	echo "Installing latest version of bat"
 	latest_version=$(curl -s https://github.com/sharkdp/bat/releases | grep "bat_" | head -1 | cut -d'/' -f6)
-	wget -qP "https://github.com/sharkdp/bat/releases/download/$latest_version/bat_$(echo $latest_version | sed 's/v//')_amd64.deb"
+	curl -L "https://github.com/sharkdp/bat/releases/download/$latest_version/bat_$(echo $latest_version | sed 's/v//')_amd64.deb" --output "bat_$(echo $latest_version | sed 's/v//')_amd64.deb"
 	sudo dpkg -i "bat_$(echo $latest_version | sed 's/v//')_amd64.deb"
 	rm "bat_$(echo $latest_version | sed 's/v//')_amd64.deb"
+}
+
+function jdgui_install(){
+	echo "Installing latest version of JD-GUI"
+	latest_version=$(curl -s https://github.com/java-decompiler/jd-gui/releases | grep "jd-gui_" | head -1 | cut -d'/' -f6)
+	curl -L "https://github.com/java-decompiler/jd-gui/releases/download/$latest_version/jd-gui-$(echo $latest_version | sed 's/v//').deb" --output "jd-gui-$(echo $latest_version | sed 's/v//').deb"
+	sudo dpkg -i "jd-gui-$(echo $latest_version | sed 's/v//').deb"
+	rm "jd-gui-$(echo $latest_version | sed 's/v//').deb"
 }
 
 function starkiller_install(){
 	echo "Installing latest version of Starkiller"
 	latest_version=$(curl -s https://github.com/BC-SECURITY/Starkiller/releases | grep "starkiller-" | head -1 | cut -d'/' -f6)
-	wget -qP "https://github.com/BC-SECURITY/Starkiller/releases/download/$latest_version/starkiller-$(echo $latest_version | sed 's/v//').AppImage"
+	curl -L "https://github.com/BC-SECURITY/Starkiller/releases/download/$latest_version/starkiller-$(echo $latest_version | sed 's/v//').AppImage" --output "starkiller-$(echo $latest_version | sed 's/v//').AppImage"
 	chmod +x "starkiller-$(echo $latest_version | sed 's/v//').AppImage"
 }
 
 function burp_download(){
 	echo "Downloading latest version of Burpsuite Community"
 	latest_version=$(curl "https://portswigger.net/burp/releases/data?previousLastId=-1&lastId=-1&pageSize=10" -s | jq ".ResultSet.Results[].builds" | grep -A5 '"community"' | grep -A4 '"Linux"' | grep Version | cut -d '"' -f 4 | sort -n | tail -1)
-	wget "https://portswigger.net/burp/releases/download?product=community&version=$latest_version&type=Linux" -O burp.sh
+	curl -L "https://portswigger.net/burp/releases/download?product=community&version=$latest_version&type=Linux" --output burp.sh
 	chmox +x burp.sh
 }
 
 function hashcat_download(){
 	echo "Downloading latest version of hashcat"
 	latest_version=$(curl -s https://github.com/hashcat/hashcat/releases | grep "hashcat-" | head -1 | cut -d'/' -f6)
-	wget "https://github.com/hashcat/hashcat/releases/download/$latest_versio/hashcat-$(echo $latest_version | sed 's/v//').7z"
+	curl -L "https://github.com/hashcat/hashcat/releases/download/$latest_versio/hashcat-$(echo $latest_version | sed 's/v//').7z" --output "hashcat-$(echo $latest_version | sed 's/v//').7z"
 	7z x "hashcat-$(echo $latest_version | sed 's/v//').7z"
 	rm "hashcat-$(echo $latest_version | sed 's/v//').7z"
 }
@@ -470,15 +485,18 @@ function hashcat_download(){
 function frp_download(){
 	echo "Downloading latest version of fast reverse proxy"
 	latest_version=$(curl -s https://github.com/fatedier/frp/releases | grep "frp_" | head -1 | cut -d'/' -f6)
-	wget "https://github.com/fatedier/frp/releases/download/$latest_version/frp_$(echo $latest_version | sed 's/v//')_linux_amd64.tar.gz"
+	curl -L "https://github.com/fatedier/frp/releases/download/$latest_version/frp_$(echo $latest_version | sed 's/v//')_linux_amd64.tar.gz" --output "frp_$(echo $latest_version | sed 's/v//')_linux_amd64.tar.gz"
 	tar xzvf "frp_$(echo $latest_version | sed 's/v//')_linux_amd64.tar.gz"
 	rm "frp_$(echo $latest_version | sed 's/v//')_linux_amd64.tar.gz"
 }
 
 
+
+
 # run functions
 websocat_install
 bat_install
+jdgui_install
 starkiller_install
 burp_download
 hashcat_download
