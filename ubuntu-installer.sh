@@ -273,7 +273,7 @@ cd && cd $secret
 
 # RsaCtfTool
 git clone https://github.com/Ganapati/RsaCtfTool
-sudo apt-get install libgmp3-dev libmpc-dev
+sudo apt-get install libgmp3-dev libmpc-dev -y
 pip3 install -r requirements.txt
 cd && cd $secret
 
@@ -296,7 +296,7 @@ python3 -m pip install -r requirements.txt
 cd && cd $secret
 
 # salamandra
-sudo apt-get install rtl-sdr
+sudo apt-get install rtl-sdr -y
 git clone https://github.com/eldraco/Salamandra
 
 # crowbar
