@@ -1,4 +1,5 @@
 #!/bin/bash
+DEBIAN_FRONTEND=noninteractive
 
 # secret directory
 secret=arsenal
