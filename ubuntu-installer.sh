@@ -265,14 +265,6 @@ cd theHarvester
 sudo pip3 install -r requirements.txt
 cd && cd $secret
 
-# portspoof
-git clone https://github.com/drk1wi/portspoof
-cd portspoof
-./configure
-make
-sudo make install
-cd && cd $secret
-
 # git-dumper
 git clone https://github.com/arthaud/git-dumper
 cd git-dumper
