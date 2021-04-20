@@ -9,8 +9,6 @@ echo -e "\n${YELLOW}[+] folder 'secret' created${NC}"
 
 sudo sh -c 'echo "\nDefaults timestamp_timeout=-1">>/etc/sudoers'
 
-echo "Download files: ~8.4GB"
-
 # update system
 echo -e "\n${YELLOW}[!] update and upgrade system${NC}"
 sudo apt-get update
@@ -190,7 +188,6 @@ git clone https://github.com/magnumripper/JohnTheRipper john
 wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cmedb-ubuntu-latest.zip
 wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cme-ubuntu-latest.4.zip
 wget https://snapshots.mitmproxy.org/6.0.2/mitmproxy-6.0.2-linux.tar.gz
-wget https://github.com/jpillora/chisel/releases/download/v1.7.6/chisel_1.7.6_linux_amd64.gz
 wget https://github.com/EgeBalci/amber/releases/download/v3.1/amber_linux_amd64_3.1.zip
 wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.2/BloodHound-linux-x64.zip
 wget https://downloads.es.net/pub/iperf/iperf-3.9.tar.gz
@@ -483,7 +480,6 @@ function frp_download(){
 	tar xzvf "frp_$(echo $latest_version | sed 's/v//')_linux_amd64.tar.gz"
 	rm "frp_$(echo $latest_version | sed 's/v//')_linux_amd64.tar.gz"
 }
-
 
 
 
