@@ -146,6 +146,7 @@ sudo snap install \
 	lolcat \
 	mycli \
 	postman \
+	powershell \
 	scrcpy \
 	vlc;
 
@@ -447,7 +448,7 @@ function bat_install(){
 function jdgui_install(){
 	echo "Installing latest version of JD-GUI"
 	latest_version=$(curl -s https://github.com/java-decompiler/jd-gui/releases | grep "jd-gui_" | head -1 | cut -d'/' -f6)
-	curl -L "https://github.com/java-decompiler/jd-gui/releases/download/$latest_version/jd-gui-$(echo $latest_version | sed 's/v//').deb" --output "jd-gui-$(echo $latest_version | sed 's/v//').deb"
+	curl -L "https://github.com/java-decompiler/jd-gui/releases/download/$latest_version/jd-gui_$(echo $latest_version | sed 's/v//').deb" --output "jd-gui-$(echo $latest_version | sed 's/v//').deb"
 	sudo dpkg -i "jd-gui-$(echo $latest_version | sed 's/v//').deb"
 	rm "jd-gui-$(echo $latest_version | sed 's/v//').deb"
 }
