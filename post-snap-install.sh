@@ -2,11 +2,16 @@
 
 source ~/.bashrc
 
+function add_env(){
+	echo 'GOBIN=$HOME/go/bin' >> ~/.bashrc
+	echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
+}
+
+grep "GOBIN" ~/.bashrc &> /dev/null && true || add_env
+
 which go &> /dev/null
 if [ $? -ne 0 ]; then
 	echo "please install go 'sudo snap install go --classic'"
-	echo 'GOBIN=$HOME/go/bin' >> ~/.bashrc
-	echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
 	exit
 fi
 
