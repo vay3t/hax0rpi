@@ -146,7 +146,6 @@ sudo snap install \
 	lolcat \
 	mycli \
 	postman \
-	powershell \
 	scrcpy \
 	vlc;
 
@@ -464,13 +463,13 @@ function burp_download(){
 	echo "Downloading latest version of Burpsuite Community"
 	latest_version=$(curl "https://portswigger.net/burp/releases/data?previousLastId=-1&lastId=-1&pageSize=10" -s | jq ".ResultSet.Results[].builds" | grep -A5 '"community"' | grep -A4 '"Linux"' | grep Version | cut -d '"' -f 4 | sort -n | tail -1)
 	curl -L "https://portswigger.net/burp/releases/download?product=community&version=$latest_version&type=Linux" --output burp.sh
-	chmox +x burp.sh
+	chmod +x burp.sh
 }
 
 function hashcat_download(){
 	echo "Downloading latest version of hashcat"
 	latest_version=$(curl -s https://github.com/hashcat/hashcat/releases | grep "hashcat-" | head -1 | cut -d'/' -f6)
-	curl -L "https://github.com/hashcat/hashcat/releases/download/$latest_versio/hashcat-$(echo $latest_version | sed 's/v//').7z" --output "hashcat-$(echo $latest_version | sed 's/v//').7z"
+	curl -L "https://github.com/hashcat/hashcat/releases/download/$latest_version/hashcat-$(echo $latest_version | sed 's/v//').7z" --output "hashcat-$(echo $latest_version | sed 's/v//').7z"
 	7z x "hashcat-$(echo $latest_version | sed 's/v//').7z"
 	rm "hashcat-$(echo $latest_version | sed 's/v//').7z"
 }
