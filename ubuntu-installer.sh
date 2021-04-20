@@ -9,6 +9,8 @@ echo -e "\n${YELLOW}[+] folder 'secret' created${NC}"
 
 sudo sh -c 'echo "\nDefaults timestamp_timeout=-1">>/etc/sudoers'
 
+echo "Download files: ~8.4GB"
+
 # update system
 echo -e "\n${YELLOW}[!] update and upgrade system${NC}"
 sudo apt-get update
