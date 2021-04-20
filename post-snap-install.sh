@@ -49,7 +49,7 @@ go get -u gitlab.com/michenriksen/jdam &>/dev/null
 go get -u github.com/shenwei356/rush &>/dev/null
 go get -u github.com/nakabonne/pbgopy &>/dev/null
 go get -u github.com/irevenko/what-anime-cli &>/dev/null
-
+go get -u github.com/jpillora/chisel &>/dev/null
 
 GO111MODULE=on go get -u mvdan.cc/garble
 GO111MODULE=on go get -u github.com/OWASP/Amass/v3/... &>/dev/null
