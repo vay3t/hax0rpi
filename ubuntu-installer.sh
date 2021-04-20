@@ -20,7 +20,7 @@ sudo apt-get dist-upgrade -y
 
 # install from apt-get
 echo -e "\n${YELLOW}\n[!] install tools with apt-get${NC}"
-sudo apt-get install -y \
+sudo apt-get install -yq \
 	adb \
 	apache2 \
 	arp-scan \
