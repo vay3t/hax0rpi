@@ -34,6 +34,7 @@ sudo apt-get install -yq \
 	evince \
 	fastboot \
 	filezilla \
+	flameshot \
 	git \
 	hexedit \
 	hexyl \
@@ -140,7 +141,6 @@ sudo snap install \
 	brave \
 	chromium \
 	drawio \
-	flameshot \
 	john-the-ripper \
 	jwt-hack \
 	leafpad \
