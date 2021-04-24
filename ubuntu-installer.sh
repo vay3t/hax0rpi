@@ -426,6 +426,12 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install sublime-text -y
 
+# oletools
+git clone https://github.com/decalage2/oletools
+cd oletools
+sudo python3 setup.py install
+cd && cd $secret
+
 ##### Download git release and more
 
 function websocat_install(){
