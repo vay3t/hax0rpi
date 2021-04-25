@@ -37,6 +37,7 @@ sudo apt-get install -yq \
 	filezilla \
 	flameshot \
 	git \
+	hashcat \
 	hexedit \
 	hexyl \
 	hostapd \
