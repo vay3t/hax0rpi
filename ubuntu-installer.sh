@@ -23,6 +23,7 @@ echo -e "\n${YELLOW}\n[!] install tools with apt-get${NC}"
 sudo apt-get install -yq \
 	adb \
 	apache2 \
+	apropos \
 	arp-scan \
 	baobab \
 	curl \
@@ -72,6 +73,7 @@ sudo apt-get install -yq \
 	tmux \
 	tor \
 	torsocks \
+	traceroute \
 	tree \
 	trickle \
 	unrar \
