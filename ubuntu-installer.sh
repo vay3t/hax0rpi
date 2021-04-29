@@ -385,13 +385,7 @@ cd IntruderPayloads
 ./install.sh
 cd && cd $secret
 
-# Empire
-sudo pip3 install poetry
-git clone --recursive https://github.com/BC-SECURITY/Empire.git
-cd Empire
-sudo ./setup/install.sh
-sudo poetry install
-cd && cd $secret
+
 
 # eaphammer
 git clone https://github.com/s0lst1c3/eaphammer
@@ -492,7 +486,14 @@ function frp_download(){
 	rm "frp_$(echo $latest_version | sed 's/v//')_linux_amd64.tar.gz"
 }
 
-
+function powershell_installer(){
+	echo "Installing latest version of powershell"
+	latest_version="$(curl -s https://github.com/PowerShell/PowerShell/releases | grep powershell_ | cut -d "/" -f6 | grep -E "^v" | head -1)"
+	curl -L "https://github.com/PowerShell/PowerShell/releases/download/$latest_version/powershell_$(echo $latest_version | sed 's/v//')-1.ubuntu.20.04_amd64.deb" -O "powershell_$(echo $latest_version | sed 's/v//')-1.ubuntu.20.04_amd64.deb"
+	sudo dpkg -i "powershell_$(echo $latest_version | sed 's/v//')-1.ubuntu.20.04_amd64.deb"
+	sudo apt install -f
+	rm "powershell_$(echo $latest_version | sed 's/v//')-1.ubuntu.20.04_amd64.deb"	
+}
 
 # run functions
 websocat_install
@@ -504,6 +505,14 @@ hashcat_download
 frp_download
 
 
+# Install empire
+powershell_installer
+sudo pip3 install poetry
+git clone --recursive https://github.com/BC-SECURITY/Empire.git
+cd Empire
+sudo ./setup/install.sh
+sudo poetry install
+cd && cd $secret
 
 
 # disable service
