@@ -489,7 +489,7 @@ function frp_download(){
 function powershell_installer(){
 	echo "Installing latest version of powershell"
 	latest_version="$(curl -s https://github.com/PowerShell/PowerShell/releases | grep powershell_ | cut -d "/" -f6 | grep -E "^v" | head -1)"
-	curl -L "https://github.com/PowerShell/PowerShell/releases/download/$latest_version/powershell_$(echo $latest_version | sed 's/v//')-1.ubuntu.20.04_amd64.deb" -O "powershell_$(echo $latest_version | sed 's/v//')-1.ubuntu.20.04_amd64.deb"
+	curl -L "https://github.com/PowerShell/PowerShell/releases/download/$latest_version/powershell_$(echo $latest_version | sed 's/v//')-1.ubuntu.20.04_amd64.deb" --output "powershell_$(echo $latest_version | sed 's/v//')-1.ubuntu.20.04_amd64.deb"
 	sudo dpkg -i "powershell_$(echo $latest_version | sed 's/v//')-1.ubuntu.20.04_amd64.deb"
 	sudo apt install -f
 	rm "powershell_$(echo $latest_version | sed 's/v//')-1.ubuntu.20.04_amd64.deb"	
