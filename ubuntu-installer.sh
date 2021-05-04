@@ -41,8 +41,10 @@ sudo apt-get install -yq \
 	hexedit \
 	hexyl \
 	hostapd \
+	hping3 \
 	htop \
 	hydra \
+	iperf3 \
 	iw \
 	jq \
 	libimage-exiftool-perl \
@@ -195,7 +197,6 @@ wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cme
 wget https://snapshots.mitmproxy.org/6.0.2/mitmproxy-6.0.2-linux.tar.gz
 wget https://github.com/EgeBalci/amber/releases/download/v3.1/amber_linux_amd64_3.1.zip
 wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.2/BloodHound-linux-x64.zip
-wget https://downloads.es.net/pub/iperf/iperf-3.9.tar.gz
 wget https://github.com/Studio3T/robomongo/releases/download/v1.4.3/robo3t-1.4.3-linux-x86_64-48f7dfd.tar.gz
 wget https://github.com/projectdiscovery/nuclei/releases/download/v2.3.4/nuclei_2.3.4_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/proxify/releases/download/v0.0.3/proxify_0.0.3_linux_amd64.tar.gz
