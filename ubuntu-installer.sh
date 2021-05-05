@@ -209,6 +209,7 @@ wget https://github.com/projectdiscovery/nuclei/releases/download/v2.3.4/nuclei_
 wget https://github.com/projectdiscovery/proxify/releases/download/v0.0.3/proxify_0.0.3_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/httpx/releases/download/v1.0.5/httpx_1.0.5_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/subfinder/releases/download/v2.4.7/subfinder_2.4.7_linux_amd64.tar.gz
+wget https://github.com/icsharpcode/AvaloniaILSpy/releases/download/v7.0-rc1/linux-x64.zip
 
 
 ##### Install from URL #####
