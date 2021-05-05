@@ -57,6 +57,7 @@ go get -u github.com/irevenko/what-anime-cli &>/dev/null
 go get -u github.com/jpillora/chisel &>/dev/null
 go get -u github.com/giteshnxtlvl/cook &>/dev/null
 go get -u github.com/beefsack/webify &>/dev/null
+go get -u github.com/ropnop/kerbrute &>/dev/null
 
 GO111MODULE=on go get -u ktbs.dev/mubeng/cmd/mubeng &>/dev/null
 GO111MODULE=on go get -u mvdan.cc/garble
