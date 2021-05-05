@@ -132,6 +132,7 @@ sudo pip3 install \
 	search-that-hash \
 	shadowsocks \
 	shodan \
+	slowloris \
 	sqlmap \
 	ssh-mitm \
 	sshuttle \
