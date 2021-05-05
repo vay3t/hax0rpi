@@ -388,8 +388,6 @@ cd IntruderPayloads
 ./install.sh
 cd && cd $secret
 
-
-
 # eaphammer
 git clone https://github.com/s0lst1c3/eaphammer
 
@@ -432,6 +430,10 @@ git clone https://github.com/decalage2/oletools
 cd oletools
 sudo python3 setup.py install
 cd && cd $secret
+
+# PCredz
+git clone https://github.com/lgandx/PCredz
+apt install python3-pip -y && sudo apt-get install libpcap-dev -y && pip3 install Cython && pip3 install python-libpcap
 
 ##### Download git release and more
 
