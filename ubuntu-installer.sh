@@ -210,7 +210,7 @@ wget https://github.com/projectdiscovery/proxify/releases/download/v0.0.3/proxif
 wget https://github.com/projectdiscovery/httpx/releases/download/v1.0.5/httpx_1.0.5_linux_amd64.tar.gz
 wget https://github.com/projectdiscovery/subfinder/releases/download/v2.4.7/subfinder_2.4.7_linux_amd64.tar.gz
 wget https://github.com/icsharpcode/AvaloniaILSpy/releases/download/v7.0-rc1/linux-x64.zip
-
+wget https://github.com/s4n7h0/Halcyon-IDE/releases/download/v2.0.2/Halcyon_IDE_v2.0.2.jar
 
 ##### Install from URL #####
 
