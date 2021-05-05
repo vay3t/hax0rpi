@@ -101,6 +101,7 @@ sudo gem install \
 
 ##### Python #####
 sudo pip3 install \
+	apkid \
 	autopep8 \
 	beautifulsoup4 \
 	cloudscraper \
