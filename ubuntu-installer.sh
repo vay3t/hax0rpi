@@ -134,6 +134,7 @@ sudo pip3 install \
 	shadowsocks \
 	shodan \
 	slowloris \
+	smtp-user-enum \
 	sqlmap \
 	ssh-mitm \
 	sshuttle \
