@@ -224,6 +224,7 @@ sudo npm install -g elasticdump
 #sudo npm install -g curlconverter
 sudo npm install -g qrcode-terminal
 sudo npm install -g s3rver
+sudo npm install -g apk-mitm
 sudo yarn global add wappalyzer
 
 ##### Git install #####
