@@ -194,6 +194,7 @@ git clone https://github.com/s4vitar/rpcenum
 git clone https://github.com/magnumripper/JohnTheRipper john
 git clone https://github.com/cujanovic/Open-Redirect-Payloads
 git clone https://github.com/trustedsec/hate_crack
+git clone https://github.com/Mr-Un1k0d3r/DKMC
 
 ##### Wget #####
 wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cmedb-ubuntu-latest.zip
