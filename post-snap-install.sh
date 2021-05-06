@@ -60,7 +60,7 @@ go get -u github.com/beefsack/webify &>/dev/null
 go get -u github.com/ropnop/kerbrute &>/dev/null
 
 GO111MODULE=on go get -u ktbs.dev/mubeng/cmd/mubeng &>/dev/null
-GO111MODULE=on go get -u mvdan.cc/garble
+GO111MODULE=on go get -u mvdan.cc/garble &>/dev/null
 GO111MODULE=on go get -u github.com/OWASP/Amass/v3/... &>/dev/null
 GO111MODULE=on go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei &>/dev/null
 GO111MODULE=on go get -u github.com/projectdiscovery/dnsx/cmd/dnsx &>/dev/null
