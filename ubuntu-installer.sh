@@ -212,6 +212,8 @@ wget https://github.com/projectdiscovery/httpx/releases/download/v1.0.5/httpx_1.
 wget https://github.com/projectdiscovery/subfinder/releases/download/v2.4.7/subfinder_2.4.7_linux_amd64.tar.gz
 wget https://github.com/icsharpcode/AvaloniaILSpy/releases/download/v7.0-rc1/linux-x64.zip
 wget https://github.com/s4n7h0/Halcyon-IDE/releases/download/v2.0.2/Halcyon_IDE_v2.0.2.jar
+wget https://github.com/angryip/ipscan/releases/download/3.7.6/ipscan_3.7.6_amd64.deb
+wget https://github.com/subhra74/snowflake/releases/download/v1.0.4/snowflake-1.0.4-setup-amd64.deb
 
 ##### Install from URL #####
 
