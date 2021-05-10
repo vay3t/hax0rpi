@@ -125,6 +125,7 @@ sudo pip3 install \
 	proxy.py \
 	pyautogui \
 	pyinstaller \
+	pyserv \
 	python-telegram-bot \
 	python-whois \
 	requests \
