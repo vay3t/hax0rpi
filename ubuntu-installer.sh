@@ -43,7 +43,6 @@ sudo apt-get install -yq \
 	hostapd \
 	hping3 \
 	htop \
-	hydra \
 	iperf3 \
 	iw \
 	jq \
@@ -445,6 +444,20 @@ cd && cd $secret
 # PCredz
 git clone https://github.com/lgandx/PCredz
 apt install python3-pip -y && sudo apt-get install libpcap-dev -y && pip3 install Cython && pip3 install python-libpcap
+
+# Hydra
+
+sudo apt-get install -y libssl-dev libssh-dev libidn11-dev libpcre3-dev \
+                 libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev \
+                 firebird-dev libmemcached-dev libgpg-error-dev \
+                 libgcrypt11-dev libgcrypt20-dev
+
+git clone https://github.com/vanhauser-thc/thc-hydra
+cd thc-hydra
+./configure
+make
+sudo make install
+cd && cd $secret
 
 ##### Download git release and more
 
