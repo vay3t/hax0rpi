@@ -34,7 +34,7 @@ go get -u github.com/tomnomnom/gf &>/dev/null
 go get -u github.com/mvdan/xurls &>/dev/null
 go get -u github.com/BBVA/kapow &>/dev/null
 go get -u github.com/davecheney/httpstat &>/dev/null
-go get -u github.com/OJ/gobuster &>/dev/null
+go install github.com/OJ/gobuster/v3@latest &>/dev/null
 go get -u github.com/michenriksen/aquatone &>/dev/null
 go get -u github.com/ffuf/ffuf &>/dev/null
 go get -u github.com/ffuf/pencode/cmd/pencode &>/dev/null
