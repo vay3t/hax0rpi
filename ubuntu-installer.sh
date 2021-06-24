@@ -198,6 +198,7 @@ git clone https://github.com/Mr-Un1k0d3r/DKMC
 git clone https://github.com/cytopia/pwncat
 git clone https://github.com/m4ll0k/Atlas
 git clone https://github.com/OsandaMalith/IPObfuscator
+git clone https://github.com/chrispetrou/EnumSNMP
 
 ##### Wget #####
 wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cmedb-ubuntu-latest.zip
