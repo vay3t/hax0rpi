@@ -17,6 +17,9 @@ pi@raspberrypi:~/hax0rpi $ ./hax0rpi
      proceeding. See README (if exist) for more information.
 ```
 
+# Archived
+Migrated to https://gitlab.com/vay3t/hax0rpi
+
 # Why
 I do not like to be filled with tools, so I try to put the least possible
 
